@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_inner_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+    <TextView
+        android:id="@+id/loginTitle"
+        style="@style/LoginTitleStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/login_main_title"
+        app:layout_constraintBottom_toTopOf="@id/emailInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/emailInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/login_email_hint"
+        android:drawablePadding="@dimen/common_margin"
+        android:drawableStart="@drawable/sig_nin_ic_email_edit_text_background"
+        android:background="@drawable/sig_nin_edit_text_background"
+        android:inputType="textEmailAddress"
+        android:lines="1" tools:ignore="Autofill"
+        android:layout_marginBottom="@dimen/common_margin"
+        app:layout_constraintTop_toBottomOf="@id/loginTitle"
+        app:layout_constraintBottom_toTopOf="@id/passwordInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <EditText
+        android:id="@+id/passwordInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/login_password_hint"
+        android:background="@drawable/sig_nin_edit_text_background"
+        android:drawablePadding="@dimen/common_margin"
+        android:drawableStart="@drawable/sig_nin_ic_password_edit_text_background"
+        android:inputType="textPassword"
+        android:lines="1"
+        tools:ignore="Autofill"
+        app:layout_constraintTop_toBottomOf="@id/emailInput"
+        app:layout_constraintBottom_toTopOf="@id/guideline_horizontal_inner_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/forgotPassword"
+        style="@style/BrownieCommonStrongText.Medium"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_forgot_password_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_inner_bottom" />
+
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/common_action_button_height"
+        android:text="@string/login_button_text"
+        android:layout_marginBottom="@dimen/common_margin"
+        style="@style/BrownieCommonActionButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/createNewAccount"/>
+
+
+    <TextView
+        android:id="@+id/createNewAccount"
+        style="@style/BrownieCommonStrongText.Medium"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_create_new_account_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

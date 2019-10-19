@@ -2,21 +2,135 @@
 <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         tools:context="sanchez.sanchez.sergio.agrociety.ui.features.IntroActivity">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_inner_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_inner_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".80" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_inner_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.24" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_inner_top_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".90" />
+
+    <com.flaviofaria.kenburnsview.KenBurnsView
+        android:id="@+id/screenBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/content_can_not_be_loaded"
+        android:scaleType="centerCrop"
+        android:src="@drawable/intro_background_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/containerBlurView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/sig_nin_container_background"
+        app:layout_constraintStart_toEndOf="@id/guideline_vertical_left"
+        app:layout_constraintEnd_toStartOf="@id/guideline_vertical_right"
+        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_top"
+        app:layout_constraintBottom_toTopOf="@id/guideline_horizontal_bottom"
+        />
+
+
+    <ImageView
+        android:id="@+id/appIcon"
+        android:layout_width="@dimen/app_icon_size"
+        android:layout_height="@dimen/app_icon_size"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginTop="@dimen/common_margin"
+        app:layout_constraintTop_toTopOf="@id/containerBlurView"
+        app:layout_constraintEnd_toEndOf="@id/containerBlurView"
+        app:layout_constraintStart_toStartOf="@id/containerBlurView"
+        app:layout_constraintBottom_toTopOf="@id/guideline_horizontal_inner_top"
+        android:contentDescription="@string/content_can_not_be_loaded" />
+
+    <TextView
+        android:id="@+id/appTitle"
+        style="@style/AppTitleStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/app_name"
+        app:layout_constraintBottom_toTopOf="@id/divisor"
+        app:layout_constraintEnd_toEndOf="@id/containerBlurView"
+        app:layout_constraintStart_toStartOf="@id/containerBlurView"
+        app:layout_constraintTop_toBottomOf="@id/appIcon" />
+
+    <View
+        android:id="@+id/divisor"
+        app:layout_constraintTop_toBottomOf="@id/appTitle"
+        app:layout_constraintBottom_toTopOf="@id/guideline_horizontal_inner_top_container"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_inner_right"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical_inner_left"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/translucentWhite"/>
+
     <fragment
-            android:id="@+id/navHostContainer"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:defaultNavHost="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:navGraph="@navigation/intro_navigation" />
+        android:id="@+id/navHostContainer"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="@id/containerBlurView"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_inner_right"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical_inner_left"
+        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_inner_top_container"
+        app:navGraph="@navigation/intro_navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

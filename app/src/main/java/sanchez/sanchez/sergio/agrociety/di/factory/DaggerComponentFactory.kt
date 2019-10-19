@@ -9,6 +9,7 @@ import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
 import sanchez.sanchez.sergio.agrociety.di.components.activity.ApplicationActivityComponent
 import sanchez.sanchez.sergio.agrociety.di.components.application.ApplicationGlobalComponent
 import sanchez.sanchez.sergio.agrociety.di.components.application.DaggerApplicationGlobalComponent
+import sanchez.sanchez.sergio.agrociety.di.components.fragment.LoginComponent
 import sanchez.sanchez.sergio.agrociety.di.components.fragment.SplashScreenComponent
 
 
@@ -40,5 +41,8 @@ object DaggerComponentFactory {
 
     fun getSplashScreenComponent(activity: SupportActivity): SplashScreenComponent =
         getAppActivityComponent(activity).splashScreenComponent()
+
+    fun getLoginComponent(activity: SupportActivity): LoginComponent =
+        getAppActivityComponent(activity).loginComponent()
 
 }

@@ -19,11 +19,18 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
-
-
     <style name="CollapsingToolbarLayoutExpandedTextStyle" parent="AppTheme">
         <item name="android:textColor">@android:color/transparent</item>
         <item name="android:textSize">0sp</item>
+    </style>
+
+    <style name="AppTitleStyle" parent="@style/BrownieCommonStrongText">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/common_margin</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="autoSizeTextType">uniform</item>
     </style>
 
 

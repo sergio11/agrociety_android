@@ -1,6 +1,7 @@
 package sanchez.sanchez.sergio.agrociety.di.components.activity
 
 import dagger.Subcomponent
+import sanchez.sanchez.sergio.agrociety.di.components.fragment.LoginComponent
 import sanchez.sanchez.sergio.brownie.di.components.ActivityComponent
 import sanchez.sanchez.sergio.brownie.di.modules.ActivityModule
 import sanchez.sanchez.sergio.brownie.di.scopes.PerActivity
@@ -16,6 +17,7 @@ interface ApplicationActivityComponent: ActivityComponent {
     fun inject(activity: IntroActivity)
 
     fun splashScreenComponent(): SplashScreenComponent
+    fun loginComponent(): LoginComponent
 
 
 }

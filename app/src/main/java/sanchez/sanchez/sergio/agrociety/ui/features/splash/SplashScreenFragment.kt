@@ -1,15 +1,13 @@
 package sanchez.sanchez.sergio.agrociety.ui.features.splash
 
 import android.os.Bundle
-import android.view.View
 import androidx.lifecycle.Observer
-import eightbitlab.com.blurview.RenderScriptBlur
-import kotlinx.android.synthetic.main.fragment_splash_screen.*
 import sanchez.sanchez.sergio.agrociety.R
 import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
 import sanchez.sanchez.sergio.brownie.ui.core.fragment.SupportFragment
 import sanchez.sanchez.sergio.agrociety.di.components.fragment.SplashScreenComponent
 import sanchez.sanchez.sergio.agrociety.di.factory.DaggerComponentFactory
+import sanchez.sanchez.sergio.brownie.extension.navigate
 import timber.log.Timber
 
 
@@ -35,15 +33,6 @@ class SplashScreenFragment : SupportFragment<SplashViewModel, Void>(SplashViewMo
         })
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        layerBlurView.setupWith(container)
-            .setFrameClearDrawable(container.background)
-            .setBlurAlgorithm(RenderScriptBlur(requireContext()))
-            .setBlurRadius(8.0f)
-            .setHasFixedTransformationMatrix(true)
-    }
 
     override fun onStart() {
         super.onStart()
@@ -60,10 +49,12 @@ class SplashScreenFragment : SupportFragment<SplashViewModel, Void>(SplashViewMo
 
     private fun onSessionLoaded() {
         Timber.tag(TAG).d("On Session Loaded")
+        navigate(R.id.action_splashScreenFragment_to_loginFragment)
     }
 
     private fun onSessionNotAvaliable() {
         Timber.tag(TAG).d("On Session Not Avaliable")
+        navigate(R.id.action_splashScreenFragment_to_loginFragment)
     }
 
 }
