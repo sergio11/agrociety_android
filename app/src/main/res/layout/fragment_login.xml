@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".90" />
+
+    <com.flaviofaria.kenburnsview.KenBurnsView
+        android:id="@+id/screenBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/content_can_not_be_loaded"
+        android:scaleType="centerCrop"
+        android:src="@drawable/intro_background_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/loginContainerBlurView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toEndOf="@id/guideline_vertical_left"
+        app:layout_constraintEnd_toStartOf="@id/guideline_vertical_right"
+        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_top"
+        app:layout_constraintBottom_toTopOf="@id/guideline_horizontal_bottom"
+        />
+
+
+    <ImageView
+        android:id="@+id/appIcon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginTop="@dimen/common_margin"
+        app:layout_constraintTop_toTopOf="@id/loginContainerBlurView"
+        app:layout_constraintEnd_toEndOf="@id/loginContainerBlurView"
+        app:layout_constraintStart_toStartOf="@id/loginContainerBlurView"
+        android:contentDescription="@string/content_can_not_be_loaded" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

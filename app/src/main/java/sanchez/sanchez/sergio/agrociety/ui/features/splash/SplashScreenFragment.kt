@@ -10,6 +10,7 @@ import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
 import sanchez.sanchez.sergio.brownie.ui.core.fragment.SupportFragment
 import sanchez.sanchez.sergio.agrociety.di.components.fragment.SplashScreenComponent
 import sanchez.sanchez.sergio.agrociety.di.factory.DaggerComponentFactory
+import sanchez.sanchez.sergio.brownie.extension.navigate
 import timber.log.Timber
 
 
@@ -60,10 +61,12 @@ class SplashScreenFragment : SupportFragment<SplashViewModel, Void>(SplashViewMo
 
     private fun onSessionLoaded() {
         Timber.tag(TAG).d("On Session Loaded")
+        navigate(R.id.action_splashScreenFragment_to_loginFragment)
     }
 
     private fun onSessionNotAvaliable() {
         Timber.tag(TAG).d("On Session Not Avaliable")
+        navigate(R.id.action_splashScreenFragment_to_loginFragment)
     }
 
 }

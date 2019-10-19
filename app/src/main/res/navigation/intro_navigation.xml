@@ -10,7 +10,16 @@
               android:name="sanchez.sanchez.sergio.agrociety.ui.features.splash.SplashScreenFragment"
               android:label="SplashScreenFragment">
 
+        <action
+            android:id="@+id/action_splashScreenFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/fadein"
+            app:exitAnim="@anim/fadeout" />
     </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="sanchez.sanchez.sergio.agrociety.ui.features.login.LoginFragment"
+        android:label="LoginFragment" />
 
 
 </navigation>
