@@ -1,6 +1,7 @@
-package sanchez.sanchez.sergio.newsapp.utils.constants
+package sanchez.sanchez.sergio.agrociety.utils.constants
 
-import sanchez.sanchez.sergio.project_z.BuildConfig
+import sanchez.sanchez.sergio.agrociety.BuildConfig
+
 
 /**
  * Helper class to hold constants

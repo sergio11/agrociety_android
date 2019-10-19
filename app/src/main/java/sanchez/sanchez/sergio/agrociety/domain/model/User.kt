@@ -1,4 +1,4 @@
-package sanchez.sanchez.sergio.newsapp.domain.model
+package sanchez.sanchez.sergio.agrociety.domain.model
 
 import android.net.Uri
 

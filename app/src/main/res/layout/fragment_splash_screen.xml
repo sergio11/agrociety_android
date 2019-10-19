@@ -1,27 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.37" />
+
 
     <ImageView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:src="@drawable/app_splash_background"
+            android:src="@drawable/intro_background"
             android:scaleType="centerCrop"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/guideline"
-            android:contentDescription="Content can not be loaded"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:contentDescription="@string/content_can_not_be_loaded"/>
 
-    <androidx.constraintlayout.widget.Guideline
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/guideline"
-            app:layout_constraintGuide_percent="0.5"
-            android:orientation="horizontal"/>
 
+    <com.github.florent37.shapeofview.shapes.ArcView
+        android:id="@+id/arcViewShape"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:background="@color/colorPrimaryTrans"
+        app:shape_arc_cropDirection="outside"
+        app:shape_arc_height="@dimen/sign_in_arch_height"
+        app:shape_arc_position="bottom"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/layerBlurView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </com.github.florent37.shapeofview.shapes.ArcView>
+
+
+    <ImageView
+        android:id="@+id/appIcon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintBottom_toTopOf="@id/appTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/arcViewShape"
+        android:contentDescription="@string/content_can_not_be_loaded" />
+
+    <TextView
+        android:id="@+id/appTitle"
+        style="@style/SplashTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="@id/arcViewShape"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appIcon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

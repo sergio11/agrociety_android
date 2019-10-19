@@ -1,12 +1,12 @@
 package sanchez.sanchez.sergio.agrociety.ui.features
 
 import android.os.Bundle
+import sanchez.sanchez.sergio.agrociety.R
 import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
 import sanchez.sanchez.sergio.agrociety.di.components.activity.ApplicationActivityComponent
 import sanchez.sanchez.sergio.agrociety.di.factory.DaggerComponentFactory
-import sanchez.sanchez.sergio.project_z.R
 
-class MainActivity : SupportActivity() {
+class IntroActivity : SupportActivity() {
 
     private val activityComponent: ApplicationActivityComponent by lazy(mode = LazyThreadSafetyMode.NONE) {
         DaggerComponentFactory.getAppActivityComponent(this)
@@ -17,19 +17,9 @@ class MainActivity : SupportActivity() {
         super.onCreate(savedInstanceState)
     }
 
-    override fun layoutId(): Int = R.layout.activity_main
+    override fun layoutId(): Int = R.layout.activity_intro
 
     override fun navHostId(): Int = R.id.navHostContainer
 
-
-    override fun onSinglePermissionGranted(permission: String) {
-    }
-
-    override fun onSinglePermissionRejected(permission: String) {}
-
-    override fun onErrorOccurred(permission: String) {}
-
-    override fun onInject() {
-        activityComponent.inject(this)
-    }
+    override fun onInject() { activityComponent.inject(this) }
 }

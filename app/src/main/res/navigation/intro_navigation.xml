@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/app_navigation" app:startDestination="@id/splashScreenFragment">
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/app_navigation"
+            app:startDestination="@id/splashScreenFragment">
 
 
+    <!-- Splash Screen Fragment -->
     <fragment android:id="@+id/splashScreenFragment"
               android:name="sanchez.sanchez.sergio.agrociety.ui.features.splash.SplashScreenFragment"
               android:label="SplashScreenFragment">
 
     </fragment>
-
 
 
 </navigation>

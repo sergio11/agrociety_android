@@ -1,4 +1,4 @@
-package sanchez.sanchez.sergio.newsapp.ui.features.splash
+package sanchez.sanchez.sergio.agrociety.ui.features.splash
 
 
 enum class SplashOperationResultEnum {

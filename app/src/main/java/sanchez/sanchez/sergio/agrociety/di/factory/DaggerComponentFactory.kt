@@ -1,4 +1,4 @@
-package sanchez.sanchez.sergio.newsapp.di.factory
+package sanchez.sanchez.sergio.agrociety.di.factory
 
 import sanchez.sanchez.sergio.brownie.BrownieApp
 import sanchez.sanchez.sergio.brownie.di.components.ApplicationComponent
@@ -6,10 +6,10 @@ import sanchez.sanchez.sergio.brownie.di.components.DaggerApplicationComponent
 import sanchez.sanchez.sergio.brownie.di.modules.ActivityModule
 import sanchez.sanchez.sergio.brownie.di.modules.ApplicationModule
 import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
-import sanchez.sanchez.sergio.newsapp.di.components.activity.ApplicationActivityComponent
-import sanchez.sanchez.sergio.newsapp.di.components.application.ApplicationGlobalComponent
-import sanchez.sanchez.sergio.newsapp.di.components.application.DaggerApplicationGlobalComponent
-import sanchez.sanchez.sergio.newsapp.di.components.fragment.SplashScreenComponent
+import sanchez.sanchez.sergio.agrociety.di.components.activity.ApplicationActivityComponent
+import sanchez.sanchez.sergio.agrociety.di.components.application.ApplicationGlobalComponent
+import sanchez.sanchez.sergio.agrociety.di.components.application.DaggerApplicationGlobalComponent
+import sanchez.sanchez.sergio.agrociety.di.components.fragment.SplashScreenComponent
 
 
 object DaggerComponentFactory {

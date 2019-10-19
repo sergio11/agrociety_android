@@ -1,4 +1,4 @@
-package sanchez.sanchez.sergio.newsapp.di.modules.viewmodel
+package sanchez.sanchez.sergio.agrociety.di.modules.viewmodel
 
 import androidx.lifecycle.ViewModel
 import dagger.Binds
@@ -7,7 +7,7 @@ import dagger.multibindings.IntoMap
 import sanchez.sanchez.sergio.brownie.di.modules.ViewModelModule
 import sanchez.sanchez.sergio.brownie.di.scopes.PerFragment
 import sanchez.sanchez.sergio.brownie.di.viewmodel.ViewModelKey
-import sanchez.sanchez.sergio.newsapp.ui.features.splash.SplashViewModel
+import sanchez.sanchez.sergio.agrociety.ui.features.splash.SplashViewModel
 
 @Module(includes = [ ViewModelModule::class ])
 abstract class SplashViewModelModule {

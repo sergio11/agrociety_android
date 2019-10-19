@@ -1,11 +1,11 @@
-package sanchez.sanchez.sergio.newsapp.di.components.activity
+package sanchez.sanchez.sergio.agrociety.di.components.activity
 
 import dagger.Subcomponent
 import sanchez.sanchez.sergio.brownie.di.components.ActivityComponent
 import sanchez.sanchez.sergio.brownie.di.modules.ActivityModule
 import sanchez.sanchez.sergio.brownie.di.scopes.PerActivity
-import sanchez.sanchez.sergio.newsapp.di.components.fragment.SplashScreenComponent
-import sanchez.sanchez.sergio.newsapp.ui.features.MainActivity
+import sanchez.sanchez.sergio.agrociety.di.components.fragment.SplashScreenComponent
+import sanchez.sanchez.sergio.agrociety.ui.features.IntroActivity
 
 @PerActivity
 @Subcomponent(modules = [
@@ -13,7 +13,7 @@ import sanchez.sanchez.sergio.newsapp.ui.features.MainActivity
     ])
 interface ApplicationActivityComponent: ActivityComponent {
 
-    fun inject(activity: MainActivity)
+    fun inject(activity: IntroActivity)
 
     fun splashScreenComponent(): SplashScreenComponent
 

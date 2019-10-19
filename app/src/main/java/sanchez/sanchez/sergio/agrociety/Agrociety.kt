@@ -1,9 +1,9 @@
-package sanchez.sanchez.sergio.newsapp
+package sanchez.sanchez.sergio.agrociety
 
 import sanchez.sanchez.sergio.brownie.BrownieApp
 import timber.log.Timber
 
-class ProjectZ: BrownieApp() {
+class Agrociety: BrownieApp() {
 
     override fun onDebugConfig() {
         super.onDebugConfig()

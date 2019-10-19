@@ -1,4 +1,4 @@
-package sanchez.sanchez.sergio.newsapp.utils
+package sanchez.sanchez.sergio.agrociety.utils
 
 import com.google.android.gms.tasks.Task
 import kotlin.coroutines.resume

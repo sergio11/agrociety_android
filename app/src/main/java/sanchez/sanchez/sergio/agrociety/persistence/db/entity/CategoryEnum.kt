@@ -1,4 +1,4 @@
-package sanchez.sanchez.sergio.newsapp.persistence.db.entity
+package sanchez.sanchez.sergio.agrociety.persistence.db.entity
 
 /**
  * business entertainment general health science sports technology

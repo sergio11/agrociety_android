@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:context="sanchez.sanchez.sergio.agrociety.ui.features.MainActivity">
+        tools:context="sanchez.sanchez.sergio.agrociety.ui.features.IntroActivity">
 
     <fragment
             android:id="@+id/navHostContainer"
@@ -17,6 +17,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:navGraph="@navigation/app_navigation" />
+            app:navGraph="@navigation/intro_navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
