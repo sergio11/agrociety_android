@@ -6,131 +6,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_vertical_left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent=".05" />
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_vertical_inner_left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent=".15" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_vertical_right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent=".95" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_vertical_inner_right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent=".80" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_horizontal_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".1" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_horizontal_inner_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.28" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_horizontal_inner_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.59" />
+        app:layout_constraintGuide_percent="0.5" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_horizontal_bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".90" />
-
-    <com.flaviofaria.kenburnsview.KenBurnsView
-        android:id="@+id/screenBackground"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:contentDescription="@string/content_can_not_be_loaded"
-        android:scaleType="centerCrop"
-        android:src="@drawable/intro_background_2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <eightbitlab.com.blurview.BlurView
-        android:id="@+id/loginContainerBlurView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/sig_nin_container_background"
-        app:layout_constraintStart_toEndOf="@id/guideline_vertical_left"
-        app:layout_constraintEnd_toStartOf="@id/guideline_vertical_right"
-        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_top"
-        app:layout_constraintBottom_toTopOf="@id/guideline_horizontal_bottom"
-        />
-
-
-    <ImageView
-        android:id="@+id/appIcon"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@mipmap/ic_launcher"
-        android:layout_marginTop="@dimen/common_margin"
-        app:layout_constraintTop_toTopOf="@id/loginContainerBlurView"
-        app:layout_constraintEnd_toEndOf="@id/loginContainerBlurView"
-        app:layout_constraintStart_toStartOf="@id/loginContainerBlurView"
-        app:layout_constraintBottom_toTopOf="@id/guideline_horizontal_inner_top"
-        android:contentDescription="@string/content_can_not_be_loaded" />
-
-    <TextView
-        android:id="@+id/appTitle"
-        style="@style/LoginAppTitleStyle"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/app_name"
-        app:layout_constraintBottom_toTopOf="@id/loginDivisor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appIcon" />
-
-    <View
-        android:id="@+id/loginDivisor"
-        app:layout_constraintTop_toBottomOf="@id/appTitle"
-        app:layout_constraintBottom_toTopOf="@id/loginTitle"
-        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_inner_right"
-        app:layout_constraintStart_toStartOf="@id/guideline_vertical_inner_left"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:background="@color/translucentWhite"/>
 
     <TextView
         android:id="@+id/loginTitle"
         style="@style/LoginTitleStyle"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:text="@string/login_main_title"
         app:layout_constraintBottom_toTopOf="@id/emailInput"
-        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_inner_right"
-        app:layout_constraintStart_toStartOf="@id/guideline_vertical_inner_left"
-        app:layout_constraintTop_toBottomOf="@id/loginDivisor" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <EditText
@@ -146,8 +40,8 @@
         android:layout_marginBottom="@dimen/common_margin"
         app:layout_constraintTop_toBottomOf="@id/loginTitle"
         app:layout_constraintBottom_toTopOf="@id/passwordInput"
-        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_inner_right"
-        app:layout_constraintStart_toStartOf="@id/guideline_vertical_inner_left"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <EditText
         android:id="@+id/passwordInput"
@@ -162,8 +56,8 @@
         tools:ignore="Autofill"
         app:layout_constraintTop_toBottomOf="@id/emailInput"
         app:layout_constraintBottom_toTopOf="@id/guideline_horizontal_inner_bottom"
-        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_inner_right"
-        app:layout_constraintStart_toStartOf="@id/guideline_vertical_inner_left"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
         android:id="@+id/forgotPassword"
@@ -172,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login_forgot_password_text"
-        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_inner_right"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_inner_bottom" />
 
 
@@ -183,8 +77,8 @@
         android:text="@string/login_button_text"
         android:layout_marginBottom="@dimen/common_margin"
         style="@style/BrownieCommonActionButton"
-        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_inner_right"
-        app:layout_constraintStart_toStartOf="@id/guideline_vertical_inner_left"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/createNewAccount"/>
 
 
@@ -195,9 +89,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login_create_new_account_text"
-        app:layout_constraintStart_toStartOf="@id/guideline_vertical_inner_left"
-        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_inner_right"
-        app:layout_constraintBottom_toBottomOf="@id/loginContainerBlurView" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,4 +10,6 @@
 
     <dimen name="sign_in_arch_height">50dp</dimen>
 
+    <dimen name="app_icon_size">90dp</dimen>
+
 </resources>
