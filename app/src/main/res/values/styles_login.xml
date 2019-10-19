@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="LoginAppTitleStyle" parent="@style/BrownieCommonStrongText">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/common_margin</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="autoSizeTextType">uniform</item>
+    </style>
+
+    <style name="LoginTitleStyle" parent="@style/BrownieCommonStrongText">
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+
+
+</resources>
