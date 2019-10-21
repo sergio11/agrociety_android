@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "940227740125",
+    "firebase_url": "https://agrociety.firebaseio.com",
+    "project_id": "agrociety",
+    "storage_bucket": "agrociety.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940227740125:android:660e54bb43578a1d6af634",
+        "android_client_info": {
+          "package_name": "sanchez.sanchez.sergio.agrociety"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "940227740125-r9eemkcj97v1dbvp6ajpbuidsqphpej7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3YydpTy1FP7S_QnvNTC4lE2LiI7sATcU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "940227740125-r9eemkcj97v1dbvp6ajpbuidsqphpej7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

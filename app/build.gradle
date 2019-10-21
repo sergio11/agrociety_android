@@ -4,6 +4,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply from: '../dependencies/core_dependencies.gradle'
 apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: 'io.fabric'
 
 
 android {
@@ -39,9 +40,21 @@ dependencies {
     implementation 'com.eightbitlab:blurview:1.6.2'
     implementation 'com.github.florent37:shapeofview:1.0.7'
 
+    // Check for v11.4.2 or higher
+    implementation 'com.google.firebase:firebase-core:17.2.0'
+
+    // (Recommended) Add Analytics
+    implementation 'com.google.firebase:firebase-analytics:17.2.0'
+
+    // Add dependency
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
 
 }
+
+
+apply plugin: 'com.google.gms.google-services'
