@@ -12,4 +12,11 @@
 
     <string name="login_button_text">Login</string>
 
+    <!-- Reset Password-->
+    <string name="reset_password_main_title">Forgot Password</string>
+    <string name="reset_password_email_hint">Email</string>
+    <string name="reset_password_description">Enter your email and will send you instructions on how reset it</string>
+    <string name="reset_password_send">Send</string>
+    <string name="reset_password_check_email">Email sent successfully, please check your email.</string>
+
 </resources>
