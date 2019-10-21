@@ -11,6 +11,7 @@ import sanchez.sanchez.sergio.agrociety.di.components.application.ApplicationGlo
 import sanchez.sanchez.sergio.agrociety.di.components.application.DaggerApplicationGlobalComponent
 import sanchez.sanchez.sergio.agrociety.di.components.fragment.LoginComponent
 import sanchez.sanchez.sergio.agrociety.di.components.fragment.ResetPasswordComponent
+import sanchez.sanchez.sergio.agrociety.di.components.fragment.SignupComponent
 import sanchez.sanchez.sergio.agrociety.di.components.fragment.SplashScreenComponent
 
 
@@ -48,5 +49,8 @@ object DaggerComponentFactory {
 
     fun getResetPasswordComponent(activity: SupportActivity): ResetPasswordComponent =
         getAppActivityComponent(activity).resetPasswordComponent()
+
+    fun getSignupComponent(activity: SupportActivity): SignupComponent =
+        getAppActivityComponent(activity).signupComponent()
 
 }
