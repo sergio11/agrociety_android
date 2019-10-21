@@ -9,6 +9,7 @@
     <string name="login_password_hint">Password</string>
     <string name="login_forgot_password_text">Forgot Password?</string>
     <string name="login_create_new_account_text">Create new Account</string>
+    <string name="login_user_or_password_incorrect">User or password incorrect</string>
 
     <string name="login_button_text">Login</string>
 
@@ -19,4 +20,13 @@
     <string name="reset_password_send">Send</string>
     <string name="reset_password_check_email">Email sent successfully, please check your email.</string>
 
+    <!-- Signup -->
+    <string name="signup_main_title">Signup</string>
+    <string name="signup_button_text">Register</string>
+    <string name="signup_go_to_login">Already have an account? Login</string>
+    <string name="signup_name_hint">Name</string>
+    <string name="signup_email_hint">Email</string>
+    <string name="signup_password_hint">Password</string>
+    <string name="signup_repeat_password_hint">Repeat Password</string>
+    <string name="signup_check_email">Register successfully, please check your email for validate account.</string>
 </resources>
