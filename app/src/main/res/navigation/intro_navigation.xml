@@ -2,22 +2,9 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/app_navigation"
-            app:startDestination="@id/splashScreenFragment">
+            app:startDestination="@id/loginFragment">
 
 
-    <!-- Splash Screen Fragment -->
-    <fragment android:id="@+id/splashScreenFragment"
-              android:name="sanchez.sanchez.sergio.agrociety.ui.features.intro.splash.SplashScreenFragment"
-              android:label="SplashScreenFragment">
-
-        <action
-            android:id="@+id/action_splashScreenFragment_to_loginFragment"
-            app:destination="@id/loginFragment"
-            app:enterAnim="@anim/fadein"
-            app:exitAnim="@anim/fadeout"
-            app:popUpTo="@+id/app_navigation"
-            app:popUpToInclusive="true" />
-    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="sanchez.sanchez.sergio.agrociety.ui.features.intro.login.LoginFragment"

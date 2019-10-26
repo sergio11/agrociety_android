@@ -6,6 +6,7 @@ import sanchez.sanchez.sergio.brownie.di.components.ApplicationComponent
 import sanchez.sanchez.sergio.brownie.di.modules.ActivityModule
 import sanchez.sanchez.sergio.brownie.di.scopes.PerApplication
 import sanchez.sanchez.sergio.agrociety.di.components.activity.IntroActivityComponent
+import sanchez.sanchez.sergio.agrociety.di.components.activity.SplashActivityComponent
 import sanchez.sanchez.sergio.healthycitizen.di.modules.UtilsModule
 
 @PerApplication
@@ -15,9 +16,7 @@ import sanchez.sanchez.sergio.healthycitizen.di.modules.UtilsModule
 interface ApplicationGlobalComponent{
 
     fun introActivityComponent(activityModule: ActivityModule) : IntroActivityComponent
-
     fun homeActivityComponent(activityModule: ActivityModule): HomeActivityComponent
-
-
+    fun splashActivityComponent(activityModule: ActivityModule): SplashActivityComponent
 
 }

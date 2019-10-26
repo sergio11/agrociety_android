@@ -16,16 +16,19 @@
             android:theme="@style/AppTheme"
             tools:replace="android:name">
 
-        <activity
-                android:name=".ui.features.intro.IntroActivity"
-                android:screenOrientation="portrait"
-                android:theme="@style/AppTheme.SplashScreen">
+
+        <activity android:name=".ui.features.splash.SplashScreenActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity
+                android:name=".ui.features.intro.IntroActivity"
+                android:screenOrientation="portrait"/>
 
         <activity android:name=".ui.features.home.HomeActivity"
                 android:screenOrientation="portrait" />

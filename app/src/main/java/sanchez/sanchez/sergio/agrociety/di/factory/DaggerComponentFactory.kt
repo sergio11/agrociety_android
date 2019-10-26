@@ -2,6 +2,7 @@ package sanchez.sanchez.sergio.agrociety.di.factory
 
 import sanchez.sanchez.sergio.agrociety.di.components.activity.HomeActivityComponent
 import sanchez.sanchez.sergio.agrociety.di.components.activity.IntroActivityComponent
+import sanchez.sanchez.sergio.agrociety.di.components.activity.SplashActivityComponent
 import sanchez.sanchez.sergio.agrociety.di.components.application.ApplicationGlobalComponent
 import sanchez.sanchez.sergio.agrociety.di.components.application.DaggerApplicationGlobalComponent
 import sanchez.sanchez.sergio.agrociety.di.components.fragment.*
@@ -19,6 +20,7 @@ object DaggerComponentFactory {
     private var appGlobalComponent: ApplicationGlobalComponent? = null
 
 
+    var splashActivityComponent: SplashActivityComponent? = null
     var introActivityComponent: IntroActivityComponent? = null
     var homeActivityComponent: HomeActivityComponent? = null
 
@@ -42,8 +44,6 @@ object DaggerComponentFactory {
                 introActivityComponent = it
             }
 
-    fun getSplashScreenComponent(activity: SupportActivity): SplashScreenComponent =
-        getIntroActivityComponent(activity).splashScreenComponent()
 
     fun getLoginComponent(activity: SupportActivity): LoginComponent =
         getIntroActivityComponent(activity).loginComponent()
@@ -66,5 +66,16 @@ object DaggerComponentFactory {
 
     fun getMainComponent(activity: SupportActivity): MainComponent =
         getHomeActivityComponent(activity).mainComponent()
+
+
+    fun getSplashActivityComponent(activity: SupportActivity): SplashActivityComponent =
+        splashActivityComponent ?: getAppGlobalComponent(activity.application as BrownieApp)
+            .splashActivityComponent(ActivityModule(activity)).also {
+                splashActivityComponent = it
+            }
+
+    fun getSplashComponent(activity: SupportActivity): SplashComponent =
+        getSplashActivityComponent(activity).splashComponent()
+
 
 }
