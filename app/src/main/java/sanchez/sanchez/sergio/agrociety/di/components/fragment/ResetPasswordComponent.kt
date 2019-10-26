@@ -2,7 +2,7 @@ package sanchez.sanchez.sergio.agrociety.di.components.fragment
 
 import dagger.Subcomponent
 import sanchez.sanchez.sergio.agrociety.di.modules.viewmodel.ResetPasswordModule
-import sanchez.sanchez.sergio.agrociety.ui.features.resetpassword.ResetPasswordFragment
+import sanchez.sanchez.sergio.agrociety.ui.features.intro.resetpassword.ResetPasswordFragment
 import sanchez.sanchez.sergio.brownie.di.components.FragmentComponent
 import sanchez.sanchez.sergio.brownie.di.scopes.PerFragment
 

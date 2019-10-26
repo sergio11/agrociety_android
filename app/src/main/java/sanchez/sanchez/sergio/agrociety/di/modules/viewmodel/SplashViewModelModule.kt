@@ -7,7 +7,7 @@ import dagger.multibindings.IntoMap
 import sanchez.sanchez.sergio.brownie.di.modules.ViewModelModule
 import sanchez.sanchez.sergio.brownie.di.scopes.PerFragment
 import sanchez.sanchez.sergio.brownie.di.viewmodel.ViewModelKey
-import sanchez.sanchez.sergio.agrociety.ui.features.splash.SplashViewModel
+import sanchez.sanchez.sergio.agrociety.ui.features.intro.splash.SplashViewModel
 
 @Module(includes = [ ViewModelModule::class ])
 abstract class SplashViewModelModule {

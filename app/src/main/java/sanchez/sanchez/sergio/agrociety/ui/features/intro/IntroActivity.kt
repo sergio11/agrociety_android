@@ -1,17 +1,17 @@
-package sanchez.sanchez.sergio.agrociety.ui.features
+package sanchez.sanchez.sergio.agrociety.ui.features.intro
 
 import android.os.Bundle
 import eightbitlab.com.blurview.RenderScriptBlur
 import kotlinx.android.synthetic.main.activity_intro.*
 import sanchez.sanchez.sergio.agrociety.R
 import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
-import sanchez.sanchez.sergio.agrociety.di.components.activity.ApplicationActivityComponent
+import sanchez.sanchez.sergio.agrociety.di.components.activity.IntroActivityComponent
 import sanchez.sanchez.sergio.agrociety.di.factory.DaggerComponentFactory
 
 class IntroActivity : SupportActivity() {
 
-    private val activityComponent: ApplicationActivityComponent by lazy(mode = LazyThreadSafetyMode.NONE) {
-        DaggerComponentFactory.getAppActivityComponent(this)
+    private val activityComponent: IntroActivityComponent by lazy(mode = LazyThreadSafetyMode.NONE) {
+        DaggerComponentFactory.getIntroActivityComponent(this)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

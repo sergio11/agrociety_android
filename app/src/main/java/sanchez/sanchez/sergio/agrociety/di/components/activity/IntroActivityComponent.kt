@@ -1,20 +1,18 @@
 package sanchez.sanchez.sergio.agrociety.di.components.activity
 
 import dagger.Subcomponent
-import sanchez.sanchez.sergio.agrociety.di.components.fragment.LoginComponent
-import sanchez.sanchez.sergio.agrociety.di.components.fragment.ResetPasswordComponent
-import sanchez.sanchez.sergio.agrociety.di.components.fragment.SignupComponent
+import sanchez.sanchez.sergio.agrociety.di.components.fragment.*
+import sanchez.sanchez.sergio.agrociety.ui.features.home.HomeActivity
 import sanchez.sanchez.sergio.brownie.di.components.ActivityComponent
 import sanchez.sanchez.sergio.brownie.di.modules.ActivityModule
 import sanchez.sanchez.sergio.brownie.di.scopes.PerActivity
-import sanchez.sanchez.sergio.agrociety.di.components.fragment.SplashScreenComponent
-import sanchez.sanchez.sergio.agrociety.ui.features.IntroActivity
+import sanchez.sanchez.sergio.agrociety.ui.features.intro.IntroActivity
 
 @PerActivity
 @Subcomponent(modules = [
     ActivityModule::class
     ])
-interface ApplicationActivityComponent: ActivityComponent {
+interface IntroActivityComponent: ActivityComponent {
 
     fun inject(activity: IntroActivity)
 
@@ -22,6 +20,7 @@ interface ApplicationActivityComponent: ActivityComponent {
     fun loginComponent(): LoginComponent
     fun resetPasswordComponent(): ResetPasswordComponent
     fun signupComponent(): SignupComponent
+    fun setLocationComponent(): SetLocationComponent
 
 
 }

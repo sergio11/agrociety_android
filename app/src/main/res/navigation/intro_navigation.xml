@@ -7,7 +7,7 @@
 
     <!-- Splash Screen Fragment -->
     <fragment android:id="@+id/splashScreenFragment"
-              android:name="sanchez.sanchez.sergio.agrociety.ui.features.splash.SplashScreenFragment"
+              android:name="sanchez.sanchez.sergio.agrociety.ui.features.intro.splash.SplashScreenFragment"
               android:label="SplashScreenFragment">
 
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="sanchez.sanchez.sergio.agrociety.ui.features.login.LoginFragment"
+        android:name="sanchez.sanchez.sergio.agrociety.ui.features.intro.login.LoginFragment"
         android:label="LoginFragment" >
         <action
             android:id="@+id/action_loginFragment_to_resetPasswordFragment"
@@ -36,15 +36,29 @@
             app:exitAnim="@anim/anim_out"
             app:popEnterAnim="@anim/anim_in"
             app:popExitAnim="@anim/anim_out" />
+        <action
+            android:id="@+id/action_loginFragment_to_setLocationFragment"
+            app:destination="@id/setLocationFragment"
+            app:enterAnim="@anim/anim_in"
+            app:exitAnim="@anim/anim_out"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/anim_in"
+            app:popExitAnim="@anim/anim_out"
+            app:popUpTo="@+id/app_navigation"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/resetPasswordFragment"
-        android:name="sanchez.sanchez.sergio.agrociety.ui.features.resetpassword.ResetPasswordFragment"
+        android:name="sanchez.sanchez.sergio.agrociety.ui.features.intro.resetpassword.ResetPasswordFragment"
         android:label="ResetPasswordFragment" />
     <fragment
         android:id="@+id/signupFragment"
-        android:name="sanchez.sanchez.sergio.agrociety.ui.features.signup.SignupFragment"
+        android:name="sanchez.sanchez.sergio.agrociety.ui.features.intro.signup.SignupFragment"
         android:label="SignupFragment" />
+    <fragment
+        android:id="@+id/setLocationFragment"
+        android:name="sanchez.sanchez.sergio.agrociety.ui.features.intro.location.SetLocationFragment"
+        android:label="SetLocationFragment" />
 
 
 </navigation>

@@ -1,10 +1,10 @@
-package sanchez.sanchez.sergio.agrociety.ui.features.login
+package sanchez.sanchez.sergio.agrociety.ui.features.intro.resetpassword
 
 import sanchez.sanchez.sergio.brownie.ui.core.viewmodel.SupportViewModel
 import javax.inject.Inject
 
 
-class LoginViewModel @Inject constructor(
+class ResetPasswordViewModel @Inject constructor(
 ): SupportViewModel() {
 
     /** ATTRIBUTES **/
