@@ -3,17 +3,84 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/intro_background">
 
-    <TextView
-        android:id="@+id/splashIntroDescription"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
-        android:text="Hola que tal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_inner_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_inner_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".6" />
+
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/containerBlurView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/container_background"
+        app:layout_constraintStart_toEndOf="@id/guideline_vertical_left"
+        app:layout_constraintEnd_toStartOf="@id/guideline_vertical_right"
+        app:layout_constraintTop_toTopOf="@id/guideline_horizontal_top"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal_bottom"
+        />
+
+
+    <ImageView
+        android:id="@+id/appIcon"
+        android:layout_width="@dimen/app_icon_size"
+        android:layout_height="@dimen/app_icon_size"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginTop="@dimen/common_margin"
+        app:layout_constraintTop_toTopOf="@id/containerBlurView"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_inner_right"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical_inner_left"
+        app:layout_constraintBottom_toTopOf="@id/appTitle"
+        android:contentDescription="@string/content_can_not_be_loaded" />
+
+    <TextView
+        android:id="@+id/appTitle"
+        style="@style/AppTitleStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="@id/containerBlurView"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_inner_right"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical_inner_left"
+        app:layout_constraintTop_toBottomOf="@id/appIcon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

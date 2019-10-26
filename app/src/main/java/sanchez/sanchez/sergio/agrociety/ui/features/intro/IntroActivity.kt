@@ -1,12 +1,15 @@
 package sanchez.sanchez.sergio.agrociety.ui.features.intro
 
+import android.app.Activity
 import android.os.Bundle
+import androidx.navigation.ActivityNavigator
 import eightbitlab.com.blurview.RenderScriptBlur
 import kotlinx.android.synthetic.main.activity_intro.*
 import sanchez.sanchez.sergio.agrociety.R
 import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
 import sanchez.sanchez.sergio.agrociety.di.components.activity.IntroActivityComponent
 import sanchez.sanchez.sergio.agrociety.di.factory.DaggerComponentFactory
+import sanchez.sanchez.sergio.brownie.extension.createDestination
 
 class IntroActivity : SupportActivity() {
 
@@ -15,7 +18,6 @@ class IntroActivity : SupportActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.AppTheme_NoActionBar)
         super.onCreate(savedInstanceState)
 
         containerBlurView.setupWith(container)
@@ -40,4 +42,16 @@ class IntroActivity : SupportActivity() {
     override fun navHostId(): Int = R.id.navHostContainer
 
     override fun onInject() { activityComponent.inject(this) }
+
+
+    /**
+     * Companion Object
+     */
+
+    companion object {
+
+        @JvmStatic
+        fun createDestination(activity: Activity): ActivityNavigator.Destination =
+            activity.createDestination(IntroActivity::class.java)
+    }
 }
