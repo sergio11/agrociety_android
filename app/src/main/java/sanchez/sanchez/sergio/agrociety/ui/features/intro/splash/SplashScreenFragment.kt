@@ -1,4 +1,4 @@
-package sanchez.sanchez.sergio.agrociety.ui.features.splash
+package sanchez.sanchez.sergio.agrociety.ui.features.intro.splash
 
 import android.os.Bundle
 import androidx.lifecycle.Observer
@@ -11,7 +11,8 @@ import sanchez.sanchez.sergio.brownie.extension.navigate
 import timber.log.Timber
 
 
-class SplashScreenFragment : SupportFragment<SplashViewModel, Void>(SplashViewModel::class.java) {
+class SplashScreenFragment : SupportFragment<SplashViewModel, Void>(
+    SplashViewModel::class.java) {
 
     private val TAG = "SPLASH_S"
 

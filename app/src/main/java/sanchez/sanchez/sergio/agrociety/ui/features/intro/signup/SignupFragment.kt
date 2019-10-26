@@ -1,4 +1,4 @@
-package sanchez.sanchez.sergio.agrociety.ui.features.signup
+package sanchez.sanchez.sergio.agrociety.ui.features.intro.signup
 
 import android.os.Bundle
 import android.view.View
@@ -13,7 +13,8 @@ import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
 import sanchez.sanchez.sergio.brownie.ui.core.fragment.SupportFragment
 import sanchez.sanchez.sergio.brownie.ui.dialogs.impl.NoticeDialogFragment
 
-class SignupFragment: SupportFragment<SignupViewModel, Void>(SignupViewModel::class.java) {
+class SignupFragment: SupportFragment<SignupViewModel, Void>(
+    SignupViewModel::class.java) {
 
     private val signupComponent: SignupComponent by lazy(mode = LazyThreadSafetyMode.NONE) {
         DaggerComponentFactory.getSignupComponent(activity as SupportActivity)

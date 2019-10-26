@@ -1,4 +1,4 @@
-package sanchez.sanchez.sergio.agrociety.ui.features.resetpassword
+package sanchez.sanchez.sergio.agrociety.ui.features.intro.resetpassword
 
 import android.os.Bundle
 import android.view.View
@@ -13,7 +13,8 @@ import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
 import sanchez.sanchez.sergio.brownie.ui.core.fragment.SupportFragment
 import sanchez.sanchez.sergio.brownie.ui.dialogs.impl.NoticeDialogFragment
 
-class ResetPasswordFragment: SupportFragment<ResetPasswordViewModel, Void>(ResetPasswordViewModel::class.java)  {
+class ResetPasswordFragment: SupportFragment<ResetPasswordViewModel, Void>(
+    ResetPasswordViewModel::class.java)  {
 
     private val resetPasswordComponent: ResetPasswordComponent by lazy(mode = LazyThreadSafetyMode.NONE) {
         DaggerComponentFactory.getResetPasswordComponent(activity as SupportActivity)

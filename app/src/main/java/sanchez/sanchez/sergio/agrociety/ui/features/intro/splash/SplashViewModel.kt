@@ -1,4 +1,4 @@
-package sanchez.sanchez.sergio.agrociety.ui.features.splash
+package sanchez.sanchez.sergio.agrociety.ui.features.intro.splash
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope

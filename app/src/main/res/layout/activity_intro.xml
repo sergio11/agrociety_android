@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:context="sanchez.sanchez.sergio.agrociety.ui.features.IntroActivity">
+        tools:context="sanchez.sanchez.sergio.agrociety.ui.features.intro.IntroActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_vertical_left"

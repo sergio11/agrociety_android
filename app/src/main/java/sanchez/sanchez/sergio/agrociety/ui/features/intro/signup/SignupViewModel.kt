@@ -1,4 +1,4 @@
-package sanchez.sanchez.sergio.agrociety.ui.features.signup
+package sanchez.sanchez.sergio.agrociety.ui.features.intro.signup
 
 import sanchez.sanchez.sergio.brownie.ui.core.viewmodel.SupportViewModel
 import javax.inject.Inject

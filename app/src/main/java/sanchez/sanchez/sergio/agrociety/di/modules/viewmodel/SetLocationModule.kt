@@ -4,18 +4,18 @@ import androidx.lifecycle.ViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
-import sanchez.sanchez.sergio.agrociety.ui.features.intro.signup.SignupViewModel
+import sanchez.sanchez.sergio.agrociety.ui.features.intro.location.SetLocationViewModel
 import sanchez.sanchez.sergio.brownie.di.modules.ViewModelModule
 import sanchez.sanchez.sergio.brownie.di.scopes.PerFragment
 import sanchez.sanchez.sergio.brownie.di.viewmodel.ViewModelKey
 
 @Module(includes = [ ViewModelModule::class ])
-abstract class SignupModule {
+abstract class SetLocationModule {
 
     @PerFragment
     @Binds
     @IntoMap
-    @ViewModelKey(SignupViewModel::class)
-    abstract fun bindsSignupViewModel(signupViewModel: SignupViewModel): ViewModel
+    @ViewModelKey(SetLocationViewModel::class)
+    abstract fun bindsSetLocationViewModel(setLocationViewModel: SetLocationViewModel): ViewModel
 
 }

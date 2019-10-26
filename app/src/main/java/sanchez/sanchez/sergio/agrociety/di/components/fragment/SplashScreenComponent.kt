@@ -4,7 +4,7 @@ import dagger.Subcomponent
 import sanchez.sanchez.sergio.brownie.di.components.FragmentComponent
 import sanchez.sanchez.sergio.brownie.di.scopes.PerFragment
 import sanchez.sanchez.sergio.agrociety.di.modules.viewmodel.SplashViewModelModule
-import sanchez.sanchez.sergio.agrociety.ui.features.splash.SplashScreenFragment
+import sanchez.sanchez.sergio.agrociety.ui.features.intro.splash.SplashScreenFragment
 
 @PerFragment
 @Subcomponent(

@@ -29,4 +29,13 @@
     <string name="signup_password_hint">Password</string>
     <string name="signup_repeat_password_hint">Repeat Password</string>
     <string name="signup_check_email">Register successfully, please check your email for validate account.</string>
+
+
+    <!-- Set Location -->
+
+    <string name="set_location_main_title" formatted="false">Hi %s, Welcome to Agrociety</string>
+    <string name="set_location_description">Please turn on your GPS to find out better services suggestions near you</string>
+    <string name="set_location_turn_on_gps_button">Turn On GPS</string>
+    <string name="set_location_reason_text">We need access to your GPS location for find out the best services suggestion near you</string>
+
 </resources>

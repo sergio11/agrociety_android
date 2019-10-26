@@ -17,7 +17,7 @@
             tools:replace="android:name">
 
         <activity
-                android:name=".ui.features.IntroActivity"
+                android:name=".ui.features.intro.IntroActivity"
                 android:screenOrientation="portrait"
                 android:theme="@style/AppTheme.SplashScreen">
             <intent-filter>
@@ -26,6 +26,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity android:name=".ui.features.home.HomeActivity"
+                android:screenOrientation="portrait" />
 
     </application>
 
