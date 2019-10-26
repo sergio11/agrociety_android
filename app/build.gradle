@@ -13,8 +13,8 @@ android {
         applicationId "sanchez.sanchez.sergio.agrociety"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 3
-        versionName "1.0"
+        versionCode 5
+        versionName "0.0.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
