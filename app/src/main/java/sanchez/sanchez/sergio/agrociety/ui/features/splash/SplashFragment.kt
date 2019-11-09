@@ -9,8 +9,8 @@ import kotlinx.android.synthetic.main.activity_intro.*
 import sanchez.sanchez.sergio.agrociety.R
 import sanchez.sanchez.sergio.agrociety.di.components.fragment.SplashComponent
 import sanchez.sanchez.sergio.agrociety.di.factory.DaggerComponentFactory
-import sanchez.sanchez.sergio.agrociety.ui.features.home.HomeActivity
 import sanchez.sanchez.sergio.agrociety.ui.features.intro.IntroActivity
+import sanchez.sanchez.sergio.agrociety.ui.features.main.MainActivity
 import sanchez.sanchez.sergio.brownie.extension.navigateAndFinish
 import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
 import sanchez.sanchez.sergio.brownie.ui.core.fragment.SupportFragment
@@ -54,7 +54,7 @@ class SplashFragment: SupportFragment<SplashViewModel, Void>(SplashViewModel::cl
      */
 
     private fun onSessionLoaded() {
-        navigateAndFinish(HomeActivity.createDestination(requireActivity()))
+        navigateAndFinish(MainActivity.createDestination(requireActivity()))
     }
 
     private fun onSessionNotLoaded() {

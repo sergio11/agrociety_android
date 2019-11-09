@@ -1,6 +1,6 @@
 package sanchez.sanchez.sergio.agrociety.di.factory
 
-import sanchez.sanchez.sergio.agrociety.di.components.activity.HomeActivityComponent
+import sanchez.sanchez.sergio.agrociety.di.components.activity.MainActivityComponent
 import sanchez.sanchez.sergio.agrociety.di.components.activity.IntroActivityComponent
 import sanchez.sanchez.sergio.agrociety.di.components.activity.SplashActivityComponent
 import sanchez.sanchez.sergio.agrociety.di.components.application.ApplicationGlobalComponent
@@ -22,7 +22,7 @@ object DaggerComponentFactory {
 
     var splashActivityComponent: SplashActivityComponent? = null
     var introActivityComponent: IntroActivityComponent? = null
-    var homeActivityComponent: HomeActivityComponent? = null
+    var mainActivityComponent: MainActivityComponent? = null
 
     fun getAppComponent(app: BrownieApp): ApplicationComponent =
         appComponent ?: DaggerApplicationComponent.builder()
@@ -58,14 +58,17 @@ object DaggerComponentFactory {
         getIntroActivityComponent(activity).setLocationComponent()
 
 
-    fun getHomeActivityComponent(activity: SupportActivity): HomeActivityComponent =
-        homeActivityComponent ?: getAppGlobalComponent(activity.application as BrownieApp)
-            .homeActivityComponent(ActivityModule(activity)).also {
-                homeActivityComponent = it
+    fun getMainActivityComponent(activity: SupportActivity): MainActivityComponent =
+        mainActivityComponent ?: getAppGlobalComponent(activity.application as BrownieApp)
+            .mainActivityComponent(ActivityModule(activity)).also {
+                mainActivityComponent = it
             }
 
-    fun getMainComponent(activity: SupportActivity): MainComponent =
-        getHomeActivityComponent(activity).mainComponent()
+    fun getHomeComponent(activity: SupportActivity): HomeComponent =
+        getMainActivityComponent(activity).homeComponent()
+
+    fun getDetailComponent(activity: SupportActivity): DetailComponent =
+        getMainActivityComponent(activity).detailComponent()
 
 
     fun getSplashActivityComponent(activity: SupportActivity): SplashActivityComponent =
