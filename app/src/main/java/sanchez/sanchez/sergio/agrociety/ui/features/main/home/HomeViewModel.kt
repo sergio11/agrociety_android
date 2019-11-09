@@ -1,9 +1,9 @@
-package sanchez.sanchez.sergio.agrociety.ui.features.home.main
+package sanchez.sanchez.sergio.agrociety.ui.features.main.home
 
 import sanchez.sanchez.sergio.brownie.ui.core.viewmodel.SupportViewModel
 import javax.inject.Inject
 
-class MainViewModel @Inject constructor(): SupportViewModel() {
+class HomeViewModel @Inject constructor(): SupportViewModel() {
 
     /** ATTRIBUTES **/
 

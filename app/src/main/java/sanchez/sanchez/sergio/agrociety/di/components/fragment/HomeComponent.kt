@@ -1,16 +1,16 @@
 package sanchez.sanchez.sergio.agrociety.di.components.fragment
 
 import dagger.Subcomponent
-import sanchez.sanchez.sergio.agrociety.di.modules.viewmodel.MainModule
-import sanchez.sanchez.sergio.agrociety.ui.features.home.main.MainFragment
+import sanchez.sanchez.sergio.agrociety.di.modules.viewmodel.HomeModule
+import sanchez.sanchez.sergio.agrociety.ui.features.main.home.HomeFragment
 import sanchez.sanchez.sergio.brownie.di.components.FragmentComponent
 import sanchez.sanchez.sergio.brownie.di.scopes.PerFragment
 
 @PerFragment
 @Subcomponent(
     modules = [
-        MainModule::class ])
-interface MainComponent: FragmentComponent {
+        HomeModule::class ])
+interface HomeComponent: FragmentComponent {
 
-    fun inject(mainFragment: MainFragment)
+    fun inject(homeFragment: HomeFragment)
 }

@@ -9,7 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/../brownie/app" />
+            <option value="$PROJECT_DIR$/../brownie_core/app" />
             <option value="$PROJECT_DIR$/../brownie_db" />
           </set>
         </option>

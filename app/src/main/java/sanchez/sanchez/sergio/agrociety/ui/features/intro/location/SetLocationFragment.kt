@@ -7,7 +7,7 @@ import kotlinx.android.synthetic.main.fragment_set_location.*
 import sanchez.sanchez.sergio.agrociety.R
 import sanchez.sanchez.sergio.agrociety.di.components.fragment.SetLocationComponent
 import sanchez.sanchez.sergio.agrociety.di.factory.DaggerComponentFactory
-import sanchez.sanchez.sergio.agrociety.ui.features.home.HomeActivity
+import sanchez.sanchez.sergio.agrociety.ui.features.main.MainActivity
 import sanchez.sanchez.sergio.brownie.extension.navigateAndFinish
 import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
 import sanchez.sanchez.sergio.brownie.ui.core.fragment.SupportFragment
@@ -50,19 +50,19 @@ class SetLocationFragment: SupportFragment<SetLocationViewModel, Void>(
     override fun onSinglePermissionGranted(permission: String) {
         super.onSinglePermissionGranted(permission)
 
-        navigateAndFinish(HomeActivity.createDestination(requireActivity()))
+        navigateAndFinish(MainActivity.createDestination(requireActivity()))
     }
 
     override fun onSinglePermissionRejected(permission: String) {
         super.onSinglePermissionRejected(permission)
 
-        navigateAndFinish(HomeActivity.createDestination(requireActivity()))
+        navigateAndFinish(MainActivity.createDestination(requireActivity()))
 
     }
 
     override fun onErrorOccurred(permission: String) {
         super.onErrorOccurred(permission)
 
-        navigateAndFinish(HomeActivity.createDestination(requireActivity()))
+        navigateAndFinish(MainActivity.createDestination(requireActivity()))
     }
 }
