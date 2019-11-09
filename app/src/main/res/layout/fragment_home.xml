@@ -21,7 +21,6 @@
             android:fitsSystemWindows="true"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:expandedTitleGravity="top"
-            app:contentScrim="@color/colorPrimary"
             app:toolbarId="@+id/toolbar">
 
             <ImageView
@@ -37,7 +36,7 @@
                 app:layout_collapseMode="pin"
                 android:layout_height="?attr/actionBarSize"
                 app:popupTheme="@style/AppTheme.PopupOverlay"
-                app:titleTextColor="@color/colorPrimary"
+                android:background="@color/colorPrimary"
                 >
 
                 <LinearLayout
@@ -98,12 +97,15 @@ Donec pellentesque ante arcu, eu tempus odio dictum at. Quisque ac lorem sed qua
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        app:centre_button_color="@color/colorPrimary"
-        app:inactive_centre_button_icon_color="@android:color/white"
-        app:space_background_color="@color/colorPrimaryLight"
-        app:active_item_color="@android:color/white"
-        app:inactive_item_color="@color/colorPrimary"
+        app:space_item_icon_size="25dp"
+        app:centre_button_color="@color/icons"
+        app:inactive_centre_button_icon_color="@color/colorPrimary"
+        app:active_centre_button_icon_color="@color/colorPrimary"
+        app:space_background_color="@color/colorPrimary"
+        app:active_item_color="@color/icons"
+        app:inactive_item_color="@color/icons"
         app:centre_button_icon="@drawable/ic_plus"
         app:layout_behavior="@string/custom_bottom_navigation_behaviour"
         />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

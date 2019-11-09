@@ -19,8 +19,10 @@ import androidx.annotation.ColorInt
 import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import sanchez.sanchez.sergio.agrociety.R
+import sanchez.sanchez.sergio.agrociety.ui.features.main.components.bottomnav.badge.BadgeHelper
 import sanchez.sanchez.sergio.agrociety.ui.features.main.components.bottomnav.listener.ISpaceOnClickListener
 import sanchez.sanchez.sergio.agrociety.ui.features.main.components.bottomnav.listener.ISpaceOnLongClickListener
+import sanchez.sanchez.sergio.agrociety.ui.features.main.components.bottomnav.model.BadgeItem
 import sanchez.sanchez.sergio.agrociety.ui.features.main.components.bottomnav.model.NavItem
 import sanchez.sanchez.sergio.brownie.extension.changeImageViewTint
 import sanchez.sanchez.sergio.brownie.extension.gone
@@ -525,11 +527,11 @@ class CustomBottomNavigationView @JvmOverloads constructor(
             /**
              * Set circle background to badge view
              */
-            /*badgeView.background = BadgeHelper.makeShapeDrawable(badgeColor)
+            badgeView.background = BadgeHelper.makeShapeDrawable(badgeColor)
 
             val badgeItem = BadgeItem(itemIndex, badgeText, badgeColor)
             BadgeHelper.showBadge(badgeView, badgeItem, shouldShowBadgeWithNinePlus)
-            badgeSaveInstanceHashMap[itemIndex] = badgeItem*/
+            badgeSaveInstanceHashMap[itemIndex] = badgeItem
         }
     }
 
@@ -539,22 +541,22 @@ class CustomBottomNavigationView @JvmOverloads constructor(
      * @param index badge index
      */
     fun hideBadgeAtIndex(index: Int) {
-        /*if (badgeList[index].visibility == View.GONE) {
+        if (badgeList[index].visibility == View.GONE) {
             Log.d(TAG, "Badge at index: $index already hidden")
         } else {
             BadgeHelper.hideBadge(badgeList[index])
             badgeSaveInstanceHashMap.remove(index)
-        }*/
+        }
     }
 
     /**
      * Hiding all available badges
      */
     fun hideAllBadges() {
-        /*for (badge in badgeList) {
+        for (badge in badgeList) {
             if (badge.visibility == View.VISIBLE)
                 BadgeHelper.hideBadge(badge)
-        }*/
+        }
         badgeSaveInstanceHashMap.clear()
     }
 
@@ -565,17 +567,17 @@ class CustomBottomNavigationView @JvmOverloads constructor(
      * @param badgeText  badge count text to change
      */
     fun changeBadgeTextAtIndex(badgeIndex: Int, badgeText: Int) {
-        /*if (badgeSaveInstanceHashMap[badgeIndex] != null && (badgeSaveInstanceHashMap[badgeIndex] as BadgeItem).getIntBadgeText() !== badgeText) {
-           /* val currentBadgeItem = badgeSaveInstanceHashMap[badgeIndex] as BadgeItem?
+        if (badgeSaveInstanceHashMap[badgeIndex] != null && (badgeSaveInstanceHashMap[badgeIndex] as BadgeItem).badgeText !== badgeText) {
+            val currentBadgeItem = badgeSaveInstanceHashMap[badgeIndex] as BadgeItem?
             val badgeItemForSave =
-                BadgeItem(badgeIndex, badgeText, currentBadgeItem!!.getBadgeColor())
+                BadgeItem(badgeIndex, badgeText, currentBadgeItem!!.badgeColor)
             BadgeHelper.forceShowBadge(
                 badgeList[badgeIndex],
                 badgeItemForSave,
                 shouldShowBadgeWithNinePlus
             )
-            badgeSaveInstanceHashMap[badgeIndex] = badgeItemForSave*/
-        }*/
+            badgeSaveInstanceHashMap[badgeIndex] = badgeItemForSave
+        }
     }
 
     /**
