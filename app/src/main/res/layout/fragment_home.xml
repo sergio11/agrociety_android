@@ -4,7 +4,8 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    android:background="@drawable/home_background">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
@@ -23,12 +24,6 @@
             app:expandedTitleGravity="top"
             app:toolbarId="@+id/toolbar">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_collapseMode="parallax"
-                android:src="@drawable/villalobon_palencia"
-                />
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -70,27 +65,14 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.core.widget.NestedScrollView
+    <!-- News Board -->
+    <fragment
+        android:id="@+id/newsBoard"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/common_margin"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id fermentum massa. Etiam blandit turpis ipsum, et ullamcorper lectus malesuada pellentesque. Vivamus at ultrices ipsum, eu blandit odio. Suspendisse potenti. Pellentesque pretium blandit laoreet. Cras et consequat nisl, ac iaculis elit. Vivamus tortor massa, congue et dui vitae, lacinia convallis lacus. Proin est lectus, egestas pellentesque nisl id, hendrerit lacinia sapien. Pellentesque quis faucibus arcu.
-
-Duis semper at elit quis commodo. Cras neque sapien, varius ac venenatis et, tempor ornare quam. Duis dui augue, ultrices in urna a, feugiat elementum ligula. Suspendisse eu est ac mauris laoreet imperdiet. Vestibulum volutpat ex sed nulla blandit placerat. Fusce ullamcorper a leo eget bibendum. Proin non leo in tortor pretium iaculis. Mauris luctus, nulla in fringilla interdum, diam sem tincidunt ipsum, at efficitur diam sem ut arcu. In hac habitasse platea dictumst.
-
-Proin at lacinia mi. Ut sem purus, accumsan id fringilla sed, gravida sed eros. Etiam dapibus feugiat posuere. Suspendisse potenti. Sed felis urna, venenatis feugiat semper vel, convallis fermentum nisl. Quisque bibendum vitae nisl vitae rhoncus. Nulla interdum lacinia turpis, et cursus lorem tempor iaculis. Nulla eleifend fringilla dui quis finibus. Aenean vitae gravida magna, pharetra suscipit odio. Phasellus rhoncus rutrum nulla quis aliquet. Aenean semper suscipit vulputate. Nullam scelerisque ex sit amet bibendum tempor. Mauris massa mauris, accumsan vel lobortis non, aliquet sed augue. Pellentesque ullamcorper consectetur lorem ac volutpat. Nullam facilisis id ligula non cursus.
-
-Vestibulum accumsan ante nec magna efficitur dapibus. Integer id dictum lorem, ac commodo turpis. Vestibulum hendrerit consectetur odio, sit amet viverra ipsum. Praesent auctor malesuada nibh at mollis. Integer posuere blandit libero, at ultricies lorem viverra sed. Aliquam vitae scelerisque purus. Nulla facilisi. Aenean rhoncus nisl ex. Morbi molestie aliquet purus, non sollicitudin mauris luctus sit amet. Duis at eros diam. Mauris sit amet sapien purus. Phasellus vulputate nunc quam, eu imperdiet magna ultrices a. Fusce et risus id odio sagittis ullamcorper vitae tincidunt dolor. Aliquam bibendum lorem enim.
-
-Donec pellentesque ante arcu, eu tempus odio dictum at. Quisque ac lorem sed quam suscipit convallis. Vivamus sollicitudin ipsum eu neque rutrum viverra. Pellentesque at placerat leo. Nam vitae nisi tempus enim tincidunt placerat in ut nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse velit enim, feugiat rhoncus lorem ut, consequat malesuada enim. Nam lobortis risus urna, sit amet imperdiet nisl vehicula ut. Cras sit amet lorem porta, egestas arcu ut, malesuada velit. Aliquam efficitur quam non urna viverra, ac dictum lorem vulputate. Nulla rutrum ante in nibh sollicitudin, non venenatis ante laoreet. Nunc volutpat venenatis quam eget convallis." />
-
-    </androidx.core.widget.NestedScrollView>
-
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        class="sanchez.sanchez.sergio.agrociety.ui.features.main.newsboard.NewsBoardFragment"
+         />
 
     <sanchez.sanchez.sergio.agrociety.ui.features.main.components.bottomnav.CustomBottomNavigationView
         android:id="@+id/navigationBottomBar"
@@ -98,12 +80,12 @@ Donec pellentesque ante arcu, eu tempus odio dictum at. Quisque ac lorem sed qua
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         app:space_item_icon_size="25dp"
-        app:centre_button_color="@color/icons"
-        app:inactive_centre_button_icon_color="@color/colorPrimary"
-        app:active_centre_button_icon_color="@color/colorPrimary"
-        app:space_background_color="@color/colorPrimary"
-        app:active_item_color="@color/icons"
-        app:inactive_item_color="@color/icons"
+        app:centre_button_color="@color/colorAccent"
+        app:inactive_centre_button_icon_color="@android:color/white"
+        app:active_centre_button_icon_color="@android:color/white"
+        app:space_background_color="@android:color/white"
+        app:active_item_color="@color/colorAccent"
+        app:inactive_item_color="@color/textColorSecondary"
         app:centre_button_icon="@drawable/ic_plus"
         app:layout_behavior="@string/custom_bottom_navigation_behaviour"
         />
