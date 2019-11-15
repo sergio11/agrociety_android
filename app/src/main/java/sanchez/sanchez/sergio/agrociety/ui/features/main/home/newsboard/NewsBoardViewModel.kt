@@ -1,4 +1,4 @@
-package sanchez.sanchez.sergio.agrociety.ui.features.main.newsboard
+package sanchez.sanchez.sergio.agrociety.ui.features.main.home.newsboard
 
 import sanchez.sanchez.sergio.agrociety.R
 import sanchez.sanchez.sergio.agrociety.domain.model.Publication

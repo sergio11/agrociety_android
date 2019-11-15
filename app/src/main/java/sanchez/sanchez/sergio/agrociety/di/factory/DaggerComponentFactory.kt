@@ -44,7 +44,6 @@ object DaggerComponentFactory {
                 introActivityComponent = it
             }
 
-
     fun getLoginComponent(activity: SupportActivity): LoginComponent =
         getIntroActivityComponent(activity).loginComponent()
 
@@ -67,12 +66,20 @@ object DaggerComponentFactory {
     fun getHomeComponent(activity: SupportActivity): HomeComponent =
         getMainActivityComponent(activity).homeComponent()
 
-    fun getNewsBoardComponent(activity: SupportActivity): NewsBoardComponent =
-        getMainActivityComponent(activity).newsBoardComponent()
-
     fun getDetailComponent(activity: SupportActivity): DetailComponent =
         getMainActivityComponent(activity).detailComponent()
 
+    fun getUserProfileComponent(activity: SupportActivity): UserProfileComponent =
+        getMainActivityComponent(activity).userProfileComponent()
+
+    fun getNewsBoardComponent(activity: SupportActivity): NewsBoardComponent =
+        getMainActivityComponent(activity).newsBoardComponent()
+
+    fun getPersonalBoardComponent(activity: SupportActivity): PersonalBoardComponent =
+        getMainActivityComponent(activity).personalBoardComponent()
+
+    fun getUserPostBoardComponent(activity: SupportActivity): UserPostBoardComponent =
+        getMainActivityComponent(activity).userPostBoardComponent()
 
     fun getSplashActivityComponent(activity: SupportActivity): SplashActivityComponent =
         splashActivityComponent ?: getAppGlobalComponent(activity.application as BrownieApp)
@@ -82,6 +89,5 @@ object DaggerComponentFactory {
 
     fun getSplashComponent(activity: SupportActivity): SplashComponent =
         getSplashActivityComponent(activity).splashComponent()
-
 
 }

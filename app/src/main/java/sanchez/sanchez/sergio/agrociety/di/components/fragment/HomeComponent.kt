@@ -13,4 +13,5 @@ import sanchez.sanchez.sergio.brownie.di.scopes.PerFragment
 interface HomeComponent: FragmentComponent {
 
     fun inject(homeFragment: HomeFragment)
+
 }

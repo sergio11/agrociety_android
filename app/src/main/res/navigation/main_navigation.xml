@@ -7,5 +7,9 @@
         android:id="@+id/homeFragment"
         android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.home.HomeFragment"
         android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.profile.UserProfileFragment"
+        android:label="UserProfileFragment" />
 
 </navigation>

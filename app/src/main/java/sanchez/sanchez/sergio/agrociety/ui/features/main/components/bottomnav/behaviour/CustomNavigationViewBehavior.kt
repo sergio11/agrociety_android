@@ -26,19 +26,34 @@ class CustomNavigationViewBehavior<V: View>(context: Context?, attrs: AttributeS
                 || super.onStartNestedScroll(coordinatorLayout, child, directTargetChild, target, nestedScrollAxes, type)
     }
 
+    override fun onNestedPreScroll(
+        coordinatorLayout: CoordinatorLayout,
+        child: V,
+        target: View,
+        dx: Int,
+        dy: Int,
+        consumed: IntArray,
+        type: Int
+    ) {
+        super.onNestedPreScroll(coordinatorLayout, child, target, dx, dy, consumed, type)
+        showOrHide(child, dx, dy)
+    }
 
     override fun onNestedScroll(coordinatorLayout: CoordinatorLayout, child: V, target: View, dxConsumed: Int, dyConsumed: Int, dxUnconsumed: Int, dyUnconsumed: Int, type: Int) {
         super.onNestedScroll(coordinatorLayout, child, target, dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed, type)
+        showOrHide(child, dxConsumed, dyConsumed)
+    }
 
-        if(dyConsumed > 0)
+    private fun showOrHide(child: V, dx: Int, dy: Int) {
+        if(dx > 0)
             child.animate()
                 .translationY(child.height.toFloat())
                 .setDuration(150)
                 .start()
-        else if (dyConsumed < 0)
+        else if (dy < 0)
             child.animate()
-                    .translationY(0.0f)
-                    .setDuration(150)
-                    .start()
+                .translationY(0.0f)
+                .setDuration(150)
+                .start()
     }
 }
