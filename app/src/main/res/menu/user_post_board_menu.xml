@@ -10,7 +10,7 @@
         android:title="Grid"
         tools:ignore="AlwaysShowAction" />
 
-    
+
     <item
         android:id="@+id/modeList"
         app:showAsAction="always"

@@ -1,74 +1,268 @@
 <?xml version="1.0" encoding="utf-8"?>
 <sanchez.sanchez.sergio.brownie.ui.components.SupportNestedScrollCoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:civ="http://schemas.android.com/apk/res-auto"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar"
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:fitsSystemWindows="true"
-        android:background="@android:color/white">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/toolbar_layout"
+            android:id="@+id/collapsingToolbarLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:expandedTitleGravity="top"
-            app:toolbarId="@+id/toolbar">
+            android:layout_height="wrap_content"
+            app:contentScrim="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <com.flaviofaria.kenburnsview.KenBurnsView
+                android:id="@+id/placeholderImageView"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:contentDescription="@string/content_can_not_be_loaded"
+                android:scaleType="centerCrop"
+                android:src="@drawable/intro_background_2"
+                android:tint="#11000000"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.9" />
+
+            <eightbitlab.com.blurview.BlurView
+                android:id="@+id/titleFrameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:orientation="vertical"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.3">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/verticalGuidelineStart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.355" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/verticalGuidelineEnd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.655" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/horizontalGuidelineTop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.29" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/horizontalGuidelineBottom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.9" />
+
+                    <TextView
+                        android:id="@+id/followersCount"
+                        style="@style/BrownieCommonStrongText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:padding="0dp"
+                        app:layout_constraintEnd_toEndOf="@id/followersCountLabel"
+                        app:layout_constraintStart_toStartOf="@id/followersCountLabel"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/followersCountLabel"
+                        android:text="0"
+                        tools:text="8" />
+
+                    <TextView
+                        android:id="@+id/followersCountLabel"
+                        style="@style/BrownieCommonStrongText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/colorAccent"
+                        android:padding="0dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/followersCount"
+                        app:layout_constraintEnd_toEndOf="@id/verticalGuidelineStart"
+                        app:layout_constraintBottom_toTopOf="@id/horizontalGuidelineTop"
+                        android:text="Followers"
+                        tools:text="Followers" />
+
+
+                    <TextView
+                        android:id="@+id/followCount"
+                        style="@style/BrownieCommonStrongText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="0dp"
+                        android:textColor="@android:color/white"
+                        app:layout_constraintEnd_toEndOf="@id/followCountLabel"
+                        app:layout_constraintStart_toStartOf="@id/followCountLabel"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/followCountLabel"
+                        android:text="0"
+                        tools:text="8" />
+
+                    <TextView
+                        android:id="@+id/followCountLabel"
+                        style="@style/BrownieCommonStrongText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="0dp"
+                        android:textColor="@color/colorAccent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/followCount"
+                        app:layout_constraintStart_toStartOf="@id/verticalGuidelineEnd"
+                        app:layout_constraintBottom_toTopOf="@id/horizontalGuidelineTop"
+                        android:text="Follow"
+                        tools:text="Follow" />
+
+                    <TextView
+                        android:id="@+id/userDescription"
+                        style="@style/BrownieCommonStrongText.Medium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="0dp"
+                        android:textColor="@android:color/white"
+                        android:layout_margin="@dimen/common_margin"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/horizontalGuidelineTop"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/locationLabel"
+                        android:text="@string/user_description_default"
+                        tools:text="@string/user_description_default" />
+
+                    <TextView
+                        android:id="@+id/locationLabel"
+                        style="@style/BrownieCommonStrongText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="0dp"
+                        android:textColor="@color/colorAccent"
+                        app:layout_constraintEnd_toStartOf="@id/locationValue"
+                        app:layout_constraintTop_toBottomOf="@id/userDescription"
+                        app:layout_constraintStart_toStartOf="@id/userDescription"
+                        app:layout_constraintBottom_toTopOf="@id/horizontalGuidelineBottom"
+                        android:text="Location:"
+                        tools:text="Location:" />
+
+                    <TextView
+                        android:id="@+id/locationValue"
+                        style="@style/BrownieCommonStrongText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="0dp"
+                        android:textColor="@android:color/white"
+                        android:layout_marginStart="@dimen/common_margin"
+                        app:layout_constraintStart_toEndOf="@id/locationLabel"
+                        app:layout_constraintTop_toTopOf="@id/locationLabel"
+                        app:layout_constraintBottom_toBottomOf="@id/locationLabel"
+                        android:text="Ávila"
+                        tools:text="Ávila" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </eightbitlab.com.blurview.BlurView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_marginBottom="50dp"
+                android:gravity="center"
+                app:layout_collapseMode="parallax">
+
+                <TextView
+                    android:id="@+id/userName"
+                    style="@style/BrownieCommonStrongText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:layout_margin="@dimen/common_margin"
+                    app:layout_collapseMode="parallax"
+                    android:text="@string/user_name_default"
+                    tools:text="@string/user_name_default" />
+
+                <Button
+                    android:id="@+id/myGroups"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_profile_my_groups"
+                    android:padding="@dimen/common_padding"
+                    android:layout_marginBottom="@dimen/common_margin"
+                    style="@style/BrownieAcceptActionButton.Transparent"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="@dimen/image_width"
+                    android:layout_height="@dimen/image_width"
+                    civ:civ_border_color="@android:color/white"
+                    civ:civ_border_width="3dp"
+                    android:src="@drawable/developer_image"
+                    />
+            </LinearLayout>
 
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/main.toolbar"
                 android:layout_width="match_parent"
-                app:layout_collapseMode="parallax"
                 android:layout_height="?attr/actionBarSize"
-                app:popupTheme="@style/AppTheme.PopupOverlay"
-                android:background="@color/colorPrimary">
+                android:background="@android:color/transparent"
+                app:layout_collapseMode="pin"
+                app:menu="@menu/user_profile_main_menu"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark"
+                app:title="">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:id="@+id/appIcon"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:src="@mipmap/ic_launcher"
-                        android:contentDescription="@string/content_can_not_be_loaded" />
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/toolbar_title"
-                        style="@style/AppTitleStyle"
-                        android:layout_margin="0dp"
+                        android:id="@+id/titleTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="@string/app_name"
+                        android:layout_marginStart="8dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        android:text="@string/user_name_default"
                         />
 
                 </LinearLayout>
-
             </androidx.appcompat.widget.Toolbar>
-
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
-
     <fragment
         android:id="@+id/userPostBoard"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        app:behavior_overlapTop="30dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         class="sanchez.sanchez.sergio.agrociety.ui.features.main.profile.userpost.UserPostBoardFragment"
-        />
-
+        tools:layout="@layout/fragment_user_post_board" />
 
 </sanchez.sanchez.sergio.brownie.ui.components.SupportNestedScrollCoordinatorLayout>
