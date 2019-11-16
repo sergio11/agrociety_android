@@ -1,4 +1,4 @@
-package sanchez.sanchez.sergio.agrociety.ui.features.main.newsboard
+package sanchez.sanchez.sergio.agrociety.ui.features.main.home.newsboard
 
 import androidx.recyclerview.widget.RecyclerView
 import sanchez.sanchez.sergio.agrociety.R

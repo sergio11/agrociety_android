@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/modeGrid"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_grid_mode"
+        android:title="Grid"
+        tools:ignore="AlwaysShowAction" />
+
+
+    <item
+        android:id="@+id/modeList"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_list_mode"
+        android:title="List" />
+
+
+
+</menu>
