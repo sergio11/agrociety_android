@@ -8,30 +8,68 @@
     android:background="@drawable/home_background">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar"
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:fitsSystemWindows="true"
-        android:background="@android:color/white"
-        >
+        android:background="@android:color/transparent">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/toolbar_layout"
+            android:id="@+id/collapsingToolbarLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:expandedTitleGravity="top"
+            app:contentScrim="@color/colorPrimary"
             app:toolbarId="@+id/toolbar">
+
+            <FrameLayout
+                android:id="@+id/parallaxContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.3"
+                android:layout_gravity="bottom|center_horizontal">
+
+                <com.flaviofaria.kenburnsview.KenBurnsView
+                    android:id="@+id/homeBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/content_can_not_be_loaded"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/home_background"
+                    android:tint="#11000000" />
+
+                <eightbitlab.com.blurview.BlurView
+                    android:id="@+id/personalBoardBlurView"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="bottom"
+                    android:layout_height="350dp">
+
+                    <!-- Personal Board -->
+                    <fragment
+                        android:id="@+id/personalBoard"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        app:layout_collapseMode="parallax"
+                        class="sanchez.sanchez.sergio.agrociety.ui.features.main.home.personalboard.PersonalBoardFragment"
+                        />
+
+                </eightbitlab.com.blurview.BlurView>
+
+            </FrameLayout>
+
 
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 app:layout_collapseMode="pin"
+                android:gravity="top"
                 android:layout_height="?attr/actionBarSize"
                 app:popupTheme="@style/AppTheme.PopupOverlay"
-                android:background="@color/colorPrimary"
                 >
 
                 <LinearLayout
@@ -63,13 +101,6 @@
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
-        <!-- Personal Board -->
-        <fragment
-            android:id="@+id/personalBoard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            class="sanchez.sanchez.sergio.agrociety.ui.features.main.home.personalboard.PersonalBoardFragment"
-            />
 
     </com.google.android.material.appbar.AppBarLayout>
 
