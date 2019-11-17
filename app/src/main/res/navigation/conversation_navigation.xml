@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/conversation_navigation"
+    app:startDestination="@id/conversationListFragment">
+
+
+    <fragment
+        android:id="@+id/conversationListFragment"
+        android:name="sanchez.sanchez.sergio.agrociety.ui.features.conversation.list.ConversationListFragment"
+        android:label="ConversationListFragment" />
+
+    <fragment
+        android:id="@+id/conversationMessagesFragment"
+        android:name="sanchez.sanchez.sergio.agrociety.ui.features.conversation.messages.ConversationMessagesFragment"
+        android:label="ConversationMessagesFragment" />
+</navigation>

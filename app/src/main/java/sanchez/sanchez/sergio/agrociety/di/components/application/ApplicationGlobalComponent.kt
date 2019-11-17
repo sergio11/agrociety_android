@@ -1,6 +1,7 @@
 package sanchez.sanchez.sergio.agrociety.di.components.application
 
 import dagger.Component
+import sanchez.sanchez.sergio.agrociety.di.components.activity.ConversationActivityComponent
 import sanchez.sanchez.sergio.agrociety.di.components.activity.MainActivityComponent
 import sanchez.sanchez.sergio.brownie.di.components.ApplicationComponent
 import sanchez.sanchez.sergio.brownie.di.modules.ActivityModule
@@ -18,5 +19,5 @@ interface ApplicationGlobalComponent{
     fun introActivityComponent(activityModule: ActivityModule) : IntroActivityComponent
     fun mainActivityComponent(activityModule: ActivityModule): MainActivityComponent
     fun splashActivityComponent(activityModule: ActivityModule): SplashActivityComponent
-
+    fun conversationActivityComponent(activityModule: ActivityModule): ConversationActivityComponent
 }
