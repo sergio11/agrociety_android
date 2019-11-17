@@ -1,6 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
 
-</LinearLayout>
+    <com.flaviofaria.kenburnsview.KenBurnsView
+        android:id="@+id/conversationBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/content_can_not_be_loaded"
+        android:scaleType="centerCrop"
+        android:src="@drawable/intro_background_2"
+        android:tint="#11000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:menu="@menu/conversation_menu"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark"
+        app:title=""
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/conversationMessagesBlurView">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:text="Conversation Title"
+                />
+
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/conversationMessagesBlurView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <!-- Swipe Refresh Layout -->
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.stfalcon.chatkit.messages.MessagesList
+                    android:id="@+id/messagesList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/input"
+                    app:dateHeaderFormat="@string/conversation_message_list_date_format"
+                    app:dateHeaderTextColor="@color/white"
+                    app:incomingDefaultBubbleColor="@color/colorPrimaryDark"
+                    app:incomingDefaultBubblePressedColor="@color/colorPrimaryDark"
+                    app:incomingDefaultBubbleSelectedColor="@color/gray"
+                    app:incomingTextColor="@color/white"
+                    app:incomingTimeTextColor="@color/white"
+                    app:incomingTimeTextSize="@dimen/common_strong_small_text_size"
+                    app:incomingTimeTextStyle="bold"
+                    app:incomingTextSize="18sp"
+                    app:outcomingDefaultBubbleColor="@color/white"
+                    app:outcomingDefaultBubblePressedColor="@color/white"
+                    app:outcomingDefaultBubbleSelectedColor="@color/gray"
+                    app:outcomingTextColor="@color/colorPrimaryDark"
+                    app:outcomingTextSize="18sp"
+                    app:outcomingTimeTextColor="@color/colorPrimaryDark"
+                    app:outcomingTimeTextStyle="bold"
+                    app:outcomingTimeTextSize="@dimen/common_strong_small_text_size"
+                    app:textAutoLink="all"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_above="@+id/input"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/white"/>
+
+                <com.stfalcon.chatkit.messages.MessageInput
+                    android:id="@+id/input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    app:inputCursorDrawable="@drawable/shape_custom_cursor"
+                    app:inputHint="@string/hint_enter_a_message"
+                    app:inputHintColor="@color/white"
+                    app:inputTextColor="@color/white"
+                    app:showAttachmentButton="false"
+                    app:inputButtonDefaultBgPressedColor="@color/colorPrimaryDark"
+                    app:inputButtonDefaultBgColor="@color/colorPrimary"
+                    app:inputButtonDefaultBgDisabledColor="@color/colorPrimary"
+                    app:inputButtonDefaultIconColor="@color/white"
+                    app:inputButtonDefaultIconDisabledColor="@color/white"
+                    app:inputButtonDefaultIconPressedColor="@color/white"/>
+
+            </RelativeLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </eightbitlab.com.blurview.BlurView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

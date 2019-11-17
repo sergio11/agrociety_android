@@ -8,7 +8,7 @@ import sanchez.sanchez.sergio.brownie.di.modules.ActivityModule
 import sanchez.sanchez.sergio.brownie.di.scopes.PerApplication
 import sanchez.sanchez.sergio.agrociety.di.components.activity.IntroActivityComponent
 import sanchez.sanchez.sergio.agrociety.di.components.activity.SplashActivityComponent
-import sanchez.sanchez.sergio.healthycitizen.di.modules.UtilsModule
+import sanchez.sanchez.sergio.agrociety.di.modules.UtilsModule
 
 @PerApplication
 @Component(dependencies = [ApplicationComponent::class],

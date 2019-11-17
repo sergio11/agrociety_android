@@ -9,7 +9,15 @@
     <fragment
         android:id="@+id/conversationListFragment"
         android:name="sanchez.sanchez.sergio.agrociety.ui.features.conversation.list.ConversationListFragment"
-        android:label="ConversationListFragment" />
+        android:label="ConversationListFragment" >
+        <action
+            android:id="@+id/action_conversationListFragment_to_conversationMessagesFragment"
+            app:destination="@id/conversationMessagesFragment"
+            app:enterAnim="@anim/anim_in"
+            app:exitAnim="@anim/anim_out"
+            app:popEnterAnim="@anim/anim_in"
+            app:popExitAnim="@anim/anim_out" />
+    </fragment>
 
     <fragment
         android:id="@+id/conversationMessagesFragment"
