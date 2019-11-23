@@ -8,6 +8,7 @@
         app:showAsAction="always"
         android:icon="@drawable/ic_grid_mode"
         android:title="Grid"
+        android:checked="true"
         tools:ignore="AlwaysShowAction" />
 
 
@@ -15,6 +16,7 @@
         android:id="@+id/modeList"
         app:showAsAction="always"
         android:icon="@drawable/ic_list_mode"
+        android:checked="false"
         android:title="List" />
 
 

@@ -6,10 +6,30 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.home.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/fadein"
+            app:exitAnim="@anim/fadeout"
+            app:popEnterAnim="@anim/fadein"
+            app:popExitAnim="@anim/fadeout" />
+    </fragment>
     <fragment
         android:id="@+id/userProfileFragment"
         android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.profile.UserProfileFragment"
-        android:label="UserProfileFragment" />
+        android:label="UserProfileFragment" >
+        <action
+            android:id="@+id/action_userProfileFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/fadein"
+            app:exitAnim="@anim/fadeout"
+            app:popEnterAnim="@anim/fadein"
+            app:popExitAnim="@anim/fadeout" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.detail.DetailFragment"
+        android:label="DetailFragment" />
 
 </navigation>

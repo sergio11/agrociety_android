@@ -1,6 +1,9 @@
 package sanchez.sanchez.sergio.agrociety.ui.features.main.profile
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import com.google.android.material.appbar.AppBarLayout
 import kotlinx.android.synthetic.main.fragment_user_profile.*
@@ -11,6 +14,8 @@ import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
 import sanchez.sanchez.sergio.brownie.ui.core.fragment.SupportFragment
 import android.view.animation.AlphaAnimation
 import eightbitlab.com.blurview.RenderScriptBlur
+import sanchez.sanchez.sergio.agrociety.ui.features.conversation.ConversationActivity
+import sanchez.sanchez.sergio.brownie.extension.navigate
 import kotlin.math.abs
 
 
@@ -44,8 +49,17 @@ class UserProfileFragment: SupportFragment<UserProfileViewModel, Void>(UserProfi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        titleFrameLayout.setupWith(collapsingToolbarLayout)
-            .setFrameClearDrawable(collapsingToolbarLayout.background)
+        toolbar.setOnMenuItemClickListener {
+            when(it.itemId){
+                R.id.goToConversations ->
+                    navigate(ConversationActivity
+                        .createDestination(requireActivity()))
+            }
+            true
+        }
+
+        titleFrameLayout.setupWith(parallaxContainer)
+            .setFrameClearDrawable(parallaxContainer.background)
             .setBlurAlgorithm(RenderScriptBlur(requireContext()))
             .setBlurRadius(4.0f)
             .setHasFixedTransformationMatrix(true)
