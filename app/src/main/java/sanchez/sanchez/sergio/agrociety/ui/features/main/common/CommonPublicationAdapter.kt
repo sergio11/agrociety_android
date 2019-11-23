@@ -1,4 +1,4 @@
-package sanchez.sanchez.sergio.agrociety.ui.features.main.home.newsboard
+package sanchez.sanchez.sergio.agrociety.ui.features.main.common
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -15,11 +15,11 @@ import sanchez.sanchez.sergio.brownie.ui.core.adapter.SupportRecyclerViewAdapter
 import timber.log.Timber
 
 /**
- * News Board Adapter
+ * Common Publication Adapter
  * @param context
  * @param data
  */
-class NewsBoardAdapter(context: Context, data: MutableList<Publication>):
+class CommonPublicationAdapter(context: Context, data: MutableList<Publication>):
     SupportRecyclerViewAdapter<Publication>(context, data) {
 
     /**
@@ -28,7 +28,7 @@ class NewsBoardAdapter(context: Context, data: MutableList<Publication>):
      */
     override fun onCreateItemViewHolder(viewGroup: ViewGroup): SupportItemViewHolder<Publication> =
         PublicationViewHolder(inflater.inflate(
-            R.layout.news_board_publication_item_layout, viewGroup, false))
+            R.layout.publication_item_layout, viewGroup, false))
 
 
     /**

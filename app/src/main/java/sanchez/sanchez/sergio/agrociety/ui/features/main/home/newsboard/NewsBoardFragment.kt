@@ -5,6 +5,7 @@ import sanchez.sanchez.sergio.agrociety.R
 import sanchez.sanchez.sergio.agrociety.di.components.fragment.NewsBoardComponent
 import sanchez.sanchez.sergio.agrociety.di.factory.DaggerComponentFactory
 import sanchez.sanchez.sergio.agrociety.domain.model.Publication
+import sanchez.sanchez.sergio.brownie.extension.navigate
 import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
 import sanchez.sanchez.sergio.brownie.ui.core.adapter.SupportRecyclerViewAdapter
 import sanchez.sanchez.sergio.brownie.ui.core.fragment.SupportLCEFragment
@@ -26,7 +27,11 @@ class NewsBoardFragment: SupportLCEFragment<Void, Publication, Void, NewsBoardVi
     override fun onCreateAdapter(): SupportRecyclerViewAdapter<Publication> =
         NewsBoardAdapter(requireContext(), ArrayList())
 
-    override fun onItemClick(item: Publication) { Timber.d("On Item Clicked") }
+    override fun onItemClick(item: Publication) {
+        navigate(
+            R.id.action_homeFragment_to_detailFragment
+        )
+    }
 
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int, position: Int) { Timber.d("On Swiped") }
 }
