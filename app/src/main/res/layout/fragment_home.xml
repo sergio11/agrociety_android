@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<sanchez.sanchez.sergio.brownie.ui.components.SupportNestedScrollCoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<sanchez.sanchez.sergio.brownie.ui.components.SupportNestedScrollCoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:background="@drawable/home_background">
+    android:fitsSystemWindows="true">
+
+    <com.flaviofaria.kenburnsview.KenBurnsView
+        android:id="@+id/homeBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/content_can_not_be_loaded"
+        android:scaleType="centerCrop"
+        android:src="@drawable/home_background"
+        android:tint="#11000000" />
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -32,45 +41,26 @@
                 app:layout_collapseParallaxMultiplier="0.3"
                 android:layout_gravity="bottom|center_horizontal">
 
-                <com.flaviofaria.kenburnsview.KenBurnsView
-                    android:id="@+id/homeBackground"
+                <!-- Last Announcements -->
+                <fragment
+                    android:id="@+id/lastAnnouncements"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:contentDescription="@string/content_can_not_be_loaded"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/home_background"
-                    android:tint="#11000000" />
-
-                <eightbitlab.com.blurview.BlurView
-                    android:id="@+id/personalBoardBlurView"
-                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
                     android:layout_gravity="bottom"
-                    android:layout_height="350dp">
+                    class="sanchez.sanchez.sergio.agrociety.ui.features.main.home.lastannouncements.LastAnnouncementsFragment"
+                    />
 
-                    <!-- Personal Board -->
-                    <fragment
-                        android:id="@+id/personalBoard"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        app:layout_collapseMode="parallax"
-                        class="sanchez.sanchez.sergio.agrociety.ui.features.main.home.personalboard.PersonalBoardFragment"
-                        />
-
-                </eightbitlab.com.blurview.BlurView>
 
             </FrameLayout>
-
-
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                app:layout_collapseMode="pin"
                 android:gravity="top"
                 android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:menu="@menu/home_menu"
                 />
-
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
