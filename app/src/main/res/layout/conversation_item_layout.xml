@@ -12,15 +12,15 @@
         android:id="@+id/itemBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/common_list_item_background">
+        android:background="@color/redDanger">
 
         <ImageView
             android:id="@+id/deleteConversation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="@dimen/common_margin"
             android:src="@drawable/ic_conversation_trash"
             android:contentDescription="@string/content_can_not_be_loaded" />
 
@@ -79,11 +79,14 @@
             android:id="@+id/userName"
             style="@style/BrownieCommonStrongText.Medium"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginEnd="8dp"
+            android:layout_height="wrap_content"
             android:singleLine="true"
             android:text="-"
-            android:textColor="@color/colorPrimaryDark"
+            android:paddingStart="@dimen/common_padding"
+            android:paddingEnd="@dimen/common_padding"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@id/lastMessage"
             app:layout_constraintEnd_toStartOf="@id/lastUpdate"
             app:layout_constraintStart_toEndOf="@+id/separator"
@@ -110,12 +113,16 @@
             android:id="@+id/lastMessage"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/white"
             style="@style/BrownieCommonStrongText.Medium"
             android:singleLine="true"
+            android:paddingStart="@dimen/common_padding"
+            android:paddingEnd="@dimen/common_padding"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
             android:text="-"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/unreadMessagesCount"
+            app:layout_constraintEnd_toEndOf="@id/unreadMessagesCount"
             app:layout_constraintStart_toEndOf="@+id/separator"
             app:layout_constraintTop_toBottomOf="@id/userName"/>
 
@@ -127,16 +134,15 @@
             style="@style/BrownieCommonStrongText.Small"
             android:layout_marginStart="@dimen/common_margin"
             android:layout_marginEnd="@dimen/common_margin"
+            android:layout_marginBottom="@dimen/common_margin"
             android:padding="0dp"
             android:gravity="center"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:visibility="visible"
+            android:visibility="gone"
             android:text="-"
             android:background="@drawable/background_alert_count_warning"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/lastMessage"
-            app:layout_constraintTop_toBottomOf="@id/userName"
             app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

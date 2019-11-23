@@ -4,17 +4,15 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/colorPrimary">
+    android:background="@drawable/intro_background_2">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/newsBoardToolbar"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:layout_marginBottom="@dimen/common_margin"
-        android:background="@android:color/white"
-        app:menu="@menu/news_board_menu"
-        app:title="News Board"
-        app:titleTextColor="@color/textColorSecondary"/>
+        android:background="@color/colorPrimary"
+        app:title="Conversations"/>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -50,8 +48,8 @@
                 android:layout_marginTop="8dp"
                 android:textAlignment="center"
                 style="@style/BrownieCommonStrongText.Big"
-                android:text="Cargando"
-                android:textColor="@android:color/white" />
+                android:text="LOADING"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
@@ -75,7 +73,7 @@
                 style="@style/BrownieCommonStrongText.Big"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="error"
-                android:textColor="@color/colorPrimaryDark" />
+                android:textColor="@color/white" />
 
         </RelativeLayout>
 
@@ -98,7 +96,7 @@
                 style="@style/BrownieCommonStrongText.Big"
                 android:layout_centerInParent="true"
                 android:text="No Data Found"
-                android:textColor="@android:color/white" />
+                android:textColor="@color/white" />
 
         </RelativeLayout>
 
