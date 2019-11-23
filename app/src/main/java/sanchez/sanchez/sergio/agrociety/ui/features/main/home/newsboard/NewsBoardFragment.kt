@@ -14,7 +14,8 @@ import timber.log.Timber
 /**
  * News Board Fragment
  */
-class NewsBoardFragment: SupportLCEFragment<Void, Publication, Void, NewsBoardViewModel>(NewsBoardViewModel::class.java) {
+class NewsBoardFragment: SupportLCEFragment<Void, Publication, Void, NewsBoardViewModel>(
+    NewsBoardViewModel::class.java) {
 
     private val component: NewsBoardComponent by lazy(mode = LazyThreadSafetyMode.NONE) {
         DaggerComponentFactory.getNewsBoardComponent(activity as SupportActivity)
