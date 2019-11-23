@@ -69,34 +69,7 @@
                 app:layout_collapseMode="pin"
                 android:gravity="top"
                 android:layout_height="?attr/actionBarSize"
-                app:popupTheme="@style/AppTheme.PopupOverlay"
-                >
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:id="@+id/appIcon"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:src="@mipmap/ic_launcher"
-                        android:contentDescription="@string/content_can_not_be_loaded" />
-
-                    <TextView
-                        android:id="@+id/toolbar_title"
-                        style="@style/AppTitleStyle"
-                        android:layout_margin="0dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="@string/app_name"
-                        />
-
-                </LinearLayout>
-
-            </androidx.appcompat.widget.Toolbar>
+                />
 
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>

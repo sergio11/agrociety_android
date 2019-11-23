@@ -44,6 +44,12 @@
     <string name="user_name_default">Sergio Sánchez Sánchez</string>
     <string name="user_description_default">This is your BIO, this is your space to explain what you want about yourself</string>
     <string name="user_profile_my_groups">My Groups</string>
+
+
+    <!-- Conversations -->
+    <string name="conversation_message_list_date_format">dd MMMM yyyy</string>
+    <string name="hint_enter_a_message">Type a message…</string>
+    <string name="sending_message_wait">sending wait …</string>
     <string name="lorem">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula sem a malesuada rhoncus. Pellentesque ut dolor a dui porttitor porta lacinia non libero. Nunc volutpat arcu quis quam convallis molestie. Etiam ac tristique sem, id commodo justo. Phasellus congue tincidunt lectus, at dignissim ligula maximus eu. Quisque interdum nunc eget tellus bibendum suscipit. Phasellus feugiat ultricies posuere. Nullam porta accumsan velit, ut rutrum massa fermentum eu. Nunc ac bibendum nunc. Mauris eu ultricies ipsum. Ut id dolor dui. Pellentesque dictum dui vel tempus maximus. Vivamus non nisi quis libero scelerisque pretium. Ut eu tristique justo. Sed pellentesque placerat quam, ut ultricies turpis feugiat a. Aliquam a volutpat risus.
 

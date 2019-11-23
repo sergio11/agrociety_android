@@ -1,4 +1,4 @@
-package sanchez.sanchez.sergio.healthycitizen.di.modules
+package sanchez.sanchez.sergio.agrociety.di.modules
 
 import android.content.Context
 import com.squareup.picasso.Picasso

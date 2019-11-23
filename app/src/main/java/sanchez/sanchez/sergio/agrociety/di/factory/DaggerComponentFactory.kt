@@ -1,5 +1,6 @@
 package sanchez.sanchez.sergio.agrociety.di.factory
 
+import sanchez.sanchez.sergio.agrociety.di.components.activity.ConversationActivityComponent
 import sanchez.sanchez.sergio.agrociety.di.components.activity.MainActivityComponent
 import sanchez.sanchez.sergio.agrociety.di.components.activity.IntroActivityComponent
 import sanchez.sanchez.sergio.agrociety.di.components.activity.SplashActivityComponent
@@ -23,6 +24,7 @@ object DaggerComponentFactory {
     var splashActivityComponent: SplashActivityComponent? = null
     var introActivityComponent: IntroActivityComponent? = null
     var mainActivityComponent: MainActivityComponent? = null
+    var conversationActivityComponent: ConversationActivityComponent? = null
 
     fun getAppComponent(app: BrownieApp): ApplicationComponent =
         appComponent ?: DaggerApplicationComponent.builder()
@@ -90,4 +92,16 @@ object DaggerComponentFactory {
     fun getSplashComponent(activity: SupportActivity): SplashComponent =
         getSplashActivityComponent(activity).splashComponent()
 
+
+    fun getConversationActivityComponent(activity: SupportActivity): ConversationActivityComponent =
+        conversationActivityComponent ?: getAppGlobalComponent(activity.application as BrownieApp)
+            .conversationActivityComponent(ActivityModule(activity)).also {
+                conversationActivityComponent  = it
+            }
+
+    fun getConversationListComponent(activity: SupportActivity): ConversationListComponent =
+        getConversationActivityComponent(activity).conversationListComponent()
+
+    fun getConversationMessagesComponent(activity: SupportActivity): ConversationMessagesComponent =
+        getConversationActivityComponent(activity).conversationMessagesComponent()
 }
