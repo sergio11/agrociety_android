@@ -4,7 +4,9 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import com.squareup.picasso.Picasso
 import sanchez.sanchez.sergio.agrociety.R
 import sanchez.sanchez.sergio.agrociety.domain.model.Conversation
 import sanchez.sanchez.sergio.brownie.extension.gone
@@ -13,7 +15,7 @@ import sanchez.sanchez.sergio.brownie.extension.visible
 import sanchez.sanchez.sergio.brownie.ui.core.adapter.SupportRecyclerViewAdapter
 
 
-class ConversationsAdapter(context: Context, data: MutableList<Conversation>):
+class ConversationsAdapter(context: Context, private val picasso: Picasso, data: MutableList<Conversation>):
     SupportRecyclerViewAdapter<Conversation>(context, data) {
 
     /**
@@ -60,6 +62,12 @@ class ConversationsAdapter(context: Context, data: MutableList<Conversation>):
                             gone()
                         }
                 }
+                element.targetImageUrl?.let {imageUrl ->
+                    findViewById<ImageView>(R.id.userImage)?.let {
+                        picasso.load(imageUrl).into(it)
+                    }
+                }
+
             }
 
 
