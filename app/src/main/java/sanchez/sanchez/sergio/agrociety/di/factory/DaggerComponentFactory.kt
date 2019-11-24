@@ -86,6 +86,9 @@ object DaggerComponentFactory {
     fun getLastAnnouncementsComponent(activity: SupportActivity): LastAnnouncementsComponent =
         getMainActivityComponent(activity).lastAnnouncementsComponent()
 
+    fun getContactListComponent(activity: SupportActivity): ContactListComponent =
+        getMainActivityComponent(activity).contactListComponent()
+
     fun getSplashActivityComponent(activity: SupportActivity): SplashActivityComponent =
         splashActivityComponent ?: getAppGlobalComponent(activity.application as BrownieApp)
             .splashActivityComponent(ActivityModule(activity)).also {

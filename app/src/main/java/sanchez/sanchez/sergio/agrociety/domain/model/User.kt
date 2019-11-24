@@ -5,5 +5,5 @@ import android.net.Uri
 data class User (
     var displayName: String,
     var email: String,
-    var photoUrl: Uri?
+    var photoUrl: Uri? = null
 )
