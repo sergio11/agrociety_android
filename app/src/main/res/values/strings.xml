@@ -45,6 +45,14 @@
     <string name="user_description_default">This is your BIO, this is your space to explain what you want about yourself</string>
     <string name="user_profile_my_groups">My Groups</string>
 
+    <string name="monday">Mon</string>
+    <string name="tuesday">Tue</string>
+    <string name="wednesday">Wed</string>
+    <string name="thursday">Thu</string>
+    <string name="friday">Fri</string>
+    <string name="saturday">Sat</string>
+    <string name="sunday">Sun</string>
+
 
     <!-- Conversations -->
     <string name="conversation_message_list_date_format">dd MMMM yyyy</string>

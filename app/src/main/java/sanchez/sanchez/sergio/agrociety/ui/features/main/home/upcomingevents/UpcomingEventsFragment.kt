@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import sanchez.sanchez.sergio.agrociety.R
-import sanchez.sanchez.sergio.agrociety.di.components.fragment.UpcomingEventsComponent
+import sanchez.sanchez.sergio.agrociety.di.components.fragment.EventsComponent
 import sanchez.sanchez.sergio.agrociety.di.factory.DaggerComponentFactory
 import sanchez.sanchez.sergio.agrociety.domain.model.UpcomingEvent
 import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
@@ -17,8 +17,8 @@ import android.view.MotionEvent
 class UpcomingEventsFragment : SupportLCEFragment<Void, UpcomingEvent, Void, UpcomingEventsViewModel>(
     UpcomingEventsViewModel::class.java) {
 
-    private val component: UpcomingEventsComponent by lazy(mode = LazyThreadSafetyMode.NONE) {
-        DaggerComponentFactory.getUpcomingEventsComponent(activity as SupportActivity)
+    private val component: EventsComponent by lazy(mode = LazyThreadSafetyMode.NONE) {
+        DaggerComponentFactory.getEventsComponent(activity as SupportActivity)
     }
 
     override fun onCreateAdapter(): SupportRecyclerViewAdapter<UpcomingEvent> =

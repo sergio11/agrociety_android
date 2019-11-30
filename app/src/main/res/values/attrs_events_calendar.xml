@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="EventsCalendar">
+        <attr name="firstDayOfWeek" format="enum">
+            <enum name="sunday" value="0" />
+            <enum name="monday" value="1" />
+            <enum name="tuesday" value="2" />
+            <enum name="wednesday" value="3" />
+            <enum name="thursday" value="4" />
+            <enum name="friday" value="5" />
+            <enum name="saturday" value="6" />
+        </attr>
+        <attr name="state" format="enum">
+            <enum name="expanded" value="0" />
+            <enum name="collapsed" value="1" />
+        </attr>
+        <attr name="textColor" format="color" />
+        <attr name="primaryColor" format="color" />
+        <attr name="eventColor" format="color" />
+        <attr name="todayItem_textColor" format="color" />
+        <attr name="todayItem_background" format="integer" />
+        <attr name="selectedItem_textColor" format="color" />
+        <attr name="selectedItem_background" format="integer" />
+        <attr name="selectToday" format="boolean" />
+    </declare-styleable>
+
+</resources>

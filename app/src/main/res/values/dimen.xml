@@ -16,4 +16,10 @@
     <dimen name="image_final_width">50dp</dimen>
     <dimen name="spacing_normal">16dp</dimen>
 
+    <!-- day -->
+    <dimen name="day_circle_width">30dp</dimen>
+    <dimen name="day_circle_height">30dp</dimen>
+    <dimen name="day_circle_radius">100dp</dimen>
+    <dimen name="day_circle_stroke_width">1dp</dimen>
+
 </resources>

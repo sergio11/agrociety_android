@@ -1,4 +1,4 @@
-package sanchez.sanchez.sergio.agrociety.ui.features.main.home.upcomingevents
+package sanchez.sanchez.sergio.agrociety.ui.features.main.events
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -10,15 +10,16 @@ import sanchez.sanchez.sergio.agrociety.domain.model.UpcomingEvent
 import sanchez.sanchez.sergio.brownie.extension.toStringFormat
 import sanchez.sanchez.sergio.brownie.ui.core.adapter.SupportRecyclerViewAdapter
 
-class UpcomingEventsAdapter(context: Context, data: MutableList<UpcomingEvent>):
+class EventsAdapter(context: Context, data: MutableList<UpcomingEvent>):
     SupportRecyclerViewAdapter<UpcomingEvent>(context, data) {
 
+
     override fun onCreateItemViewHolder(viewGroup: ViewGroup): SupportItemViewHolder<UpcomingEvent> =
-        UpcomingEventViewHolder(inflater.inflate(
+        EventViewHolder(inflater.inflate(
             R.layout.upcoming_event_item_layout, viewGroup, false))
 
 
-    inner class UpcomingEventViewHolder(itemView: View) : SupportRecyclerViewAdapter<UpcomingEvent>
+    inner class EventViewHolder(itemView: View) : SupportRecyclerViewAdapter<UpcomingEvent>
     .SupportItemViewHolder<UpcomingEvent>(itemView) {
 
         @SuppressLint("SetTextI18n")
@@ -32,4 +33,5 @@ class UpcomingEventsAdapter(context: Context, data: MutableList<UpcomingEvent>):
             }
         }
     }
+
 }

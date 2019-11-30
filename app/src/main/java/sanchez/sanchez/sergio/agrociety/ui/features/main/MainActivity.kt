@@ -4,7 +4,6 @@ import android.app.Activity
 import android.os.Bundle
 import androidx.core.content.ContextCompat
 import androidx.navigation.ActivityNavigator
-import androidx.navigation.NavController
 import kotlinx.android.synthetic.main.activity_main.*
 import sanchez.sanchez.sergio.agrociety.R
 import sanchez.sanchez.sergio.agrociety.di.components.activity.MainActivityComponent
@@ -47,8 +46,8 @@ class MainActivity: SupportActivity() {
             )
             addSpaceItem(
                 NavItem(
-                    itemName = getString(R.string.main_navigation_home_item),
-                    itemIcon = R.drawable.ic_home)
+                    itemName = getString(R.string.main_navigation_events_item),
+                    itemIcon = R.drawable.ic_event_menu)
             )
             addSpaceItem(
                 NavItem(
@@ -79,7 +78,7 @@ class MainActivity: SupportActivity() {
             when(itemIndex) {
                 HOME_MENU_ITEM_IDX -> navigate(R.id.homeFragment)
                 SERVICES_MENU_ITEM_IDX -> navigate(R.id.homeFragment)
-                NOTICES_MENU_ITEM_IDX -> navigate(R.id.homeFragment)
+                EVENTS_MENU_ITEM_IDX -> navigate(R.id.eventsFragment)
                 else -> {
                     navigate(R.id.userProfileFragment)
                 }
@@ -106,7 +105,7 @@ class MainActivity: SupportActivity() {
 
         const val HOME_MENU_ITEM_IDX = 0
         const val SERVICES_MENU_ITEM_IDX = 1
-        const val NOTICES_MENU_ITEM_IDX = 2
+        const val EVENTS_MENU_ITEM_IDX = 2
         const val PROFILE_MENU_ITEM_IDX = 3
 
 
