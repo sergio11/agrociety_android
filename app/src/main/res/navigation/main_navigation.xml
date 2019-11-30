@@ -31,5 +31,9 @@
         android:id="@+id/detailFragment"
         android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.detail.DetailFragment"
         android:label="DetailFragment" />
+    <fragment
+        android:id="@+id/eventsFragment"
+        android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.events.EventsFragment"
+        android:label="EventsFragment" />
 
 </navigation>
