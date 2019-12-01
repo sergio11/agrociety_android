@@ -18,10 +18,12 @@ import sanchez.sanchez.sergio.brownie.ui.core.adapter.SupportItemTouchHelper
 import sanchez.sanchez.sergio.brownie.ui.core.adapter.SupportRecyclerViewAdapter
 import sanchez.sanchez.sergio.brownie.ui.core.fragment.SupportLCEFragment
 import com.google.android.material.snackbar.Snackbar
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_conversation_list.*
 import sanchez.sanchez.sergio.brownie.extension.showConfirmationDialog
 import sanchez.sanchez.sergio.brownie.extension.showSnackbar
 import sanchez.sanchez.sergio.brownie.ui.dialogs.impl.ConfirmationDialogFragment
+import javax.inject.Inject
 
 
 class ConversationListFragment: SupportLCEFragment<Void, Conversation, Void, ConversationListViewModel>(ConversationListViewModel::class.java) {
@@ -31,6 +33,9 @@ class ConversationListFragment: SupportLCEFragment<Void, Conversation, Void, Con
     }
 
     private lateinit var conversationsAdapter: ConversationsAdapter
+
+    @Inject
+    lateinit var picasso: Picasso
 
     override fun layoutId(): Int =
         R.layout.fragment_conversation_list
@@ -79,7 +84,7 @@ class ConversationListFragment: SupportLCEFragment<Void, Conversation, Void, Con
     }
 
     override fun onCreateAdapter(): SupportRecyclerViewAdapter<Conversation> =
-        ConversationsAdapter(requireContext(), ArrayList()).also {
+        ConversationsAdapter(requireContext(), picasso, ArrayList()).also {
             conversationsAdapter = it
         }
 

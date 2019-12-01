@@ -77,6 +77,9 @@ object DaggerComponentFactory {
     fun getNewsBoardComponent(activity: SupportActivity): NewsBoardComponent =
         getMainActivityComponent(activity).newsBoardComponent()
 
+    fun getEventsComponent(activity: SupportActivity): EventsComponent =
+        getMainActivityComponent(activity).eventsComponent()
+
     fun getPersonalBoardComponent(activity: SupportActivity): PersonalBoardComponent =
         getMainActivityComponent(activity).personalBoardComponent()
 

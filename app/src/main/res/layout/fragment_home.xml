@@ -5,58 +5,59 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
-
-    <com.flaviofaria.kenburnsview.KenBurnsView
-        android:id="@+id/homeBackground"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/content_can_not_be_loaded"
-        android:scaleType="centerCrop"
-        android:src="@drawable/home_background"
-        android:tint="#11000000" />
+    android:fitsSystemWindows="true"
+    android:background="@color/screenBackground">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
         android:background="@android:color/transparent">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/collapsingToolbarLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:expandedTitleGravity="top"
             app:contentScrim="@color/colorPrimary"
             app:toolbarId="@+id/toolbar">
 
-            <FrameLayout
+            <LinearLayout
                 android:id="@+id/parallaxContainer"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="?android:attr/actionBarSize"
+                android:paddingTop="@dimen/common_padding"
                 app:layout_collapseMode="parallax"
                 app:layout_collapseParallaxMultiplier="0.3"
+                android:orientation="vertical"
                 android:layout_gravity="bottom|center_horizontal">
+
+                <!-- Upcoming Events -->
+                <fragment
+                    android:id="@+id/upcomingEvents"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    class="sanchez.sanchez.sergio.agrociety.ui.features.main.home.upcomingevents.UpcomingEventsFragment" />
 
                 <!-- Last Announcements -->
                 <fragment
                     android:id="@+id/lastAnnouncements"
                     android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:layout_gravity="bottom"
+                    android:layout_height="350dp"
                     class="sanchez.sanchez.sergio.agrociety.ui.features.main.home.lastannouncements.LastAnnouncementsFragment"
                     />
 
-
-            </FrameLayout>
+            </LinearLayout>
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?android:attr/actionBarSize"
+                android:background="@color/white"
                 app:contentInsetEnd="0dp"
                 app:contentInsetStart="0dp"
                 app:contentInsetStartWithNavigation="0dp"
@@ -67,6 +68,9 @@
             </androidx.appcompat.widget.Toolbar>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+
 
 
     </com.google.android.material.appbar.AppBarLayout>

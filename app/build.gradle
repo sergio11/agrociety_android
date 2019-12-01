@@ -13,7 +13,7 @@ android {
         applicationId "sanchez.sanchez.sergio.agrociety"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 5
+        versionCode 6
         versionName "0.0.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

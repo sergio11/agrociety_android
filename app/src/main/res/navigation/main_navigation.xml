@@ -28,16 +28,19 @@
             app:popExitAnim="@anim/fadeout" />
         <action
             android:id="@+id/action_userProfileFragment_to_contactListFragment"
-            app:destination="@id/contactListFragment"
-            app:enterAnim="@anim/anim_in"
-            app:exitAnim="@anim/anim_out"
-            app:popEnterAnim="@anim/anim_in"
-            app:popExitAnim="@anim/anim_out" />
+            app:destination="@id/contactListFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/detailFragment"
         android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.detail.DetailFragment"
         android:label="DetailFragment" />
+
+    <fragment
+        android:id="@+id/eventsFragment"
+        android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.events.EventsFragment"
+        android:label="EventsFragment" />
+
     <fragment
         android:id="@+id/contactListFragment"
         android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.contactlist.ContactListFragment"

@@ -17,6 +17,7 @@ interface MainActivityComponent: ActivityComponent {
 
     fun homeComponent(): HomeComponent
     fun newsBoardComponent(): NewsBoardComponent
+    fun eventsComponent(): EventsComponent
     fun personalBoardComponent(): PersonalBoardComponent
     fun detailComponent(): DetailComponent
     fun userProfileComponent(): UserProfileComponent
