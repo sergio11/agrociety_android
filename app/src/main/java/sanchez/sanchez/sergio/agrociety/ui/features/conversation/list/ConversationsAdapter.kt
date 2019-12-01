@@ -28,7 +28,7 @@ class ConversationsAdapter(context: Context, private val picasso: Picasso, data:
 
 
     /**
-     * Publication View Holder
+     * Conversation View Holder
      * @param itemView
      */
     inner class ConversationViewHolder(itemView: View) : SupportRecyclerViewAdapter<Conversation>

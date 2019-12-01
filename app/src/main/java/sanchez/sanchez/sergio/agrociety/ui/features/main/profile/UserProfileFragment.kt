@@ -1,21 +1,18 @@
 package sanchez.sanchez.sergio.agrociety.ui.features.main.profile
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
+import android.view.animation.AlphaAnimation
 import com.google.android.material.appbar.AppBarLayout
+import eightbitlab.com.blurview.RenderScriptBlur
 import kotlinx.android.synthetic.main.fragment_user_profile.*
 import sanchez.sanchez.sergio.agrociety.R
 import sanchez.sanchez.sergio.agrociety.di.components.fragment.UserProfileComponent
 import sanchez.sanchez.sergio.agrociety.di.factory.DaggerComponentFactory
-import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
-import sanchez.sanchez.sergio.brownie.ui.core.fragment.SupportFragment
-import android.view.animation.AlphaAnimation
-import eightbitlab.com.blurview.RenderScriptBlur
 import sanchez.sanchez.sergio.agrociety.ui.features.conversation.ConversationActivity
 import sanchez.sanchez.sergio.brownie.extension.navigate
+import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
+import sanchez.sanchez.sergio.brownie.ui.core.fragment.SupportFragment
 import kotlin.math.abs
 
 
@@ -66,6 +63,15 @@ class UserProfileFragment: SupportFragment<UserProfileViewModel, Void>(UserProfi
 
         appBarLayout.addOnOffsetChangedListener(this)
         startAlphaAnimation(titleTextView, 0, View.INVISIBLE)
+
+
+        followersCountLabel.setOnClickListener {
+            navigate(R.id.action_userProfileFragment_to_contactListFragment)
+        }
+
+        followCountLabel.setOnClickListener {
+            navigate(R.id.action_userProfileFragment_to_contactListFragment)
+        }
     }
 
     override fun onOffsetChanged(appBarLayout: AppBarLayout?, offset: Int) {

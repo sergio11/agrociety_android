@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="280dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/common_margin"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontalGuideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <ImageView
+            android:id="@+id/userBackgroundImageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/publication_example_one"
+            android:contentDescription="@string/content_can_not_be_loaded"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/horizontalGuideline2"
+            />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/userImage"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/content_can_not_be_loaded"
+            android:layout_gravity="center"
+            android:src="@drawable/developer_image"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="@dimen/common_image_stroke_width"
+            app:layout_constraintBottom_toTopOf="@id/horizontalGuideline2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horizontalGuideline2"/>
+
+
+        <TextView
+            android:id="@+id/userName"
+            style="@style/BrownieCommonStrongText"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:singleLine="true"
+            android:text="-"
+            android:padding="0dp"
+            android:paddingStart="@dimen/common_padding"
+            android:paddingEnd="@dimen/common_padding"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="@id/horizontalGuideline2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/userImage"
+            app:layout_constraintTop_toTopOf="@id/userImage" />
+
+        <TextView
+            android:id="@+id/friendsCount"
+            style="@style/BrownieCommonStrongText.Small"
+            android:textColor="@color/textColorSecondary"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:drawableStart="@drawable/ic_contact_user_friends_count"
+            android:background="@drawable/oval_stroke_secondary_background"
+            android:text="12"
+            android:layout_marginTop="@dimen/common_margin"
+            android:layout_marginEnd="@dimen/common_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horizontalGuideline2"
+            tools:text="8"/>
+
+        <TextView
+            android:id="@+id/publicationsCount"
+            style="@style/BrownieCommonStrongText.Small"
+            android:textColor="@color/textColorSecondary"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:drawableStart="@drawable/ic_contact_user_posts_count"
+            android:background="@drawable/oval_stroke_secondary_background"
+            android:text="8"
+            android:layout_marginEnd="@dimen/common_margin"
+            app:layout_constraintEnd_toStartOf="@id/friendsCount"
+            app:layout_constraintTop_toTopOf="@id/friendsCount"
+            app:layout_constraintBottom_toBottomOf="@id/friendsCount"
+            tools:text="8"/>
+
+        <TextView
+            android:id="@+id/userDescription"
+            style="@style/BrownieCommonStrongText.Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:textColor="@color/textColorSecondary"
+            android:layout_margin="@dimen/common_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/publicationsCount"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/locationLabel"
+            android:text="@string/user_description_default"
+            tools:text="@string/user_description_default" />
+
+        <TextView
+            android:id="@+id/locationLabel"
+            style="@style/BrownieCommonStrongText.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="0dp"
+            android:textColor="@color/colorAccent"
+            android:layout_marginBottom="@dimen/common_margin"
+            app:layout_constraintEnd_toStartOf="@id/locationValue"
+            app:layout_constraintTop_toBottomOf="@id/userDescription"
+            app:layout_constraintStart_toStartOf="@id/userDescription"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="Location:"
+            tools:text="Location:" />
+
+        <TextView
+            android:id="@+id/locationValue"
+            style="@style/BrownieCommonStrongText.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="0dp"
+            android:textColor="@color/textColorSecondary"
+            android:layout_marginStart="@dimen/common_margin"
+            app:layout_constraintStart_toEndOf="@id/locationLabel"
+            app:layout_constraintTop_toTopOf="@id/locationLabel"
+            app:layout_constraintBottom_toBottomOf="@id/locationLabel"
+            android:text="Ávila"
+            tools:text="Ávila" />
+
+
+
+
+
+        <!--
+
+
+
+        <View
+            android:id="@+id/separator"
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:layout_constraintStart_toEndOf="@id/userImage"
+            app:layout_constraintEnd_toStartOf="@id/userName"/>
+
+        <TextView
+            android:id="@+id/userName"
+            style="@style/BrownieCommonStrongText.Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="-"
+            android:paddingStart="@dimen/common_padding"
+            android:paddingEnd="@dimen/common_padding"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/separator"
+            app:layout_constraintTop_toTopOf="parent" />-->
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.cardview.widget.CardView>

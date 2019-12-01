@@ -31,15 +31,4 @@ class HomeFragment: SupportFragment<HomeViewModel, Void>(HomeViewModel::class.ja
                 .createDestination(requireActivity()))
         }
     }
-
-    override fun onStart() {
-        super.onStart()
-        homeBackground.resume()
-    }
-
-    override fun onStop() {
-        super.onStop()
-        homeBackground.pause()
-    }
-
 }

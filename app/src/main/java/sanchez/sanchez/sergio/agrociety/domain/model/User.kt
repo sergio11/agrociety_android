@@ -1,9 +1,10 @@
 package sanchez.sanchez.sergio.agrociety.domain.model
 
-import android.net.Uri
+import androidx.annotation.DrawableRes
 
 data class User (
     var displayName: String,
     var email: String,
-    var photoUrl: Uri?
+    var photoUrl: String? = null,
+    @DrawableRes val background: Int
 )

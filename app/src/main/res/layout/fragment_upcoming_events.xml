@@ -132,7 +132,7 @@
     <TextView
         android:id="@+id/showCalendar"
         style="@style/BrownieCommonStrongText.Medium"
-        android:textColor="@android:color/white"
+        android:textColor="@color/textColorSecondary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -147,7 +147,7 @@
     <TextView
         android:id="@+id/addEvent"
         style="@style/BrownieCommonStrongText.Medium"
-        android:textColor="@android:color/white"
+        android:textColor="@color/textColorSecondary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"

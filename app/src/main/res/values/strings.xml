@@ -54,6 +54,7 @@
     <string name="sunday">Sun</string>
 
 
+
     <!-- Conversations -->
     <string name="conversation_message_list_date_format">dd MMMM yyyy</string>
     <string name="hint_enter_a_message">Type a message…</string>

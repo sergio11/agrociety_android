@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?listPreferredItemHeight"
+    android:background="@color/screenBackground">
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/BrownieCommonStrongText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:singleLine="true"
+        android:gravity="center_vertical|start"
+        android:text="-"
+        android:padding="0dp"
+        android:paddingStart="@dimen/common_padding"
+        android:paddingEnd="@dimen/common_padding"
+        android:textColor="@color/colorAccent" />
+</FrameLayout>

@@ -33,13 +33,11 @@ class EventsFragment : SupportLCEFragment<Void, UpcomingEvent, Void, EventsViewM
 
     override fun onStart() {
         super.onStart()
-        eventsBackground.resume()
         startObserveScrollEvents()
     }
 
     override fun onStop() {
         super.onStop()
-        eventsBackground.pause()
         stopObserveScrollEvents()
     }
 
