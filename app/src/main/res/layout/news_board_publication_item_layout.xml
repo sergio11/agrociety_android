@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="510dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="6dp">
+    style="@style/BrownieTheme.DefaultCardView">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -35,6 +34,7 @@
             app:title="@string/app_name"
             app:subtitle="@string/app_name"
             app:titleTextColor="@color/colorAccent"
+            app:subtitleTextColor="@color/textColorSecondary"
             app:menu="@menu/publication_menu"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -131,34 +131,33 @@
 
             <Button
                 android:id="@+id/likePublication"
-                style="?android:attr/buttonBarButtonStyle"
+                style="@style/BrownieTheme.UnelevatedButton"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
                 android:gravity="center"
-                android:drawableStart="@drawable/ic_like_publication"
+                app:icon="@drawable/ic_like_publication"
                 android:text="Like" />
 
 
             <Button
                 android:id="@+id/commentPublication"
-                style="?android:attr/buttonBarButtonStyle"
+                style="@style/BrownieTheme.UnelevatedButton"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.4"
                 android:gravity="center"
-                android:drawableStart="@drawable/ic_comment_publication"
+                app:icon="@drawable/ic_comment_publication"
                 android:text="Comment" />
 
 
             <Button
-                style="?android:attr/buttonBarButtonStyle"
+                style="@style/BrownieTheme.UnelevatedButton"
                 android:id="@+id/sharePublication"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
-                android:gravity="center"
-                android:drawableStart="@drawable/ic_share_publication"
+                app:icon="@drawable/ic_share_publication"
                 android:text="Share" />
 
 
@@ -167,4 +166,4 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

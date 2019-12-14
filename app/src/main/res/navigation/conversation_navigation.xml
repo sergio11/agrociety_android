@@ -12,11 +12,7 @@
         android:label="ConversationListFragment" >
         <action
             android:id="@+id/action_conversationListFragment_to_conversationMessagesFragment"
-            app:destination="@id/conversationMessagesFragment"
-            app:enterAnim="@anim/fadein"
-            app:exitAnim="@anim/fadeout"
-            app:popEnterAnim="@anim/fadein"
-            app:popExitAnim="@anim/fadeout" />
+            app:destination="@id/conversationMessagesFragment" />
     </fragment>
 
     <fragment

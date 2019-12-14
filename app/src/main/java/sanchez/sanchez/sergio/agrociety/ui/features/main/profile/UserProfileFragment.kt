@@ -65,11 +65,11 @@ class UserProfileFragment: SupportFragment<UserProfileViewModel, Void>(UserProfi
         startAlphaAnimation(titleTextView, 0, View.INVISIBLE)
 
 
-        followersCountLabel.setOnClickListener {
+        followersCountButton.setOnClickListener {
             navigate(R.id.action_userProfileFragment_to_contactListFragment)
         }
 
-        followCountLabel.setOnClickListener {
+        followCountButton.setOnClickListener {
             navigate(R.id.action_userProfileFragment_to_contactListFragment)
         }
     }

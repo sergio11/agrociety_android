@@ -12,7 +12,6 @@ import sanchez.sanchez.sergio.agrociety.R
 import sanchez.sanchez.sergio.agrociety.di.components.fragment.ConversationListComponent
 import sanchez.sanchez.sergio.agrociety.di.factory.DaggerComponentFactory
 import sanchez.sanchez.sergio.agrociety.domain.model.Conversation
-import sanchez.sanchez.sergio.brownie.extension.navigate
 import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
 import sanchez.sanchez.sergio.brownie.ui.core.adapter.SupportItemTouchHelper
 import sanchez.sanchez.sergio.brownie.ui.core.adapter.SupportRecyclerViewAdapter
@@ -20,8 +19,8 @@ import sanchez.sanchez.sergio.brownie.ui.core.fragment.SupportLCEFragment
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_conversation_list.*
-import sanchez.sanchez.sergio.brownie.extension.showConfirmationDialog
-import sanchez.sanchez.sergio.brownie.extension.showSnackbar
+import sanchez.sanchez.sergio.agrociety.ui.features.main.MainActivity
+import sanchez.sanchez.sergio.brownie.extension.*
 import sanchez.sanchez.sergio.brownie.ui.dialogs.impl.ConfirmationDialogFragment
 import javax.inject.Inject
 
@@ -49,6 +48,8 @@ class ConversationListFragment: SupportLCEFragment<Void, Conversation, Void, Con
         setHasOptionsMenu(true)
     }
 
+
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.conversation_list_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
@@ -73,8 +74,8 @@ class ConversationListFragment: SupportLCEFragment<Void, Conversation, Void, Con
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        (requireActivity() as SupportActivity).apply {
-            setSupportActionBar(toolbar)
+        toolbar.setNavigationOnClickListener {
+            navigateAndFinish(MainActivity.createDestination(requireActivity()))
         }
 
         // adding item touch helper

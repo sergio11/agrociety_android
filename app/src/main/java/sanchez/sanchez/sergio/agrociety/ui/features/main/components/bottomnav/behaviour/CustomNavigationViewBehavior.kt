@@ -6,6 +6,7 @@ import android.view.View
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.ViewCompat
 import com.google.android.material.snackbar.Snackbar
+import timber.log.Timber
 
 class CustomNavigationViewBehavior<V: View>(context: Context?, attrs: AttributeSet?) :
         CoordinatorLayout.Behavior<V>(context, attrs) {
@@ -45,7 +46,10 @@ class CustomNavigationViewBehavior<V: View>(context: Context?, attrs: AttributeS
     }
 
     private fun showOrHide(child: V, dx: Int, dy: Int) {
-        if(dx > 0)
+
+        Timber.d("NavigationView -> showOrHide CALLED: dx: $dx, dy: $dy")
+
+        if(dy > 0)
             child.animate()
                 .translationY(child.height.toFloat())
                 .setDuration(150)
