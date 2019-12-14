@@ -75,29 +75,29 @@
                             app:layout_constraintGuide_percent="0.9" />
 
                         <TextView
-                            android:id="@+id/followersCount"
-                            style="@style/BrownieCommonStrongText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@android:color/white"
-                            android:padding="0dp"
-                            app:layout_constraintEnd_toEndOf="@id/followersCountLabel"
-                            app:layout_constraintStart_toStartOf="@id/followersCountLabel"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintBottom_toTopOf="@id/followersCountLabel"
-                            android:text="0"
-                            tools:text="8" />
-
-                        <TextView
                             android:id="@+id/followersCountLabel"
                             style="@style/BrownieCommonStrongText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:textColor="@color/white"
                             android:gravity="center"
-                            android:textColor="@color/colorAccent"
+                            android:padding="0dp"
+                            android:labelFor="@id/followersCountButton"
+                            app:layout_constraintEnd_toEndOf="@id/followersCountButton"
+                            app:layout_constraintStart_toStartOf="@id/followersCountButton"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toTopOf="@id/followersCountButton"
+                            android:text="0"
+                            tools:text="8" />
+
+                        <Button
+                            android:id="@+id/followersCountButton"
+                            style="@style/BrownieTheme.TextButton.Accent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
                             android:padding="0dp"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/followersCount"
+                            app:layout_constraintTop_toBottomOf="@id/followersCountLabel"
                             app:layout_constraintEnd_toEndOf="@id/verticalGuidelineStart"
                             app:layout_constraintBottom_toTopOf="@id/horizontalGuidelineTop"
                             android:text="Followers"
@@ -105,30 +105,29 @@
 
 
                         <TextView
-                            android:id="@+id/followCount"
-                            style="@style/BrownieCommonStrongText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:padding="0dp"
-                            android:textColor="@android:color/white"
-                            app:layout_constraintEnd_toEndOf="@id/followCountLabel"
-                            app:layout_constraintStart_toStartOf="@id/followCountLabel"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintBottom_toTopOf="@id/followCountLabel"
-                            android:text="0"
-                            tools:text="8" />
-
-                        <TextView
                             android:id="@+id/followCountLabel"
                             style="@style/BrownieCommonStrongText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
+                            android:textColor="@color/white"
                             android:padding="0dp"
-                            android:textColor="@color/colorAccent"
+                            android:gravity="center"
+                            android:labelFor="@id/followCountButton"
+                            app:layout_constraintEnd_toEndOf="@id/followCountButton"
+                            app:layout_constraintStart_toStartOf="@id/followCountButton"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toTopOf="@id/followCountButton"
+                            android:text="0"
+                            tools:text="8" />
+
+                        <Button
+                            android:id="@+id/followCountButton"
+                            style="@style/BrownieTheme.TextButton.Accent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:padding="0dp"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/followCount"
+                            app:layout_constraintTop_toBottomOf="@id/followCountLabel"
                             app:layout_constraintStart_toStartOf="@id/verticalGuidelineEnd"
                             app:layout_constraintBottom_toTopOf="@id/horizontalGuidelineTop"
                             android:text="Follow"
@@ -211,9 +210,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/user_profile_my_groups"
-                    android:padding="@dimen/common_padding"
                     android:layout_marginBottom="@dimen/common_margin"
-                    style="@style/BrownieAcceptActionButton.Transparent"/>
+                    style="@style/BrownieTheme.OutlinedButton"/>
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="@dimen/image_width"
@@ -232,7 +230,6 @@
                 android:background="@android:color/transparent"
                 app:layout_collapseMode="pin"
                 app:menu="@menu/user_profile_main_menu"
-                app:theme="@style/ThemeOverlay.AppCompat.Dark"
                 app:title="">
 
                 <LinearLayout
@@ -258,12 +255,10 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="8dp"
-        android:layout_margin="8dp"
-        app:contentPadding="@dimen/common_padding"
+        style="@style/BrownieTheme.DefaultCardView.Space"
         app:behavior_overlapTop="30dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
@@ -273,7 +268,7 @@
             android:layout_height="match_parent"
             class="sanchez.sanchez.sergio.agrociety.ui.features.main.profile.userpost.UserPostBoardFragment" />
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 
 

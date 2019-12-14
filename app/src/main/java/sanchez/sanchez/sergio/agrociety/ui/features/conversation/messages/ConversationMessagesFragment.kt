@@ -16,6 +16,7 @@ import sanchez.sanchez.sergio.agrociety.di.components.fragment.ConversationMessa
 import sanchez.sanchez.sergio.agrociety.di.factory.DaggerComponentFactory
 import sanchez.sanchez.sergio.agrociety.ui.features.conversation.models.ConversationMessage
 import sanchez.sanchez.sergio.agrociety.ui.features.conversation.models.ConversationMessageUser
+import sanchez.sanchez.sergio.brownie.extension.popBackStack
 import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
 import sanchez.sanchez.sergio.brownie.ui.core.fragment.SupportFragment
 import timber.log.Timber
@@ -95,6 +96,10 @@ class ConversationMessagesFragment: SupportFragment<ConversationMessagesViewMode
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        toolbar.setNavigationOnClickListener {
+            popBackStack()
+        }
 
         input.setInputListener(this)
         messagesList.setAdapter(messagesAdapter)

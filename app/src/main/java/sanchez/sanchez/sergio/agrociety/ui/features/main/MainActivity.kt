@@ -4,6 +4,7 @@ import android.app.Activity
 import android.os.Bundle
 import androidx.core.content.ContextCompat
 import androidx.navigation.ActivityNavigator
+import androidx.navigation.NavController
 import kotlinx.android.synthetic.main.activity_main.*
 import sanchez.sanchez.sergio.agrociety.R
 import sanchez.sanchez.sergio.agrociety.di.components.activity.MainActivityComponent
@@ -29,8 +30,8 @@ class MainActivity: SupportActivity() {
 
     override fun onInject() { activityComponent.inject(this) }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onSetupNavigation(savedInstanceState: Bundle?, navController: NavController?) {
+        super.onSetupNavigation(savedInstanceState, navController)
 
         navigationBottomBar?.apply {
             savedInstanceState?.let { initWithSaveInstanceState(it) }
@@ -59,6 +60,22 @@ class MainActivity: SupportActivity() {
             setSpaceOnClickListener(spaceOnClickListener)
             setSpaceOnLongClickListener(spaceOnLongClickListener)
         }
+
+
+        navController?.let {
+            it.addOnDestinationChangedListener { controller, destination, arguments ->
+                when(destination.id) {
+                    R.id.homeFragment ->
+                        navigationBottomBar?.updateSpaceItems(HOME_MENU_ITEM_IDX)
+                    R.id.userProfileFragment ->
+                        navigationBottomBar?.updateSpaceItems(PROFILE_MENU_ITEM_IDX)
+                    R.id.eventsFragment ->
+                        navigationBottomBar?.updateSpaceItems(EVENTS_MENU_ITEM_IDX)
+                }
+            }
+
+        }
+
     }
 
     private val spaceOnClickListener = object : ISpaceOnClickListener {
@@ -76,13 +93,19 @@ class MainActivity: SupportActivity() {
         override fun onItemClick(itemIndex: Int, itemName: String) {
             Timber.d("On Item $itemName clicked")
             when(itemIndex) {
-                HOME_MENU_ITEM_IDX -> navigate(R.id.homeFragment)
-                SERVICES_MENU_ITEM_IDX -> navigate(R.id.homeFragment)
-                EVENTS_MENU_ITEM_IDX -> navigate(R.id.eventsFragment)
-                else -> {
-                    navigate(R.id.userProfileFragment)
+                HOME_MENU_ITEM_IDX ->
+                    if(navController?.currentDestination?.id != R.id.homeFragment)
+                        navigate(R.id.homeFragment)
+                SERVICES_MENU_ITEM_IDX ->
+                    if(navController?.currentDestination?.id != R.id.homeFragment)
+                        navigate(R.id.homeFragment)
+                EVENTS_MENU_ITEM_IDX ->
+                    if(navController?.currentDestination?.id != R.id.eventsFragment)
+                        navigate(R.id.eventsFragment)
+                PROFILE_MENU_ITEM_IDX ->
+                    if(navController?.currentDestination?.id != R.id.userProfileFragment)
+                        navigate(R.id.userProfileFragment)
                 }
-            }
         }
 
         override fun onItemReselected(itemIndex: Int, itemName: String) {

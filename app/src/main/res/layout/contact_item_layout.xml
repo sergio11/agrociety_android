@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="280dp"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_margin="@dimen/common_margin"
-    app:cardElevation="8dp"
-    app:cardCornerRadius="8dp">
+    style="@style/BrownieTheme.DefaultCardView"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -144,43 +142,8 @@
             android:text="Ávila"
             tools:text="Ávila" />
 
-
-
-
-
-        <!--
-
-
-
-        <View
-            android:id="@+id/separator"
-            android:layout_width="4dp"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            app:layout_constraintStart_toEndOf="@id/userImage"
-            app:layout_constraintEnd_toStartOf="@id/userName"/>
-
-        <TextView
-            android:id="@+id/userName"
-            style="@style/BrownieCommonStrongText.Medium"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:singleLine="true"
-            android:text="-"
-            android:paddingStart="@dimen/common_padding"
-            android:paddingEnd="@dimen/common_padding"
-            android:paddingTop="0dp"
-            android:paddingBottom="0dp"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/separator"
-            app:layout_constraintTop_toTopOf="parent" />-->
-
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

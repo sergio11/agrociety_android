@@ -910,7 +910,7 @@ class CustomBottomNavigationView @JvmOverloads constructor(
      *
      * @param selectedIndex item in index
      */
-    private fun updateSpaceItems(selectedIndex: Int) {
+    fun updateSpaceItems(selectedIndex: Int) {
 
         /**
          * return if item already selected
