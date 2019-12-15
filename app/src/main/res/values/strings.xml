@@ -2,6 +2,7 @@
     <string name="app_name">Agrociety</string>
     <string name="content_can_not_be_loaded">Content can not be loaded</string>
 
+    <string name="progress_please_wait">Please Wait …</string>
 
     <!-- Login Screen -->
     <string name="login_main_title">Login now or register</string>
@@ -63,7 +64,7 @@
     <string name="user_settings_surname_hint">Surname</string>
     <string name="user_settings_birthday">Birthday</string>
     <string name="user_settings_birthday_picker_title">Select your birthday</string>
-
+    <string name="user_settings_profile_saved_successful">Update Successful</string>
 
 
     <!-- Conversations -->

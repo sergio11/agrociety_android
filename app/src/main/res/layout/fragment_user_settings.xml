@@ -67,6 +67,7 @@
                     />
 
                 <FrameLayout
+                    android:id="@+id/changePrimaryPhoto"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/change_primary_photo_background" />
@@ -90,6 +91,7 @@
                     android:contentDescription="@string/content_can_not_be_loaded"/>
 
                 <FrameLayout
+                    android:id="@+id/changeSecondaryPhoto"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/change_secondary_photo_background" />
