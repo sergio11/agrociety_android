@@ -74,6 +74,9 @@ object DaggerComponentFactory {
     fun getUserProfileComponent(activity: SupportActivity): UserProfileComponent =
         getMainActivityComponent(activity).userProfileComponent()
 
+    fun getUserSettingsComponent(activity: SupportActivity): UserSettingsComponent =
+        getMainActivityComponent(activity).userSettingsComponent()
+
     fun getNewsBoardComponent(activity: SupportActivity): NewsBoardComponent =
         getMainActivityComponent(activity).newsBoardComponent()
 

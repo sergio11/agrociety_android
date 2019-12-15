@@ -13,8 +13,8 @@
         android:layout_marginBottom="@dimen/common_margin"
         android:background="@color/colorPrimary"
         app:navigationIcon="?homeAsUpIndicator"
-        app:title="Conversations"/>
-
+        app:title="Conversations"
+        app:titleTextColor="@color/white"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

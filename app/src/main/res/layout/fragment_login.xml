@@ -63,7 +63,6 @@
     <Button
         android:id="@+id/forgotPassword"
         style="@style/BrownieTheme.TextButton"
-        android:textColor="@android:color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login_forgot_password_text"
@@ -86,7 +85,6 @@
     <Button
         android:id="@+id/createNewAccount"
         style="@style/BrownieTheme.TextButton"
-        android:textColor="@android:color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login_create_new_account_text"

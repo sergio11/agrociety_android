@@ -13,7 +13,9 @@ import sanchez.sanchez.sergio.agrociety.ui.features.main.components.bottomnav.li
 import sanchez.sanchez.sergio.agrociety.ui.features.main.components.bottomnav.listener.ISpaceOnLongClickListener
 import sanchez.sanchez.sergio.agrociety.ui.features.main.components.bottomnav.model.NavItem
 import sanchez.sanchez.sergio.brownie.extension.createDestination
+import sanchez.sanchez.sergio.brownie.extension.gone
 import sanchez.sanchez.sergio.brownie.extension.navigate
+import sanchez.sanchez.sergio.brownie.extension.visible
 import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
 import timber.log.Timber
 
@@ -66,11 +68,23 @@ class MainActivity: SupportActivity() {
             it.addOnDestinationChangedListener { controller, destination, arguments ->
                 when(destination.id) {
                     R.id.homeFragment ->
-                        navigationBottomBar?.updateSpaceItems(HOME_MENU_ITEM_IDX)
+                        navigationBottomBar?.apply {
+                            visible()
+                            updateSpaceItems(HOME_MENU_ITEM_IDX)
+                        }
                     R.id.userProfileFragment ->
-                        navigationBottomBar?.updateSpaceItems(PROFILE_MENU_ITEM_IDX)
+                        navigationBottomBar?.apply {
+                            visible()
+                            updateSpaceItems(PROFILE_MENU_ITEM_IDX)
+                        }
                     R.id.eventsFragment ->
-                        navigationBottomBar?.updateSpaceItems(EVENTS_MENU_ITEM_IDX)
+                        navigationBottomBar?.apply {
+                            visible()
+                            updateSpaceItems(EVENTS_MENU_ITEM_IDX)
+                        }
+                    else -> {
+                        navigationBottomBar?.gone()
+                    }
                 }
             }
 

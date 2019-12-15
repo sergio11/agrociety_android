@@ -22,4 +22,8 @@
     <dimen name="day_circle_radius">100dp</dimen>
     <dimen name="day_circle_stroke_width">1dp</dimen>
 
+
+    <dimen name="user_secondary_image_width">160dp</dimen>
+    <dimen name="user_secondary_image_height">120dp</dimen>
+
 </resources>
