@@ -1,6 +1,7 @@
 package sanchez.sanchez.sergio.agrociety.ui.features.main.settings
 
 import android.Manifest
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
@@ -15,7 +16,8 @@ import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
 import sanchez.sanchez.sergio.brownie.ui.core.fragment.SupportFragment
 import timber.log.Timber
 
-class UserSettingsFragment: SupportFragment<UserSettingsViewModel, Void>(UserSettingsViewModel::class.java) {
+class UserSettingsFragment: SupportFragment<UserSettingsViewModel, Void>(UserSettingsViewModel::class.java),
+    ChangePhotoMenuBottomSheet.IOnChangePhotoMenuListener {
 
     private val component: UserSettingsComponent by lazy(mode = LazyThreadSafetyMode.NONE) {
         DaggerComponentFactory.getUserSettingsComponent(activity as SupportActivity)
@@ -31,6 +33,8 @@ class UserSettingsFragment: SupportFragment<UserSettingsViewModel, Void>(UserSet
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        permissionManager.setCheckPermissionListener(this)
+
         toolbar.apply {
             setNavigationOnClickListener {
                 popBackStack()
@@ -43,8 +47,6 @@ class UserSettingsFragment: SupportFragment<UserSettingsViewModel, Void>(UserSet
                 true
             }
         }
-
-
 
         closeSession.setOnClickListener {
             navigateAndFinish(IntroActivity.createDestination(requireActivity()))
@@ -66,10 +68,12 @@ class UserSettingsFragment: SupportFragment<UserSettingsViewModel, Void>(UserSet
         }
 
         changePrimaryPhoto.setOnClickListener {
+            viewModel.photoCurrentlyEditing.value = PhotoTypeEnum.PRIMARY
             onChangePhoto()
         }
 
         changeSecondaryPhoto.setOnClickListener {
+            viewModel.photoCurrentlyEditing.value = PhotoTypeEnum.SECONDARY
             onChangePhoto()
         }
     }
@@ -78,16 +82,40 @@ class UserSettingsFragment: SupportFragment<UserSettingsViewModel, Void>(UserSet
     override fun onSinglePermissionGranted(permission: String) {
         super.onSinglePermissionGranted(permission)
         Timber.d("onSinglePermissionGranted -> $permission")
+        showChangePhotoMenuBottomSheet()
     }
 
     override fun onSinglePermissionRejected(permission: String) {
         super.onSinglePermissionRejected(permission)
         Timber.d("onSinglePermissionRejected -> $permission")
+        showChangePhotoMenuBottomSheet()
     }
 
     override fun onErrorOccurred(permission: String) {
         super.onErrorOccurred(permission)
         Timber.d("onErrorOccurred -> $permission")
+        showChangePhotoMenuBottomSheet()
+    }
+
+    /**
+     * On Image Selected
+     * @param imageSelected
+     */
+    override fun onImageSelected(imageSelected: String) {
+        Timber.d("On Image Selected -> $imageSelected")
+
+        viewModel.photoCurrentlyEditing.value?.let {
+
+            when(it) {
+                PhotoTypeEnum.PRIMARY ->
+                    changePrimaryPhotoImageView.setImageURI(Uri.parse(imageSelected))
+                PhotoTypeEnum.SECONDARY ->
+                    changePrimarySecondaryImageView.setImageURI(Uri.parse(imageSelected))
+            }
+
+            viewModel.photoCurrentlyEditing.value = null
+        }
+
     }
 
     /**
@@ -109,8 +137,37 @@ class UserSettingsFragment: SupportFragment<UserSettingsViewModel, Void>(UserSet
         if(permissionManager.shouldAskPermission(Manifest.permission.CAMERA)) {
             permissionManager.checkSinglePermission(
                 permission = Manifest.permission.CAMERA,
-                reasonText = "")
+                reasonText = getString(R.string.request_camera_permission_reason_text))
+        } else
+            showChangePhotoMenuBottomSheet()
+    }
+
+    /**
+     * On Reset Photo
+     */
+    override fun onResetPhoto() {
+
+        // Reset to default image
+        viewModel.photoCurrentlyEditing.value?.let {
+
+            when(it) {
+                PhotoTypeEnum.PRIMARY ->
+                    changePrimaryPhotoImageView.setImageResource(R.drawable.developer_image)
+                PhotoTypeEnum.SECONDARY ->
+                    changePrimarySecondaryImageView.setImageResource(R.drawable.intro_background)
+            }
+
+            viewModel.photoCurrentlyEditing.value = null
         }
+    }
+
+    /**
+     * Show Change Photo Menu Bottom Sheet
+     */
+    private fun showChangePhotoMenuBottomSheet() {
+        val changePhotoMenuBottomSheet = ChangePhotoMenuBottomSheet()
+        changePhotoMenuBottomSheet.listener = this
+        changePhotoMenuBottomSheet.show(childFragmentManager, ChangePhotoMenuBottomSheet.TAG)
     }
 
 }

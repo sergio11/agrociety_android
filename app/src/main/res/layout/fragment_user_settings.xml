@@ -61,6 +61,7 @@
                 android:layout_alignParentStart="true">
 
                 <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/changePrimaryPhotoImageView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/developer_image"
@@ -84,6 +85,7 @@
                 android:layout_alignParentEnd="true">
 
                 <ImageView
+                    android:id="@+id/changePrimarySecondaryImageView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
@@ -107,6 +109,7 @@
             style="@style/BrownieTheme.TextInputLayout.OutlinedBox"
             android:id="@+id/userNameTextInputLayout"
             app:errorEnabled="true"
+            android:layout_marginTop="@dimen/common_margin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -115,6 +118,7 @@
                 android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Sergio"
                 android:hint="@string/user_settings_name_hint"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -131,6 +135,7 @@
                 android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Sánchez"
                 android:hint="@string/user_settings_surname_hint"/>
 
         </com.google.android.material.textfield.TextInputLayout>

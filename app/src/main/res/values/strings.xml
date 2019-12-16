@@ -3,6 +3,11 @@
     <string name="content_can_not_be_loaded">Content can not be loaded</string>
 
     <string name="progress_please_wait">Please Wait …</string>
+    <string name="confirm_close_session">Do you want close session?</string>
+
+    <string name="request_camera_permission_reason_text">
+        We need access to your camera to update your profile picture
+    </string>
 
     <!-- Login Screen -->
     <string name="login_main_title">Login now or register</string>
@@ -65,6 +70,9 @@
     <string name="user_settings_birthday">Birthday</string>
     <string name="user_settings_birthday_picker_title">Select your birthday</string>
     <string name="user_settings_profile_saved_successful">Update Successful</string>
+    <string name="user_settings_change_photo_from_gallery">Photo from gallery</string>
+    <string name="user_settings_change_photo_from_camera">Photo from camera</string>
+    <string name="user_settings_reset_photo">Reset Photo</string>
 
 
     <!-- Conversations -->

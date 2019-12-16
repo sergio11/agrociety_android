@@ -52,5 +52,4 @@
         android:id="@+id/userSettingsFragment"
         android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.settings.UserSettingsFragment"
         android:label="UserSettingsFragment" />
-
 </navigation>

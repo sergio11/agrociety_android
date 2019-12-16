@@ -5,6 +5,7 @@ import com.squareup.picasso.Picasso
 import dagger.Module
 import dagger.Provides
 import sanchez.sanchez.sergio.brownie.di.scopes.PerApplication
+import sanchez.sanchez.sergio.brownie.utils.SupportImagePicker
 import timber.log.Timber
 
 @Module
@@ -18,5 +19,10 @@ class UtilsModule {
                 Timber.d(exception)
             }
         }.build()
+
+    @Provides
+    @PerApplication
+    fun provideSupportImagePicker(context: Context): SupportImagePicker =
+        SupportImagePicker(context)
 
 }

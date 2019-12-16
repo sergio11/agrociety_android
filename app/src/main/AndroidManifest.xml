@@ -19,8 +19,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
-            tools:replace="android:name">
-
+            tools:replace="android:name"
+        tools:ignore="GoogleAppIndexingWarning">
 
         <activity android:name=".ui.features.splash.SplashScreenActivity"
             android:screenOrientation="portrait"
