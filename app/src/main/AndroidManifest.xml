@@ -6,6 +6,11 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
             android:name="sanchez.sanchez.sergio.agrociety.Agrociety"
             android:allowBackup="true"
@@ -14,8 +19,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
-            tools:replace="android:name">
-
+            tools:replace="android:name"
+        tools:ignore="GoogleAppIndexingWarning">
 
         <activity android:name=".ui.features.splash.SplashScreenActivity"
             android:screenOrientation="portrait"

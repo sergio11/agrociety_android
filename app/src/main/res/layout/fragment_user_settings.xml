@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screenBackground">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalGuidelineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalGuidelineRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="?colorPrimary"
+        app:navigationIcon="?homeAsUpIndicator"
+        app:title="@string/user_settings_title"
+        app:titleTextColor="@color/white"
+        app:menu="@menu/user_settings"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/formContainer"
+        />
+
+    <LinearLayout
+        android:id="@+id/formContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/common_margin"
+        android:layout_marginBottom="@dimen/common_margin"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toEndOf="@id/verticalGuidelineLeft"
+        app:layout_constraintEnd_toStartOf="@id/verticalGuidelineRight"
+        app:layout_constraintBottom_toTopOf="@id/termsAndConditions">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/common_margin">
+
+            <FrameLayout
+                android:layout_width="@dimen/image_width"
+                android:layout_height="@dimen/image_width"
+                android:background="@drawable/user_primary_photo_background"
+                android:padding="2dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/changePrimaryPhotoImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/developer_image"
+                    />
+
+                <FrameLayout
+                    android:id="@+id/changePrimaryPhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/change_primary_photo_background" />
+
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:layout_width="@dimen/user_secondary_image_width"
+                android:layout_height="@dimen/user_secondary_image_height"
+                android:background="@drawable/user_secondary_photo_background"
+                android:padding="2dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true">
+
+                <ImageView
+                    android:id="@+id/changePrimarySecondaryImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/intro_background"
+                    android:contentDescription="@string/content_can_not_be_loaded"/>
+
+                <FrameLayout
+                    android:id="@+id/changeSecondaryPhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/change_secondary_photo_background" />
+
+            </FrameLayout>
+
+
+        </RelativeLayout>
+
+
+        <!-- User Name -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/BrownieTheme.TextInputLayout.OutlinedBox"
+            android:id="@+id/userNameTextInputLayout"
+            app:errorEnabled="true"
+            android:layout_marginTop="@dimen/common_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userName"
+                android:singleLine="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sergio"
+                android:hint="@string/user_settings_name_hint"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- User Surname -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/BrownieTheme.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userSurname"
+                android:singleLine="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sánchez"
+                android:hint="@string/user_settings_surname_hint"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- User Birthday -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/BrownieTheme.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userBirthday"
+                android:singleLine="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:longClickable="false"
+                android:hint="@string/user_settings_birthday"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/termsAndConditions"
+        style="@style/BrownieTheme.TextButton.Secondary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/user_settings_terms_and_conditions"
+        app:layout_constraintTop_toBottomOf="@id/formContainer"
+        app:layout_constraintStart_toEndOf="@id/verticalGuidelineLeft"
+        app:layout_constraintEnd_toStartOf="@id/aboutAgrociety"
+        app:layout_constraintBottom_toTopOf="@id/closeSession" />
+
+    <Button
+        android:id="@+id/aboutAgrociety"
+        style="@style/BrownieTheme.TextButton.Secondary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/user_settings_about_agrociety"
+        app:layout_constraintTop_toTopOf="@id/termsAndConditions"
+        app:layout_constraintEnd_toStartOf="@id/verticalGuidelineRight"
+        app:layout_constraintStart_toEndOf="@id/termsAndConditions"
+        app:layout_constraintBottom_toBottomOf="@id/termsAndConditions" />
+
+
+    <Button
+        android:id="@+id/closeSession"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/user_settings_close_session"
+        android:layout_marginBottom="@dimen/common_margin"
+        android:layout_marginTop="@dimen/common_margin"
+        style="@style/BrownieTheme.OutlinedButton"
+        app:layout_constraintStart_toEndOf="@id/verticalGuidelineLeft"
+        app:layout_constraintEnd_toStartOf="@id/verticalGuidelineRight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/termsAndConditions"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

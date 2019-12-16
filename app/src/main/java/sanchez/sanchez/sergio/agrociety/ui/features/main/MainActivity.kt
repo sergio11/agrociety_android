@@ -3,18 +3,20 @@ package sanchez.sanchez.sergio.agrociety.ui.features.main
 import android.app.Activity
 import android.os.Bundle
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.DialogFragment
 import androidx.navigation.ActivityNavigator
 import androidx.navigation.NavController
 import kotlinx.android.synthetic.main.activity_main.*
 import sanchez.sanchez.sergio.agrociety.R
 import sanchez.sanchez.sergio.agrociety.di.components.activity.MainActivityComponent
 import sanchez.sanchez.sergio.agrociety.di.factory.DaggerComponentFactory
+import sanchez.sanchez.sergio.agrociety.ui.features.intro.IntroActivity
 import sanchez.sanchez.sergio.agrociety.ui.features.main.components.bottomnav.listener.ISpaceOnClickListener
 import sanchez.sanchez.sergio.agrociety.ui.features.main.components.bottomnav.listener.ISpaceOnLongClickListener
 import sanchez.sanchez.sergio.agrociety.ui.features.main.components.bottomnav.model.NavItem
-import sanchez.sanchez.sergio.brownie.extension.createDestination
-import sanchez.sanchez.sergio.brownie.extension.navigate
+import sanchez.sanchez.sergio.brownie.extension.*
 import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
+import sanchez.sanchez.sergio.brownie.ui.dialogs.impl.ConfirmationDialogFragment
 import timber.log.Timber
 
 
@@ -66,11 +68,23 @@ class MainActivity: SupportActivity() {
             it.addOnDestinationChangedListener { controller, destination, arguments ->
                 when(destination.id) {
                     R.id.homeFragment ->
-                        navigationBottomBar?.updateSpaceItems(HOME_MENU_ITEM_IDX)
+                        navigationBottomBar?.apply {
+                            visible()
+                            updateSpaceItems(HOME_MENU_ITEM_IDX)
+                        }
                     R.id.userProfileFragment ->
-                        navigationBottomBar?.updateSpaceItems(PROFILE_MENU_ITEM_IDX)
+                        navigationBottomBar?.apply {
+                            visible()
+                            updateSpaceItems(PROFILE_MENU_ITEM_IDX)
+                        }
                     R.id.eventsFragment ->
-                        navigationBottomBar?.updateSpaceItems(EVENTS_MENU_ITEM_IDX)
+                        navigationBottomBar?.apply {
+                            visible()
+                            updateSpaceItems(EVENTS_MENU_ITEM_IDX)
+                        }
+                    else -> {
+                        navigationBottomBar?.gone()
+                    }
                 }
             }
 
@@ -120,6 +134,19 @@ class MainActivity: SupportActivity() {
         override fun onItemLongClick(itemIndex: Int, itemName: String) {
             Timber.d("On Item $itemName long clicked")
         }
+    }
+
+    override fun onBackPressed() {
+        if(navController?.currentDestination?.id == R.id.homeFragment)
+            showConfirmationDialog(R.string.confirm_close_session, object : ConfirmationDialogFragment.ConfirmationDialogListener {
+                override fun onAccepted(dialog: DialogFragment) {
+                    navigateAndFinish(IntroActivity.createDestination(this@MainActivity))
+                }
+                override fun onRejected(dialog: DialogFragment) {}
+            })
+        else
+            super.onBackPressed()
+
     }
 
     /** COMPANION OBJECT **/

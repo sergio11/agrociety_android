@@ -2,6 +2,12 @@
     <string name="app_name">Agrociety</string>
     <string name="content_can_not_be_loaded">Content can not be loaded</string>
 
+    <string name="progress_please_wait">Please Wait …</string>
+    <string name="confirm_close_session">Do you want close session?</string>
+
+    <string name="request_camera_permission_reason_text">
+        We need access to your camera to update your profile picture
+    </string>
 
     <!-- Login Screen -->
     <string name="login_main_title">Login now or register</string>
@@ -53,6 +59,20 @@
     <string name="saturday">Sat</string>
     <string name="sunday">Sun</string>
 
+
+    <!-- User Settings -->
+    <string name="user_settings_title">Settings</string>
+    <string name="user_settings_terms_and_conditions">Terms And Conditions</string>
+    <string name="user_settings_about_agrociety">About Agrociety</string>
+    <string name="user_settings_close_session">Close Session</string>
+    <string name="user_settings_name_hint">Name</string>
+    <string name="user_settings_surname_hint">Surname</string>
+    <string name="user_settings_birthday">Birthday</string>
+    <string name="user_settings_birthday_picker_title">Select your birthday</string>
+    <string name="user_settings_profile_saved_successful">Update Successful</string>
+    <string name="user_settings_change_photo_from_gallery">Photo from gallery</string>
+    <string name="user_settings_change_photo_from_camera">Photo from camera</string>
+    <string name="user_settings_reset_photo">Reset Photo</string>
 
 
     <!-- Conversations -->

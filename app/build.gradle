@@ -13,8 +13,8 @@ android {
         applicationId "sanchez.sanchez.sergio.agrociety"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 7
-        versionName "0.0.3"
+        versionCode 8
+        versionName "0.0.4"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -31,7 +31,6 @@ dependencies {
     implementation "com.google.android.gms:play-services-location:17.0.0"
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.google.android.material:material:1.0.0'
     kapt "com.google.dagger:dagger-compiler:2.16"
 
     // Images library

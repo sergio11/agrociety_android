@@ -24,4 +24,5 @@ interface MainActivityComponent: ActivityComponent {
     fun userPostBoardComponent(): UserPostBoardComponent
     fun lastAnnouncementsComponent(): LastAnnouncementsComponent
     fun contactListComponent(): ContactListComponent
+    fun userSettingsComponent(): UserSettingsComponent
 }

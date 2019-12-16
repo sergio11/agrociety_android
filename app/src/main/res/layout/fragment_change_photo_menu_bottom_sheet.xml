@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <Button
+        android:id="@+id/changePhotoFromGallery"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.33"
+        android:text="@string/user_settings_change_photo_from_gallery"
+        android:layout_marginBottom="@dimen/common_margin"
+        android:layout_marginTop="@dimen/common_margin"
+        app:icon="@drawable/ic_photo_gallery"
+        style="@style/BrownieTheme.UnelevatedButton" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent" />
+
+    <Button
+        android:id="@+id/changePhotoFromCamera"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.33"
+        android:text="@string/user_settings_change_photo_from_camera"
+        android:layout_marginBottom="@dimen/common_margin"
+        android:layout_marginTop="@dimen/common_margin"
+        app:icon="@drawable/ic_photo_camera"
+        style="@style/BrownieTheme.UnelevatedButton" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent" />
+
+    <Button
+        android:id="@+id/resetPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.33"
+        android:text="@string/user_settings_reset_photo"
+        android:layout_marginBottom="@dimen/common_margin"
+        android:layout_marginTop="@dimen/common_margin"
+        app:icon="@drawable/ic_remove_photo"
+        style="@style/BrownieTheme.UnelevatedButton" />
+
+</LinearLayout>

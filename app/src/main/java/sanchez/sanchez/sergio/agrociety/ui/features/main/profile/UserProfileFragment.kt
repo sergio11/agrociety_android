@@ -15,7 +15,6 @@ import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
 import sanchez.sanchez.sergio.brownie.ui.core.fragment.SupportFragment
 import kotlin.math.abs
 
-
 /**
  * User Profile Fragment
  */
@@ -51,6 +50,9 @@ class UserProfileFragment: SupportFragment<UserProfileViewModel, Void>(UserProfi
                 R.id.goToConversations ->
                     navigate(ConversationActivity
                         .createDestination(requireActivity()))
+                R.id.editUserProfile ->
+                    navigate(R.id.action_userProfileFragment_to_userSettingsFragment)
+
             }
             true
         }

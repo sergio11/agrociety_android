@@ -29,6 +29,9 @@
         <action
             android:id="@+id/action_userProfileFragment_to_contactListFragment"
             app:destination="@id/contactListFragment" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_userSettingsFragment"
+            app:destination="@id/userSettingsFragment" />
     </fragment>
 
     <fragment
@@ -45,5 +48,8 @@
         android:id="@+id/contactListFragment"
         android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.contactlist.ContactListFragment"
         android:label="ContactListFragment" />
-
+    <fragment
+        android:id="@+id/userSettingsFragment"
+        android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.settings.UserSettingsFragment"
+        android:label="UserSettingsFragment" />
 </navigation>
