@@ -95,6 +95,9 @@ object DaggerComponentFactory {
     fun getContactListComponent(activity: SupportActivity): ContactListComponent =
         getMainActivityComponent(activity).contactListComponent()
 
+    fun getSearchComponent(activity: SupportActivity): SearchComponent =
+        getMainActivityComponent(activity).searchComponent()
+
     fun getSplashActivityComponent(activity: SupportActivity): SplashActivityComponent =
         splashActivityComponent ?: getAppGlobalComponent(activity.application as BrownieApp)
             .splashActivityComponent(ActivityModule(activity)).also {
