@@ -87,8 +87,8 @@
                             app:layout_constraintStart_toStartOf="@id/followersCountButton"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintBottom_toTopOf="@id/followersCountButton"
-                            android:text="0"
-                            tools:text="8" />
+                            tools:text="8"
+                            android:contentDescription="@string/content_can_not_be_loaded" />
 
                         <Button
                             android:id="@+id/followersCountButton"
@@ -117,8 +117,8 @@
                             app:layout_constraintStart_toStartOf="@id/followCountButton"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintBottom_toTopOf="@id/followCountButton"
-                            android:text="0"
-                            tools:text="8" />
+                            tools:text="8"
+                            android:contentDescription="@string/content_can_not_be_loaded" />
 
                         <Button
                             android:id="@+id/followCountButton"
@@ -202,18 +202,18 @@
                     android:textColor="@android:color/white"
                     android:layout_margin="@dimen/common_margin"
                     app:layout_collapseMode="parallax"
-                    android:text="@string/user_name_default"
                     tools:text="@string/user_name_default" />
 
                 <Button
-                    android:id="@+id/myGroups"
+                    android:id="@+id/followUserBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/user_profile_my_groups"
+                    android:text="@string/user_detail_follow_btn"
                     android:layout_marginBottom="@dimen/common_margin"
                     style="@style/BrownieTheme.OutlinedButton"/>
 
                 <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/userImageView"
                     android:layout_width="@dimen/image_width"
                     android:layout_height="@dimen/image_width"
                     civ:civ_border_color="@android:color/white"
@@ -228,8 +228,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@android:color/transparent"
+                app:navigationIcon="?homeAsUpIndicator"
                 app:layout_collapseMode="pin"
-                app:menu="@menu/user_profile_main_menu"
                 app:title="">
 
                 <LinearLayout

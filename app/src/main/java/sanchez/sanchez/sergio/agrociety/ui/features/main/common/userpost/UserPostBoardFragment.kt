@@ -1,4 +1,4 @@
-package sanchez.sanchez.sergio.agrociety.ui.features.main.profile.userpost
+package sanchez.sanchez.sergio.agrociety.ui.features.main.common.userpost
 
 import android.os.Bundle
 import android.view.View
