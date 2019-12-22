@@ -1,9 +1,8 @@
-package sanchez.sanchez.sergio.agrociety.ui.features.main.profile.userpost
+package sanchez.sanchez.sergio.agrociety.ui.features.main.common.userpost
 
 import sanchez.sanchez.sergio.agrociety.R
 import sanchez.sanchez.sergio.agrociety.domain.model.Publication
 import sanchez.sanchez.sergio.brownie.ui.core.viewmodel.SupportLCEViewModel
-import sanchez.sanchez.sergio.brownie.ui.core.viewmodel.SupportViewModel
 import java.util.*
 import javax.inject.Inject
 

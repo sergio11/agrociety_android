@@ -59,6 +59,9 @@
     <string name="saturday">Sat</string>
     <string name="sunday">Sun</string>
 
+    <!-- User Detail -->
+    <string name="user_detail_follow_btn">Follow</string>
+    <string name="user_detail_unfollow_btn">Un follow</string>
 
     <!-- User Settings -->
     <string name="user_settings_title">Settings</string>

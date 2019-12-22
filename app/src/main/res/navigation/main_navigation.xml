@@ -47,9 +47,21 @@
     <fragment
         android:id="@+id/contactListFragment"
         android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.contactlist.ContactListFragment"
-        android:label="ContactListFragment" />
+        android:label="ContactListFragment" >
+        <action
+            android:id="@+id/action_contactListFragment_to_userDetailFragment"
+            app:destination="@id/userDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/userSettingsFragment"
         android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.settings.UserSettingsFragment"
         android:label="UserSettingsFragment" />
+    <fragment
+        android:id="@+id/userDetailFragment"
+        android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.userdetail.UserDetailFragment"
+        android:label="UserDetailFragment" >
+        <argument
+            android:name="user"
+            app:argType="sanchez.sanchez.sergio.agrociety.domain.model.User" />
+    </fragment>
 </navigation>

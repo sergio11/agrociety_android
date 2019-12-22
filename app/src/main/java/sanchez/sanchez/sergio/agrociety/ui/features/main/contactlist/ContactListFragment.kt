@@ -9,6 +9,7 @@ import sanchez.sanchez.sergio.agrociety.R
 import sanchez.sanchez.sergio.agrociety.di.components.fragment.ContactListComponent
 import sanchez.sanchez.sergio.agrociety.di.factory.DaggerComponentFactory
 import sanchez.sanchez.sergio.agrociety.domain.model.User
+import sanchez.sanchez.sergio.brownie.extension.navigate
 import sanchez.sanchez.sergio.brownie.extension.popBackStack
 import sanchez.sanchez.sergio.brownie.models.Section
 import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
@@ -43,7 +44,11 @@ class ContactListFragment: SupportGroupedLCEFragment<Void, User, Void, ContactLi
         }
     }
 
-    override fun onItemClick(item: Section<User>) {}
+    override fun onItemClick(item: Section<User>) {
+        navigate(ContactListFragmentDirections
+            .actionContactListFragmentToUserDetailFragment(item.element()))
+
+    }
 
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int, position: Int) {}
 }

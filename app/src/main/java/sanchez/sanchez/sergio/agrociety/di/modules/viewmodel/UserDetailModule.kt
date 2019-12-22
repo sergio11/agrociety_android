@@ -4,18 +4,18 @@ import androidx.lifecycle.ViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
-import sanchez.sanchez.sergio.agrociety.ui.features.main.common.userpost.UserPostBoardViewModel
+import sanchez.sanchez.sergio.agrociety.ui.features.main.userdetail.UserDetailViewModel
 import sanchez.sanchez.sergio.brownie.di.modules.ViewModelModule
 import sanchez.sanchez.sergio.brownie.di.scopes.PerFragment
 import sanchez.sanchez.sergio.brownie.di.viewmodel.ViewModelKey
 
 @Module(includes = [ ViewModelModule::class ])
-abstract class UserPostBoardModule {
+abstract class UserDetailModule {
 
     @PerFragment
     @Binds
     @IntoMap
-    @ViewModelKey(UserPostBoardViewModel::class)
-    abstract fun bindsUserPostBoardViewModel(userPostBoardViewModel: UserPostBoardViewModel): ViewModel
+    @ViewModelKey(UserDetailViewModel::class)
+    abstract fun bindsUserDetailViewModel(userDetailViewModel: UserDetailViewModel): ViewModel
 
 }
