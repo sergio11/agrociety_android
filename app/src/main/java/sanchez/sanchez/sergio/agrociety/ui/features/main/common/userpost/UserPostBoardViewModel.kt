@@ -1,76 +1,149 @@
 package sanchez.sanchez.sergio.agrociety.ui.features.main.common.userpost
 
 import sanchez.sanchez.sergio.agrociety.R
-import sanchez.sanchez.sergio.agrociety.domain.model.Publication
+import sanchez.sanchez.sergio.agrociety.domain.model.Post
+import sanchez.sanchez.sergio.agrociety.domain.model.User
 import sanchez.sanchez.sergio.brownie.ui.core.viewmodel.SupportLCEViewModel
 import java.util.*
 import javax.inject.Inject
 
-class UserPostBoardViewModel @Inject constructor(): SupportLCEViewModel<Publication, Void>() {
+class UserPostBoardViewModel @Inject constructor(): SupportLCEViewModel<Post, Void>() {
     private val publications = arrayListOf(
-        Publication(
+        Post(
             image = R.drawable.publication_example_one,
-            title = "First Publication",
+            title = "First Post",
             date = Date(),
             likesCount = 8,
-            commentsCount = 5
+            commentsCount = 5,
+            author = User(
+                id = "dsadsadsadsadas",
+                displayName = "David Martín Fidalgo",
+                email = "davidmartin@gmail.com",
+                followers = 32,
+                follow = 23,
+                photoUrl = "https://media.licdn.com/dms/image/C5603AQFHfMzxZg-B1Q/profile-displayphoto-shrink_200_200/0?e=1579737600&v=beta&t=s1HgcSfcUNKYizZwFyrCyp30YzJuFsErYrOd_uY9XXM",
+                background = R.drawable.publication_example_one
+            )
         ),
-        Publication(
+        Post(
             image = R.drawable.publication_example_two,
-            title = "Second Publication",
+            title = "Second Post",
             date = Date(),
             likesCount = 8,
-            commentsCount = 5
+            commentsCount = 5,
+            author = User(
+                id = "dsadsadsadsadas",
+                displayName = "David Martín Fidalgo",
+                email = "davidmartin@gmail.com",
+                followers = 32,
+                follow = 23,
+                photoUrl = "https://media.licdn.com/dms/image/C5603AQFHfMzxZg-B1Q/profile-displayphoto-shrink_200_200/0?e=1579737600&v=beta&t=s1HgcSfcUNKYizZwFyrCyp30YzJuFsErYrOd_uY9XXM",
+                background = R.drawable.publication_example_one
+            )
         ),
-        Publication(
+        Post(
             image = R.drawable.publication_example_tree,
-            title = "Third Publication",
+            title = "Third Post",
             date = Date(),
             likesCount = 8,
-            commentsCount = 5
+            commentsCount = 5,
+            author = User(
+                id = "dsadsadsadsadas",
+                displayName = "David Martín Fidalgo",
+                email = "davidmartin@gmail.com",
+                followers = 32,
+                follow = 23,
+                photoUrl = "https://media.licdn.com/dms/image/C5603AQFHfMzxZg-B1Q/profile-displayphoto-shrink_200_200/0?e=1579737600&v=beta&t=s1HgcSfcUNKYizZwFyrCyp30YzJuFsErYrOd_uY9XXM",
+                background = R.drawable.publication_example_one
+            )
         ),
-        Publication(
+        Post(
             image = R.drawable.publication_example_four,
-            title = "Four Publication",
+            title = "Four Post",
             date = Date(),
             likesCount = 8,
-            commentsCount = 5
+            commentsCount = 5,
+            author = User(
+                id = "dsadsadsadsadas",
+                displayName = "David Martín Fidalgo",
+                email = "davidmartin@gmail.com",
+                followers = 32,
+                follow = 23,
+                photoUrl = "https://media.licdn.com/dms/image/C5603AQFHfMzxZg-B1Q/profile-displayphoto-shrink_200_200/0?e=1579737600&v=beta&t=s1HgcSfcUNKYizZwFyrCyp30YzJuFsErYrOd_uY9XXM",
+                background = R.drawable.publication_example_one
+            )
         ),
-        Publication(
+        Post(
             image = R.drawable.publication_example_one,
-            title = "Five Publication",
+            title = "Five Post",
             date = Date(),
             likesCount = 8,
-            commentsCount = 5
+            commentsCount = 5,
+            author = User(
+                id = "dsadsadsadsadas",
+                displayName = "David Martín Fidalgo",
+                email = "davidmartin@gmail.com",
+                followers = 32,
+                follow = 23,
+                photoUrl = "https://media.licdn.com/dms/image/C5603AQFHfMzxZg-B1Q/profile-displayphoto-shrink_200_200/0?e=1579737600&v=beta&t=s1HgcSfcUNKYizZwFyrCyp30YzJuFsErYrOd_uY9XXM",
+                background = R.drawable.publication_example_one
+            )
         ),
-        Publication(
+        Post(
             image = R.drawable.publication_example_two,
-            title = "Six Publication",
+            title = "Six Post",
             date = Date(),
             likesCount = 8,
-            commentsCount = 5
+            commentsCount = 5,
+            author = User(
+                id = "dsadsadsadsadas",
+                displayName = "David Martín Fidalgo",
+                email = "davidmartin@gmail.com",
+                followers = 32,
+                follow = 23,
+                photoUrl = "https://media.licdn.com/dms/image/C5603AQFHfMzxZg-B1Q/profile-displayphoto-shrink_200_200/0?e=1579737600&v=beta&t=s1HgcSfcUNKYizZwFyrCyp30YzJuFsErYrOd_uY9XXM",
+                background = R.drawable.publication_example_one
+            )
         ),
-        Publication(
+        Post(
             image = R.drawable.publication_example_tree,
-            title = "Seven Publication",
+            title = "Seven Post",
             date = Date(),
             likesCount = 8,
-            commentsCount = 5
+            commentsCount = 5,
+            author = User(
+                id = "dsadsadsadsadas",
+                displayName = "David Martín Fidalgo",
+                email = "davidmartin@gmail.com",
+                followers = 32,
+                follow = 23,
+                photoUrl = "https://media.licdn.com/dms/image/C5603AQFHfMzxZg-B1Q/profile-displayphoto-shrink_200_200/0?e=1579737600&v=beta&t=s1HgcSfcUNKYizZwFyrCyp30YzJuFsErYrOd_uY9XXM",
+                background = R.drawable.publication_example_one
+            )
         ),
-        Publication(
+        Post(
             image = R.drawable.publication_example_one,
-            title = "Eight Publication",
+            title = "Eight Post",
             date = Date(),
             likesCount = 8,
-            commentsCount = 5
+            commentsCount = 5,
+            author = User(
+                id = "dsadsadsadsadas",
+                displayName = "David Martín Fidalgo",
+                email = "davidmartin@gmail.com",
+                followers = 32,
+                follow = 23,
+                photoUrl = "https://media.licdn.com/dms/image/C5603AQFHfMzxZg-B1Q/profile-displayphoto-shrink_200_200/0?e=1579737600&v=beta&t=s1HgcSfcUNKYizZwFyrCyp30YzJuFsErYrOd_uY9XXM",
+                background = R.drawable.publication_example_one
+            )
         )
     )
 
 
-    override suspend fun onLoadData(): List<Publication> =
+    override suspend fun onLoadData(): List<Post> =
         publications
 
 
-    override suspend fun onLoadData(params: Void): List<Publication> =
+    override suspend fun onLoadData(params: Void): List<Post> =
         publications
 }

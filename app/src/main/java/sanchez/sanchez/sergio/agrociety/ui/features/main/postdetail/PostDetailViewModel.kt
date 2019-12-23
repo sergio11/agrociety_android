@@ -1,9 +1,9 @@
-package sanchez.sanchez.sergio.agrociety.ui.features.main.detail
+package sanchez.sanchez.sergio.agrociety.ui.features.main.postdetail
 
 import sanchez.sanchez.sergio.brownie.ui.core.viewmodel.SupportViewModel
 import javax.inject.Inject
 
-class DetailViewModel @Inject constructor(): SupportViewModel() {
+class PostDetailViewModel @Inject constructor(): SupportViewModel() {
 
     /** ATTRIBUTES **/
 

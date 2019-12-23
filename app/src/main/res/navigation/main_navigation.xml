@@ -9,11 +9,14 @@
         android:label="HomeFragment" >
         <action
             android:id="@+id/action_homeFragment_to_detailFragment"
-            app:destination="@id/detailFragment"
+            app:destination="@id/postDetailFragment"
             app:enterAnim="@anim/fadein"
             app:exitAnim="@anim/fadeout"
             app:popEnterAnim="@anim/fadein"
             app:popExitAnim="@anim/fadeout" />
+        <action
+            android:id="@+id/action_homeFragment_to_userDetailFragment"
+            app:destination="@id/userDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/userProfileFragment"
@@ -21,7 +24,7 @@
         android:label="UserProfileFragment" >
         <action
             android:id="@+id/action_userProfileFragment_to_detailFragment"
-            app:destination="@id/detailFragment"
+            app:destination="@id/postDetailFragment"
             app:enterAnim="@anim/fadein"
             app:exitAnim="@anim/fadeout"
             app:popEnterAnim="@anim/fadein"
@@ -35,9 +38,13 @@
     </fragment>
 
     <fragment
-        android:id="@+id/detailFragment"
-        android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.detail.DetailFragment"
-        android:label="DetailFragment" />
+        android:id="@+id/postDetailFragment"
+        android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.postdetail.PostDetailFragment"
+        android:label="DetailFragment">
+        <argument
+            android:name="post"
+            app:argType="sanchez.sanchez.sergio.agrociety.domain.model.Post" />
+    </fragment>
 
     <fragment
         android:id="@+id/eventsFragment"

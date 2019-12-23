@@ -8,15 +8,16 @@ import kotlinx.android.synthetic.main.fragment_user_post_board.*
 import sanchez.sanchez.sergio.agrociety.R
 import sanchez.sanchez.sergio.agrociety.di.components.fragment.UserPostBoardComponent
 import sanchez.sanchez.sergio.agrociety.di.factory.DaggerComponentFactory
-import sanchez.sanchez.sergio.agrociety.domain.model.Publication
+import sanchez.sanchez.sergio.agrociety.domain.model.Post
 import sanchez.sanchez.sergio.agrociety.ui.features.main.common.CommonPublicationAdapter
 import sanchez.sanchez.sergio.agrociety.ui.features.main.common.CommonSimplePublicationAdapter
+import sanchez.sanchez.sergio.agrociety.ui.features.main.profile.UserProfileFragmentDirections
 import sanchez.sanchez.sergio.brownie.extension.navigate
 import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
 import sanchez.sanchez.sergio.brownie.ui.core.adapter.SupportRecyclerViewAdapter
 import sanchez.sanchez.sergio.brownie.ui.core.fragment.SupportLCEFragment
 
-class UserPostBoardFragment: SupportLCEFragment<Void, Publication, Void, UserPostBoardViewModel>(UserPostBoardViewModel::class.java) {
+class UserPostBoardFragment: SupportLCEFragment<Void, Post, Void, UserPostBoardViewModel>(UserPostBoardViewModel::class.java) {
 
     private val component: UserPostBoardComponent by lazy(mode = LazyThreadSafetyMode.NONE) {
         DaggerComponentFactory.getUserPostBoardComponent(activity as SupportActivity)
@@ -86,7 +87,7 @@ class UserPostBoardFragment: SupportLCEFragment<Void, Publication, Void, UserPos
     /**
      * On Create Adapter
      */
-    override fun onCreateAdapter(): SupportRecyclerViewAdapter<Publication> =
+    override fun onCreateAdapter(): SupportRecyclerViewAdapter<Post> =
         if(dataMode == DataModeEnum.GRID)
             CommonSimplePublicationAdapter(
                 requireContext(),
@@ -101,10 +102,8 @@ class UserPostBoardFragment: SupportLCEFragment<Void, Publication, Void, UserPos
     /**
      * On Item Click
      */
-    override fun onItemClick(item: Publication) {
-        navigate(
-            R.id.action_userProfileFragment_to_detailFragment
-        )
+    override fun onItemClick(item: Post) {
+        navigate(UserProfileFragmentDirections.actionUserProfileFragmentToDetailFragment(item))
     }
 
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int, position: Int) {}
