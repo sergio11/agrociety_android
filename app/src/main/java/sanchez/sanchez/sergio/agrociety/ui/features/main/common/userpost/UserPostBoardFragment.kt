@@ -103,7 +103,7 @@ class UserPostBoardFragment: SupportLCEFragment<Void, Post, Void, UserPostBoardV
      * On Item Click
      */
     override fun onItemClick(item: Post) {
-        navigate(UserProfileFragmentDirections.actionUserProfileFragmentToDetailFragment(item))
+        navigate(UserProfileFragmentDirections.actionGlobalPostDetailFragment(item))
     }
 
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int, position: Int) {}

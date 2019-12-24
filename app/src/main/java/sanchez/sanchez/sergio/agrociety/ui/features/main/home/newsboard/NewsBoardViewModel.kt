@@ -13,6 +13,7 @@ class NewsBoardViewModel @Inject constructor(): SupportLCEViewModel<Post, Void>(
         Post(
             image = R.drawable.publication_example_one,
             title = "This is the title for the first post",
+            subtitle = "This is the subtitle for the first post",
             date = Date(),
             likesCount = 8,
             commentsCount = 5,
@@ -29,6 +30,7 @@ class NewsBoardViewModel @Inject constructor(): SupportLCEViewModel<Post, Void>(
         Post(
             image = R.drawable.publication_example_two,
             title = "This is the title for the second post",
+            subtitle = "This is the subtitle for the second post",
             date = Date(),
             likesCount = 8,
             commentsCount = 5,
@@ -45,6 +47,7 @@ class NewsBoardViewModel @Inject constructor(): SupportLCEViewModel<Post, Void>(
         Post(
             image = R.drawable.publication_example_tree,
             title = "This is the title for the third post",
+            subtitle = "This is the subtitle for the third post",
             date = Date(),
             likesCount = 8,
             commentsCount = 5,
@@ -61,6 +64,7 @@ class NewsBoardViewModel @Inject constructor(): SupportLCEViewModel<Post, Void>(
         Post(
             image = R.drawable.publication_example_four,
             title = "This is the title for the four post",
+            subtitle = "This is the subtitle for the four post",
             date = Date(),
             likesCount = 8,
             commentsCount = 5,
@@ -77,6 +81,7 @@ class NewsBoardViewModel @Inject constructor(): SupportLCEViewModel<Post, Void>(
         Post(
             image = R.drawable.publication_example_one,
             title = "This is the title for the five post",
+            subtitle = "This is the subtitle for the five post",
             date = Date(),
             likesCount = 8,
             commentsCount = 5,
@@ -91,6 +96,7 @@ class NewsBoardViewModel @Inject constructor(): SupportLCEViewModel<Post, Void>(
         Post(
             image = R.drawable.publication_example_two,
             title = "This is the title for the six post",
+            subtitle = "This is the subtitle for the six post",
             date = Date(),
             likesCount = 8,
             commentsCount = 5,
@@ -107,6 +113,7 @@ class NewsBoardViewModel @Inject constructor(): SupportLCEViewModel<Post, Void>(
         Post(
             image = R.drawable.publication_example_tree,
             title = "This is the title for the seven post",
+            subtitle = "This is the subtitle for the seven post",
             date = Date(),
             likesCount = 8,
             commentsCount = 5,
@@ -123,6 +130,7 @@ class NewsBoardViewModel @Inject constructor(): SupportLCEViewModel<Post, Void>(
         Post(
             image = R.drawable.publication_example_one,
             title = "This is the title for the eight post",
+            subtitle = "This is the subtitle for the eight post",
             date = Date(),
             likesCount = 8,
             commentsCount = 5,

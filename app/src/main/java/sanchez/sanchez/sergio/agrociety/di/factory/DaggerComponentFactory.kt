@@ -98,6 +98,9 @@ object DaggerComponentFactory {
     fun getUserDetailComponent(activity: SupportActivity): UserDetailComponent =
         getMainActivityComponent(activity).userDetailComponent()
 
+    fun getCommentsWallComponent(activity: SupportActivity): CommentsWallComponent =
+        getMainActivityComponent(activity).commentsWallComponent()
+
     fun getSplashActivityComponent(activity: SupportActivity): SplashActivityComponent =
         splashActivityComponent ?: getAppGlobalComponent(activity.application as BrownieApp)
             .splashActivityComponent(ActivityModule(activity)).also {

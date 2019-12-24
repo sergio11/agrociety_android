@@ -38,13 +38,13 @@ class NewsBoardFragment: SupportLCEFragment<Void, Post, Void, NewsBoardViewModel
         }
 
     override fun onItemClick(item: Post) {
-        navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(item))
+        navigate(HomeFragmentDirections.actionGlobalPostDetailFragment(item))
     }
 
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int, position: Int) { Timber.d("On Swiped") }
 
     override fun onGoToUserDetail(user: User) {
-        navigate(HomeFragmentDirections.actionHomeFragmentToUserDetailFragment(user))
+        navigate(HomeFragmentDirections.actionGlobalUserDetailFragment(user))
     }
 
 }

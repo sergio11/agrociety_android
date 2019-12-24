@@ -12,6 +12,7 @@ class UserPostBoardViewModel @Inject constructor(): SupportLCEViewModel<Post, Vo
         Post(
             image = R.drawable.publication_example_one,
             title = "First Post",
+            subtitle = "First Post Subtitle",
             date = Date(),
             likesCount = 8,
             commentsCount = 5,
@@ -28,6 +29,7 @@ class UserPostBoardViewModel @Inject constructor(): SupportLCEViewModel<Post, Vo
         Post(
             image = R.drawable.publication_example_two,
             title = "Second Post",
+            subtitle = "Second Post Subtitle",
             date = Date(),
             likesCount = 8,
             commentsCount = 5,
@@ -44,6 +46,7 @@ class UserPostBoardViewModel @Inject constructor(): SupportLCEViewModel<Post, Vo
         Post(
             image = R.drawable.publication_example_tree,
             title = "Third Post",
+            subtitle = "Third Post Subtitle",
             date = Date(),
             likesCount = 8,
             commentsCount = 5,
@@ -60,6 +63,7 @@ class UserPostBoardViewModel @Inject constructor(): SupportLCEViewModel<Post, Vo
         Post(
             image = R.drawable.publication_example_four,
             title = "Four Post",
+            subtitle = "Four Post Subtitle",
             date = Date(),
             likesCount = 8,
             commentsCount = 5,
@@ -76,6 +80,7 @@ class UserPostBoardViewModel @Inject constructor(): SupportLCEViewModel<Post, Vo
         Post(
             image = R.drawable.publication_example_one,
             title = "Five Post",
+            subtitle = "Five Post Subtitle",
             date = Date(),
             likesCount = 8,
             commentsCount = 5,
@@ -92,6 +97,7 @@ class UserPostBoardViewModel @Inject constructor(): SupportLCEViewModel<Post, Vo
         Post(
             image = R.drawable.publication_example_two,
             title = "Six Post",
+            subtitle = "Six Post Subtitle",
             date = Date(),
             likesCount = 8,
             commentsCount = 5,
@@ -108,6 +114,7 @@ class UserPostBoardViewModel @Inject constructor(): SupportLCEViewModel<Post, Vo
         Post(
             image = R.drawable.publication_example_tree,
             title = "Seven Post",
+            subtitle = "Seven Post Subtitle",
             date = Date(),
             likesCount = 8,
             commentsCount = 5,
@@ -124,6 +131,7 @@ class UserPostBoardViewModel @Inject constructor(): SupportLCEViewModel<Post, Vo
         Post(
             image = R.drawable.publication_example_one,
             title = "Eight Post",
+            subtitle = "Eight Post Subtitle",
             date = Date(),
             likesCount = 8,
             commentsCount = 5,

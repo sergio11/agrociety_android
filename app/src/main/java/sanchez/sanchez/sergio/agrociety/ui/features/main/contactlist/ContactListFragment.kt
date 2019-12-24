@@ -45,9 +45,7 @@ class ContactListFragment: SupportGroupedLCEFragment<Void, User, Void, ContactLi
     }
 
     override fun onItemClick(item: Section<User>) {
-        navigate(ContactListFragmentDirections
-            .actionContactListFragmentToUserDetailFragment(item.element()))
-
+        navigate(ContactListFragmentDirections.actionGlobalUserDetailFragment(item.element()))
     }
 
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int, position: Int) {}

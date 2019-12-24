@@ -3,7 +3,9 @@ package sanchez.sanchez.sergio.agrociety.ui.features.main.postdetail
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AlphaAnimation
+import androidx.lifecycle.Observer
 import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import eightbitlab.com.blurview.RenderScriptBlur
 import kotlinx.android.synthetic.main.fragment_post_detail.*
@@ -11,8 +13,7 @@ import sanchez.sanchez.sergio.agrociety.R
 import sanchez.sanchez.sergio.agrociety.di.components.fragment.DetailComponent
 import sanchez.sanchez.sergio.agrociety.di.factory.DaggerComponentFactory
 import sanchez.sanchez.sergio.agrociety.domain.model.Post
-import sanchez.sanchez.sergio.brownie.extension.popBackStack
-import sanchez.sanchez.sergio.brownie.extension.toStringFormat
+import sanchez.sanchez.sergio.brownie.extension.*
 import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
 import sanchez.sanchez.sergio.brownie.ui.core.fragment.SupportFragment
 import javax.inject.Inject
@@ -35,6 +36,26 @@ class PostDetailFragment: SupportFragment<PostDetailViewModel, Void>(PostDetailV
 
     override fun onInject() { component.inject(this) }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        viewModel.like.observe(this, Observer { hasLike ->
+            likeButton.apply {
+                isEnabled = true
+                changeImageViewTintWithColorRes(if(hasLike)
+                    R.color.redDanger
+                else
+                    R.color.textColorSecondary)
+            }
+
+            showSnackbar(if(hasLike)
+                getString(R.string.post_detail_like_this_post)
+            else
+                getString(R.string.post_detail_no_like_this_post), Snackbar.LENGTH_LONG)
+
+        })
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -56,9 +77,9 @@ class PostDetailFragment: SupportFragment<PostDetailViewModel, Void>(PostDetailV
         startAlphaAnimation(titleTextView, 0, View.INVISIBLE)
 
         likeButton.setOnClickListener {
-
+            likeButton.isEnabled = false
+            viewModel.toggleLike()
         }
-
 
     }
 
@@ -77,6 +98,7 @@ class PostDetailFragment: SupportFragment<PostDetailViewModel, Void>(PostDetailV
     private fun onPostLoaded(post: Post) {
         parallaxImage.setImageResource(post.image)
         postTitle.text = post.title
+        postSubtitle.text = post.subtitle
         postDate.text = post.date.toStringFormat(getString(R.string.date_format))
 
         post.author.photoUrl?.let { photo ->

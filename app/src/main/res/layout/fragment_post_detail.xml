@@ -178,78 +178,121 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/BrownieTheme.DefaultCardView.Space"
         app:behavior_overlapTop="60dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <androidx.core.widget.NestedScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                style="@style/BrownieTheme.DefaultCardView.Space">
 
-                <TextView
-                    android:id="@+id/commentsCount"
-                    style="@style/BrownieCommonStrongText.Small"
-                    android:textColor="@color/textColorSecondary"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:gravity="center"
-                    android:layout_marginBottom="@dimen/common_margin"
-                    android:layout_marginStart="@dimen/common_margin"
-                    android:drawableStart="@drawable/ic_comments_stroke_secondary"
-                    android:background="@drawable/oval_stroke_secondary_background"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/likeCount"
-                    app:layout_constraintBottom_toTopOf="@id/postContent"
-                    tools:text="8"/>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/likeCount"
-                    style="@style/BrownieCommonStrongText.Small"
-                    android:textColor="@color/textColorSecondary"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:gravity="center"
-                    android:layout_marginStart="@dimen/common_margin"
-                    android:drawableStart="@drawable/ic_like_stroke_secondary"
-                    android:background="@drawable/oval_stroke_secondary_background"
-                    app:layout_constraintStart_toEndOf="@id/commentsCount"
-                    app:layout_constraintEnd_toEndOf="@id/commentsCount"
-                    app:layout_constraintTop_toTopOf="@id/commentsCount"
-                    app:layout_constraintBottom_toBottomOf="@id/commentsCount"
-                    tools:text="8"/>
+                    <TextView
+                        android:id="@+id/postSubtitle"
+                        style="@style/BrownieCommonStrongText.Medium"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:padding="@dimen/common_padding"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/textColorSecondary"
+                        tools:text="Esto es el subtítulo de un post de ejemplo"
+                        app:layout_constraintEnd_toStartOf="@id/commentsCount"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/postContentDivider"/>
+
+                    <TextView
+                        android:id="@+id/commentsCount"
+                        style="@style/BrownieCommonStrongText.Small"
+                        android:textColor="@color/textColorSecondary"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:layout_marginEnd="@dimen/common_margin"
+                        android:drawableStart="@drawable/ic_comments_stroke_secondary"
+                        android:background="@drawable/oval_stroke_secondary_background"
+                        app:layout_constraintTop_toTopOf="@id/likeCount"
+                        app:layout_constraintEnd_toStartOf="@id/likeCount"
+                        app:layout_constraintBottom_toBottomOf="@id/likeCount"
+                        tools:text="8"/>
+
+                    <TextView
+                        android:id="@+id/likeCount"
+                        style="@style/BrownieCommonStrongText.Small"
+                        android:textColor="@color/textColorSecondary"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/common_margin"
+                        android:layout_marginEnd="@dimen/common_margin"
+                        android:drawableStart="@drawable/ic_like_stroke_secondary"
+                        android:background="@drawable/oval_stroke_secondary_background"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/postContentDivider"
+                        tools:text="8"/>
+
+                    <View
+                        android:id="@+id/postContentDivider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/common_margin"
+                        android:layout_marginStart="@dimen/common_margin"
+                        android:layout_marginEnd="@dimen/common_margin"
+                        android:background="@color/textColorSecondary"
+                        app:layout_constraintTop_toBottomOf="@id/commentsCount"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/postContent"/>
+
+                    <TextView
+                        android:id="@+id/postContent"
+                        style="@style/BrownieCommonText.Medium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:padding="@dimen/common_padding"
+                        android:textColor="@color/textColorSecondary"
+                        android:layout_marginTop="@dimen/common_margin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/commentsCount"
+                        android:text="@string/lorem"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+                style="@style/BrownieTheme.DefaultCardView.Space">
+
+                <fragment
+                    android:id="@+id/commentsWallFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    class="sanchez.sanchez.sergio.agrociety.ui.features.main.postdetail.comments.CommentsWallFragment" />
+
+            </com.google.android.material.card.MaterialCardView>
 
 
-                <TextView
-                    android:id="@+id/postContent"
-                    style="@style/BrownieCommonText"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|end"
-                    android:padding="0dp"
-                    android:textColor="@color/textColorSecondary"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/commentsCount"
-                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis eget urna vitae suscipit. Duis velit lorem, scelerisque vel rhoncus eget, rutrum ac erat. Integer a tellus non mi posuere euismod. Ut mollis, orci at pulvinar euismod, sem lectus vehicula arcu, in vestibulum sem nibh et magna. Ut leo ex, porta ut erat id, pretium efficitur orci. Praesent sed elit odio. Aenean sodales tempus odio.
-Curabitur vel lectus mi. Nulla urna lectus, dignissim eu dictum eget, gravida vel nunc. Sed dignissim eros vitae odio fringilla ornare. Praesent consectetur massa et tincidunt mattis. Pellentesque in pellentesque neque. Sed maximus augue sem, eget rutrum ligula ullamcorper ultricies. Integer malesuada non est non semper. In semper luctus ex, in dignissim dui tincidunt at. Morbi quis diam orci. Fusce semper tristique magna ultrices consequat. Quisque sed sapien ac arcu tincidunt ultrices. Aenean eleifend placerat accumsan. Vivamus a dolor metus.
-Curabitur ipsum metus, tempus eget ipsum ac, dictum eleifend dui. Cras aliquet gravida luctus. Nulla et arcu sed arcu finibus volutpat. Etiam consequat, sem at mollis molestie, urna enim lacinia nibh, eu pretium neque lectus at urna. Phasellus ex diam, condimentum eget scelerisque vitae, viverra interdum tortor. Vivamus tempor ornare tempor. Morbi eros mauris, tincidunt vitae tristique ac, pulvinar in justo. Curabitur at tellus in tellus vestibulum ultrices et eu mauris. Aenean nulla risus, tincidunt nec sem at, euismod auctor purus. Duis finibus aliquet magna, ac gravida magna semper ac. Donec dapibus, ante ut pellentesque sodales, tortor odio sollicitudin orci, id vestibulum nulla magna in dui. Phasellus pharetra fermentum purus a posuere. Morbi justo eros, imperdiet non porta fermentum, posuere ut purus. Aenean mauris justo, placerat nec sodales at, maximus et dolor. Nam at ornare ante. Donec vel scelerisque lorem."/>
+        </LinearLayout>
 
+    </androidx.core.widget.NestedScrollView>
 
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.core.widget.NestedScrollView>
-
-
-    </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/likeButton"
@@ -260,6 +303,7 @@ Curabitur ipsum metus, tempus eget ipsum ac, dictum eleifend dui. Cras aliquet g
         android:src="@drawable/ic_like_fill"
         app:rippleColor="@color/white"
         app:elevation="20dp"
+        app:borderWidth="0dp"
         app:tint="@color/redDanger"
         android:contentDescription="Like Content"
         android:layout_margin="16dp" />

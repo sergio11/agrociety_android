@@ -9,6 +9,7 @@ import java.util.*
 data class Post(
     @DrawableRes val image: Int,
     val title: String,
+    val subtitle: String,
     val date: Date,
     val likesCount: Int,
     val commentsCount: Int,

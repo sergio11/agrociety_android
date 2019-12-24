@@ -26,4 +26,5 @@ interface MainActivityComponent: ActivityComponent {
     fun contactListComponent(): ContactListComponent
     fun userSettingsComponent(): UserSettingsComponent
     fun userDetailComponent(): UserDetailComponent
+    fun commentsWallComponent(): CommentsWallComponent
 }
