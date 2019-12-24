@@ -4,18 +4,18 @@ import androidx.lifecycle.ViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
-import sanchez.sanchez.sergio.agrociety.ui.features.main.postdetail.PostDetailViewModel
+import sanchez.sanchez.sergio.agrociety.ui.features.main.postdetail.comments.CommentsWallViewModel
 import sanchez.sanchez.sergio.brownie.di.modules.ViewModelModule
 import sanchez.sanchez.sergio.brownie.di.scopes.PerFragment
 import sanchez.sanchez.sergio.brownie.di.viewmodel.ViewModelKey
 
 @Module(includes = [ ViewModelModule::class ])
-abstract class DetailModule {
+abstract class CommentsWallModule {
 
     @PerFragment
     @Binds
     @IntoMap
-    @ViewModelKey(PostDetailViewModel::class)
-    abstract fun bindsDetailViewModel(postDetailViewModel: PostDetailViewModel): ViewModel
+    @ViewModelKey(CommentsWallViewModel::class)
+    abstract fun bindsCommentsWallViewModel(commentsWallViewModel: CommentsWallViewModel): ViewModel
 
 }

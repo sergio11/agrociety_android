@@ -6,26 +6,11 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.home.HomeFragment"
-        android:label="HomeFragment" >
-        <action
-            android:id="@+id/action_homeFragment_to_detailFragment"
-            app:destination="@id/detailFragment"
-            app:enterAnim="@anim/fadein"
-            app:exitAnim="@anim/fadeout"
-            app:popEnterAnim="@anim/fadein"
-            app:popExitAnim="@anim/fadeout" />
-    </fragment>
+        android:label="HomeFragment"/>
     <fragment
         android:id="@+id/userProfileFragment"
         android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.profile.UserProfileFragment"
-        android:label="UserProfileFragment" >
-        <action
-            android:id="@+id/action_userProfileFragment_to_detailFragment"
-            app:destination="@id/detailFragment"
-            app:enterAnim="@anim/fadein"
-            app:exitAnim="@anim/fadeout"
-            app:popEnterAnim="@anim/fadein"
-            app:popExitAnim="@anim/fadeout" />
+        android:label="UserProfileFragment">
         <action
             android:id="@+id/action_userProfileFragment_to_contactListFragment"
             app:destination="@id/contactListFragment" />
@@ -35,9 +20,13 @@
     </fragment>
 
     <fragment
-        android:id="@+id/detailFragment"
-        android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.detail.DetailFragment"
-        android:label="DetailFragment" />
+        android:id="@+id/postDetailFragment"
+        android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.postdetail.PostDetailFragment"
+        android:label="DetailFragment">
+        <argument
+            android:name="post"
+            app:argType="sanchez.sanchez.sergio.agrociety.domain.model.Post" />
+    </fragment>
 
     <fragment
         android:id="@+id/eventsFragment"
@@ -47,11 +36,7 @@
     <fragment
         android:id="@+id/contactListFragment"
         android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.contactlist.ContactListFragment"
-        android:label="ContactListFragment" >
-        <action
-            android:id="@+id/action_contactListFragment_to_userDetailFragment"
-            app:destination="@id/userDetailFragment" />
-    </fragment>
+        android:label="ContactListFragment"/>
     <fragment
         android:id="@+id/userSettingsFragment"
         android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.settings.UserSettingsFragment"
@@ -64,4 +49,13 @@
             android:name="user"
             app:argType="sanchez.sanchez.sergio.agrociety.domain.model.User" />
     </fragment>
+
+
+    <action
+        android:id="@+id/action_global_userDetailFragment"
+        app:destination="@id/userDetailFragment" />
+
+    <action
+        android:id="@+id/action_global_postDetailFragment"
+        app:destination="@id/postDetailFragment" />
 </navigation>
