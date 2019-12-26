@@ -9,37 +9,37 @@ import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import sanchez.sanchez.sergio.agrociety.R
-import sanchez.sanchez.sergio.agrociety.domain.model.Publication
+import sanchez.sanchez.sergio.agrociety.domain.model.Post
 import sanchez.sanchez.sergio.brownie.extension.toStringFormat
 import sanchez.sanchez.sergio.brownie.ui.core.adapter.SupportRecyclerViewAdapter
 import timber.log.Timber
 
 /**
- * Common Publication Adapter
+ * Common Post Adapter
  * @param context
  * @param data
  */
-class CommonPublicationAdapter(context: Context, data: MutableList<Publication>):
-    SupportRecyclerViewAdapter<Publication>(context, data) {
+class CommonPublicationAdapter(context: Context, data: MutableList<Post>):
+    SupportRecyclerViewAdapter<Post>(context, data) {
 
     /**
      * On Create Item View Holder
      * @param viewGroup
      */
-    override fun onCreateItemViewHolder(viewGroup: ViewGroup): SupportItemViewHolder<Publication> =
+    override fun onCreateItemViewHolder(viewGroup: ViewGroup): SupportItemViewHolder<Post> =
         PublicationViewHolder(inflater.inflate(
             R.layout.publication_item_layout, viewGroup, false))
 
 
     /**
-     * Publication View Holder
+     * Post View Holder
      * @param itemView
      */
-    inner class PublicationViewHolder(itemView: View) : SupportRecyclerViewAdapter<Publication>
-    .SupportItemViewHolder<Publication>(itemView) {
+    inner class PublicationViewHolder(itemView: View) : SupportRecyclerViewAdapter<Post>
+    .SupportItemViewHolder<Post>(itemView) {
 
         @SuppressLint("SetTextI18n")
-        override fun bind(element: Publication) {
+        override fun bind(element: Post) {
             super.bind(element)
 
             itemView.apply {
@@ -54,15 +54,15 @@ class CommonPublicationAdapter(context: Context, data: MutableList<Publication>)
                     }
                 }
 
-                // Publication Image
+                // Post Image
                 findViewById<ImageView>(R.id.publicationImage)?.setImageResource(element.image)
-                // Publication Title
+                // Post Title
                 findViewById<TextView>(R.id.publicationTitle)?.text = element.title
-                // Publication Date
+                // Post Date
                 findViewById<TextView>(R.id.publicationDate)?.text = element.date.toStringFormat(
                     context.getString(R.string.datetime_format)
                 )
-                // Likes Publication
+                // Likes Post
                 findViewById<TextView>(R.id.likeCount)?.apply {
                     text = element.likesCount.toString()
                     setCompoundDrawablesRelativeWithIntrinsicBounds(

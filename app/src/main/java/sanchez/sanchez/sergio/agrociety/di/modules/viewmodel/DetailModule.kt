@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
-import sanchez.sanchez.sergio.agrociety.ui.features.main.detail.DetailViewModel
+import sanchez.sanchez.sergio.agrociety.ui.features.main.postdetail.PostDetailViewModel
 import sanchez.sanchez.sergio.brownie.di.modules.ViewModelModule
 import sanchez.sanchez.sergio.brownie.di.scopes.PerFragment
 import sanchez.sanchez.sergio.brownie.di.viewmodel.ViewModelKey
@@ -15,7 +15,7 @@ abstract class DetailModule {
     @PerFragment
     @Binds
     @IntoMap
-    @ViewModelKey(DetailViewModel::class)
-    abstract fun bindsDetailViewModel(detailViewModel: DetailViewModel): ViewModel
+    @ViewModelKey(PostDetailViewModel::class)
+    abstract fun bindsDetailViewModel(postDetailViewModel: PostDetailViewModel): ViewModel
 
 }

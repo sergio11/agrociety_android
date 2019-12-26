@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        app:title="@string/app_name"
+        app:subtitle="@string/app_name"
+        app:titleTextColor="@color/colorAccent"
+        app:subtitleTextColor="@color/textColorSecondary" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/BrownieTheme.TextInputLayout.OutlinedBox"
+        android:id="@+id/commentTextInputLayout"
+        app:errorEnabled="true"
+        android:layout_marginTop="@dimen/common_margin"
+        android:layout_marginStart="@dimen/common_margin"
+        android:layout_marginEnd="@dimen/common_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/commentEditText"
+            android:singleLine="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/post_detail_comment_hint"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/sendCommentBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/post_detail_comment_button_text"
+        android:layout_marginBottom="@dimen/common_margin"
+        android:layout_marginTop="@dimen/common_margin"
+        style="@style/BrownieTheme.OutlinedButton"
+        android:layout_gravity="end"/>
+
+    <include layout="@layout/comments_wall_list_layout" />
+
+
+</LinearLayout>

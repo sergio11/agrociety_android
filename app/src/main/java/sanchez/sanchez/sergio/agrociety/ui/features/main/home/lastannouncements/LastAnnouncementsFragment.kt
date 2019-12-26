@@ -7,6 +7,7 @@ import sanchez.sanchez.sergio.agrociety.R
 import sanchez.sanchez.sergio.agrociety.di.components.fragment.LastAnnouncementsComponent
 import sanchez.sanchez.sergio.agrociety.di.factory.DaggerComponentFactory
 import sanchez.sanchez.sergio.agrociety.domain.model.Announcement
+import sanchez.sanchez.sergio.agrociety.ui.features.main.home.HomeFragmentDirections
 import sanchez.sanchez.sergio.brownie.extension.navigate
 import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
 import sanchez.sanchez.sergio.brownie.ui.core.adapter.SupportRecyclerViewAdapter
@@ -31,11 +32,7 @@ class LastAnnouncementsFragment: SupportLCEFragment<Void, Announcement, Void, La
         component.inject(this)
     }
 
-    override fun onItemClick(item: Announcement) {
-        navigate(
-            R.id.action_homeFragment_to_detailFragment
-        )
-    }
+    override fun onItemClick(item: Announcement) {}
 
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int, position: Int) {
     }

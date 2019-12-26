@@ -266,7 +266,7 @@
             android:id="@+id/userPostBoard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            class="sanchez.sanchez.sergio.agrociety.ui.features.main.profile.userpost.UserPostBoardFragment" />
+            class="sanchez.sanchez.sergio.agrociety.ui.features.main.common.userpost.UserPostBoardFragment" />
 
     </com.google.android.material.card.MaterialCardView>
 

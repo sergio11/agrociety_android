@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.SearchView
 import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.lifecycle.Observer
+import com.ToxicBakery.viewpager.transforms.ZoomInTransformer
 import kotlinx.android.synthetic.main.fragment_search_layout.*
 import sanchez.sanchez.sergio.agrociety.R
 import sanchez.sanchez.sergio.agrociety.di.components.fragment.SearchComponent
@@ -59,8 +60,11 @@ class SearchFragment: SupportFragment<SearchViewModel, Void>(SearchViewModel::cl
      */
 
     private fun onCategoriesLoaded(categories: MutableList<SearchCategory>) {
-        viewPager.adapter = SearchPagerAdapter(categories, childFragmentManager,
-            FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT)
+        viewPager.apply {
+            adapter = SearchPagerAdapter(categories, childFragmentManager,
+                FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT)
+            setPageTransformer(true, ZoomInTransformer())
+        }
         tabs.setupWithViewPager(viewPager)
     }
 

@@ -2,67 +2,105 @@ package sanchez.sanchez.sergio.agrociety.ui.features.main.home.newsboard
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
+import com.squareup.picasso.Picasso
+import com.squareup.picasso.Target
 import sanchez.sanchez.sergio.agrociety.R
-import sanchez.sanchez.sergio.agrociety.domain.model.Publication
+import sanchez.sanchez.sergio.agrociety.domain.model.Post
 import sanchez.sanchez.sergio.brownie.extension.toStringFormat
 import sanchez.sanchez.sergio.brownie.ui.core.adapter.SupportRecyclerViewAdapter
 import timber.log.Timber
+import java.lang.Exception
+import android.graphics.drawable.BitmapDrawable
+import androidx.core.graphics.scale
+import sanchez.sanchez.sergio.agrociety.domain.model.User
+import sanchez.sanchez.sergio.brownie.extension.getCircularBitmap
+
 
 /**
  * News Board Adapter
  * @param context
  * @param data
  */
-class NewsBoardAdapter(context: Context, data: MutableList<Publication>):
-    SupportRecyclerViewAdapter<Publication>(context, data) {
+class NewsBoardAdapter(private val picasso: Picasso, context: Context, data: MutableList<Post>):
+    SupportRecyclerViewAdapter<Post>(context, data) {
+
+
+    var listener: OnNewsBoardListener? = null
+
 
     /**
      * On Create Item View Holder
      * @param viewGroup
      */
-    override fun onCreateItemViewHolder(viewGroup: ViewGroup): SupportItemViewHolder<Publication> =
+    override fun onCreateItemViewHolder(viewGroup: ViewGroup): SupportItemViewHolder<Post> =
         PublicationViewHolder(inflater.inflate(
             R.layout.news_board_publication_item_layout, viewGroup, false))
 
 
     /**
-     * Publication View Holder
+     * Post View Holder
      * @param itemView
      */
-    inner class PublicationViewHolder(itemView: View) : SupportRecyclerViewAdapter<Publication>
-    .SupportItemViewHolder<Publication>(itemView) {
+    inner class PublicationViewHolder(itemView: View) : SupportRecyclerViewAdapter<Post>
+    .SupportItemViewHolder<Post>(itemView) {
 
         @SuppressLint("SetTextI18n")
-        override fun bind(element: Publication) {
+        override fun bind(element: Post) {
             super.bind(element)
 
             itemView.apply {
                 // Configure Card Toolbar
                 findViewById<Toolbar>(R.id.cardToolbar)?.apply {
-                    title = context.getString(R.string.app_name)
+                    title = element.author.displayName
                     subtitle = context.getString(R.string.app_name)
                     navigationIcon = ContextCompat.getDrawable(context, R.drawable.ic_news)
+                    picasso.load(element.author.photoUrl).into(object : Target {
+                        override fun onPrepareLoad(placeHolderDrawable: Drawable?) { }
+                        override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
+                            navigationIcon = ContextCompat.getDrawable(context, R.drawable.ic_news)
+                        }
+                        override fun onBitmapLoaded(bitmap: Bitmap?, from: Picasso.LoadedFrom?) {
+                            bitmap?.let {
+                                navigationIcon = BitmapDrawable(resources, it.scale(
+                                    width = it.width / 2,
+                                    height = it.height / 2).getCircularBitmap())
+                            } ?: run {
+                                navigationIcon = ContextCompat.getDrawable(context, R.drawable.ic_news)
+                            }
+
+                        }
+                    })
+                    setNavigationOnClickListener {
+                        listener?.onGoToUserDetail(element.author)
+                    }
                     setOnMenuItemClickListener {
+                        when(it.itemId) {
+                            R.id.userDetail -> {
+                                listener?.onGoToUserDetail(element.author)
+                            }
+                        }
                         Timber.d("Toolbar Menu Item Clicked")
                         false
                     }
                 }
 
-                // Publication Image
+                // Post Image
                 findViewById<ImageView>(R.id.publicationImage)?.setImageResource(element.image)
-                // Publication Title
+                // Post Title
                 findViewById<TextView>(R.id.publicationTitle)?.text = element.title
-                // Publication Date
+                // Post Date
                 findViewById<TextView>(R.id.publicationDate)?.text = element.date.toStringFormat(
                     context.getString(R.string.datetime_format)
                 )
-                // Likes Publication
+                // Likes Post
                 findViewById<TextView>(R.id.likeCount)?.apply {
                     text = element.likesCount.toString()
                     setCompoundDrawablesRelativeWithIntrinsicBounds(
@@ -76,5 +114,17 @@ class NewsBoardAdapter(context: Context, data: MutableList<Publication>):
             }
 
         }
+    }
+
+
+    /**
+     * On Support Recycler View Listener
+     */
+    interface OnNewsBoardListener {
+
+        /**
+         *
+         */
+        fun onGoToUserDetail(user: User)
     }
 }
