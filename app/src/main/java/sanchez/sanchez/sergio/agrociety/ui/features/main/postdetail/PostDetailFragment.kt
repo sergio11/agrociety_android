@@ -59,13 +59,30 @@ class PostDetailFragment: SupportFragment<PostDetailViewModel, Void>(PostDetailV
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val args = PostDetailFragmentArgs.fromBundle(requireArguments())
+        val post = PostDetailFragmentArgs
+            .fromBundle(requireArguments())
+            .post
 
-        onPostLoaded(args.post)
+        onPostLoaded(post)
 
-        toolbar.setNavigationOnClickListener {
-            popBackStack()
+        toolbar.apply {
+            setNavigationOnClickListener {
+                popBackStack()
+            }
+            setOnMenuItemClickListener {
+                when(it.itemId) {
+                    R.id.sharePublication -> {
+                       requireActivity().shareSimpleContent(
+                           textTitle = "${post.title} - ${post.subtitle}",
+                           textContent = "Contenido de la aplicación, ver más en Agrociety"
+                       )
+                    }
+                    else -> {}
+                }
+                true
+            }
         }
+
 
         containerBlurView.setupWith(diagonalLayout)
             .setFrameClearDrawable(diagonalLayout.background)

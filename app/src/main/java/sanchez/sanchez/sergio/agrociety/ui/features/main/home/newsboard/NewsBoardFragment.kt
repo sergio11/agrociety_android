@@ -9,6 +9,7 @@ import sanchez.sanchez.sergio.agrociety.domain.model.Post
 import sanchez.sanchez.sergio.agrociety.domain.model.User
 import sanchez.sanchez.sergio.agrociety.ui.features.main.home.HomeFragmentDirections
 import sanchez.sanchez.sergio.brownie.extension.navigate
+import sanchez.sanchez.sergio.brownie.extension.shareSimpleContent
 import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
 import sanchez.sanchez.sergio.brownie.ui.core.adapter.SupportRecyclerViewAdapter
 import sanchez.sanchez.sergio.brownie.ui.core.fragment.SupportLCEFragment
@@ -20,6 +21,7 @@ import javax.inject.Inject
  */
 class NewsBoardFragment: SupportLCEFragment<Void, Post, Void, NewsBoardViewModel>(
     NewsBoardViewModel::class.java), NewsBoardAdapter.OnNewsBoardListener {
+
 
     private val component: NewsBoardComponent by lazy(mode = LazyThreadSafetyMode.NONE) {
         DaggerComponentFactory.getNewsBoardComponent(activity as SupportActivity)
@@ -47,4 +49,10 @@ class NewsBoardFragment: SupportLCEFragment<Void, Post, Void, NewsBoardViewModel
         navigate(HomeFragmentDirections.actionGlobalUserDetailFragment(user))
     }
 
+    override fun onSharePublication(post: Post) {
+        requireActivity().shareSimpleContent(
+            textTitle = "${post.title} - ${post.subtitle}",
+            textContent = "Contenido de la aplicación, ver más en Agrociety"
+        )
+    }
 }
