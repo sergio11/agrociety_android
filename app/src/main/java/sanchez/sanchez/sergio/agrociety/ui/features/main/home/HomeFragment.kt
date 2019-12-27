@@ -2,20 +2,14 @@ package sanchez.sanchez.sergio.agrociety.ui.features.main.home
 
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.DialogFragment
-import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.toolbar_home_layout.*
 import sanchez.sanchez.sergio.agrociety.R
 import sanchez.sanchez.sergio.agrociety.di.components.fragment.HomeComponent
 import sanchez.sanchez.sergio.agrociety.di.factory.DaggerComponentFactory
 import sanchez.sanchez.sergio.agrociety.ui.features.conversation.ConversationActivity
-import sanchez.sanchez.sergio.agrociety.ui.features.intro.IntroActivity
 import sanchez.sanchez.sergio.brownie.extension.navigate
-import sanchez.sanchez.sergio.brownie.extension.navigateAndFinish
-import sanchez.sanchez.sergio.brownie.extension.showConfirmationDialog
 import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
 import sanchez.sanchez.sergio.brownie.ui.core.fragment.SupportFragment
-import sanchez.sanchez.sergio.brownie.ui.dialogs.impl.ConfirmationDialogFragment
 
 class HomeFragment: SupportFragment<HomeViewModel, Void>(HomeViewModel::class.java) {
 
@@ -30,6 +24,9 @@ class HomeFragment: SupportFragment<HomeViewModel, Void>(HomeViewModel::class.ja
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        searchImageButton?.setOnClickListener {
+            navigate(R.id.action_homeFragment_to_searchFragment)
+        }
 
         conversationsImageButton?.setOnClickListener {
             navigate(ConversationActivity

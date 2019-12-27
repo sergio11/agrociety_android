@@ -35,11 +35,11 @@ dependencies {
 
     // Images library
     implementation 'com.squareup.picasso:picasso:2.71828'
-
     implementation 'de.hdodenhof:circleimageview:3.0.0'
     implementation 'com.flaviofaria:kenburnsview:1.0.7'
     implementation 'com.eightbitlab:blurview:1.6.2'
     implementation 'com.github.stfalcon:chatkit:0.3.3'
+    implementation 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:2.0.24'
 
 
     // Check for v11.4.2 or higher

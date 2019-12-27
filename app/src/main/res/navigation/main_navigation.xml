@@ -6,7 +6,15 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.home.HomeFragment"
-        android:label="HomeFragment"/>
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/postDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@+id/searchFragment" />
+    </fragment>
+
     <fragment
         android:id="@+id/userProfileFragment"
         android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.profile.UserProfileFragment"
@@ -42,6 +50,11 @@
         android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.settings.UserSettingsFragment"
         android:label="UserSettingsFragment" />
     <fragment
+        android:id="@+id/searchFragment"
+        android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.search.SearchFragment"
+        android:label="SearchFragment" />
+
+    <fragment
         android:id="@+id/userDetailFragment"
         android:name="sanchez.sanchez.sergio.agrociety.ui.features.main.userdetail.UserDetailFragment"
         android:label="UserDetailFragment" >
@@ -58,4 +71,5 @@
     <action
         android:id="@+id/action_global_postDetailFragment"
         app:destination="@id/postDetailFragment" />
+
 </navigation>

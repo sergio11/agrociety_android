@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="350dp"
+    style="@style/BrownieTheme.DefaultCardView">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Guidelines -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineVertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.82" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/cardToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            app:title="@string/app_name"
+            app:subtitle="@string/app_name"
+            app:titleTextColor="@color/colorAccent"
+            app:subtitleTextColor="@color/textColorSecondary"
+            app:menu="@menu/publication_menu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/publicationImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/content_can_not_be_loaded"
+            android:scaleType="centerCrop"
+            android:src="@drawable/intro_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardToolbar" />
+
+        <TextView
+            android:id="@+id/publicationTitle"
+            style="@style/BrownieCommonStrongText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@id/publicationDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guidelineVertical"
+            tools:text="Despacito y con buena letra" />
+
+        <TextView
+            android:id="@+id/publicationDate"
+            style="@style/BrownieCommonStrongText.Medium"
+            android:textColor="@android:color/white"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guidelineVertical"
+            tools:text="06 Nov, 2019"/>
+
+        <TextView
+            android:id="@+id/likeCount"
+            style="@style/BrownieCommonStrongText.Small"
+            android:textColor="@android:color/white"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:drawableStart="@drawable/ic_like_stroke"
+            android:background="@drawable/oval_stroke_white_background"
+            android:layout_marginBottom="@dimen/common_margin"
+            app:layout_constraintStart_toStartOf="@id/commentsCount"
+            app:layout_constraintEnd_toEndOf="@id/commentsCount"
+            app:layout_constraintBottom_toTopOf="@id/commentsCount"
+            tools:text="8"/>
+
+
+        <TextView
+            android:id="@+id/commentsCount"
+            style="@style/BrownieCommonStrongText.Small"
+            android:textColor="@android:color/white"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:drawableStart="@drawable/ic_comments_stroke"
+            android:background="@drawable/oval_stroke_white_background"
+            android:layout_marginBottom="@dimen/common_margin"
+            app:layout_constraintStart_toEndOf="@id/guidelineVertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="8"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

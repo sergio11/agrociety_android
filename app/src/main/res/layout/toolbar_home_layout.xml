@@ -6,7 +6,7 @@
     android:padding="@dimen/common_padding">
 
     <ImageButton
-        android:id="@+id/search"
+        android:id="@+id/searchImageButton"
         android:src="@drawable/ic_search"
         android:background="?attr/actionBarItemBackground"
         android:layout_width="30dp"
