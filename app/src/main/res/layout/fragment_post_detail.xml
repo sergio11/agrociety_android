@@ -148,6 +148,7 @@
                 android:layout_width="match_parent"
                 app:layout_collapseMode="pin"
                 android:layout_height="?attr/actionBarSize"
+                app:menu="@menu/post_detail_menu"
                 app:navigationIcon="?homeAsUpIndicator"
                 >
 
@@ -164,6 +165,7 @@
                         android:gravity="center_vertical"
                         android:textColor="@android:color/white"
                         android:textSize="20sp"
+                        android:singleLine="true"
                         android:text="@string/user_name_default"
                         />
 

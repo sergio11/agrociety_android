@@ -19,6 +19,7 @@ import sanchez.sanchez.sergio.brownie.ui.core.adapter.SupportRecyclerViewAdapter
 import timber.log.Timber
 import java.lang.Exception
 import android.graphics.drawable.BitmapDrawable
+import android.widget.Button
 import androidx.core.graphics.scale
 import sanchez.sanchez.sergio.agrociety.domain.model.User
 import sanchez.sanchez.sergio.brownie.extension.getCircularBitmap
@@ -111,6 +112,9 @@ class NewsBoardAdapter(private val picasso: Picasso, context: Context, data: Mut
                 // Comments Count
                 findViewById<TextView>(R.id.commentsCount)?.text = element.commentsCount.toString()
 
+                findViewById<Button>(R.id.sharePublication)?.setOnClickListener {
+                    listener?.onSharePublication(element)
+                }
             }
 
         }
@@ -123,8 +127,13 @@ class NewsBoardAdapter(private val picasso: Picasso, context: Context, data: Mut
     interface OnNewsBoardListener {
 
         /**
-         *
+         * on Go to user detail
          */
         fun onGoToUserDetail(user: User)
+
+        /**
+         * on share publication
+         */
+        fun onSharePublication(post: Post)
     }
 }
