@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 import sanchez.sanchez.sergio.agrociety.domain.model.SearchCategory
 import sanchez.sanchez.sergio.agrociety.domain.model.SearchCategoryTypeEnum
 import sanchez.sanchez.sergio.agrociety.ui.features.main.search.categories.announcements.SearchAnnouncementsFragment
+import sanchez.sanchez.sergio.agrociety.ui.features.main.search.categories.event.SearchEventFragment
 import sanchez.sanchez.sergio.agrociety.ui.features.main.search.categories.post.SearchPostFragment
 import sanchez.sanchez.sergio.agrociety.ui.features.main.search.categories.user.SearchUserFragment
 
@@ -14,10 +15,14 @@ class SearchPagerAdapter(private val categories: List<SearchCategory>, fm: Fragm
 
     override fun getItem(position: Int): Fragment =
         when(categories[position].type) {
-            SearchCategoryTypeEnum.POSTS -> SearchPostFragment()
-            SearchCategoryTypeEnum.USERS -> SearchUserFragment()
-            SearchCategoryTypeEnum.EVENTS -> SearchPostFragment()
-            SearchCategoryTypeEnum.ANNOUNCEMENTS -> SearchAnnouncementsFragment()
+            SearchCategoryTypeEnum.POSTS ->
+                SearchPostFragment.newInstance(categories[position])
+            SearchCategoryTypeEnum.USERS ->
+                SearchUserFragment.newInstance(categories[position])
+            SearchCategoryTypeEnum.EVENTS ->
+                SearchEventFragment.newInstance(categories[position])
+            SearchCategoryTypeEnum.ANNOUNCEMENTS ->
+                SearchAnnouncementsFragment.newInstance(categories[position])
         }
 
     override fun getPageTitle(position: Int): CharSequence? =

@@ -7,6 +7,7 @@ import sanchez.sanchez.sergio.agrociety.ui.features.main.search.categories.annou
 import sanchez.sanchez.sergio.agrociety.ui.features.main.search.categories.event.SearchEventFragment
 import sanchez.sanchez.sergio.agrociety.ui.features.main.search.categories.post.SearchPostFragment
 import sanchez.sanchez.sergio.agrociety.ui.features.main.search.categories.user.SearchUserFragment
+import sanchez.sanchez.sergio.agrociety.ui.features.main.search.tags.SearchCategoryTagsFragment
 import sanchez.sanchez.sergio.brownie.di.components.FragmentComponent
 import sanchez.sanchez.sergio.brownie.di.scopes.PerFragment
 
@@ -17,7 +18,8 @@ import sanchez.sanchez.sergio.brownie.di.scopes.PerFragment
         SearchPostModule::class,
         SearchUserModule::class,
         SearchEventModule::class,
-        SearchAnnouncementsModule::class
+        SearchAnnouncementsModule::class,
+        SearchCategoryTagsModule::class
     ])
 interface SearchComponent: FragmentComponent {
 
@@ -26,4 +28,5 @@ interface SearchComponent: FragmentComponent {
     fun inject(searchAnnouncementsFragment: SearchAnnouncementsFragment)
     fun inject(searchEventFragment: SearchEventFragment)
     fun inject(searchUserFragment: SearchUserFragment)
+    fun inject(searchCategoryTagsFragment: SearchCategoryTagsFragment)
 }

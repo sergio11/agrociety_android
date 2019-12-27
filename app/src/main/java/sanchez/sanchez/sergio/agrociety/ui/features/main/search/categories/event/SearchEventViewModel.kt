@@ -1,22 +1,36 @@
 package sanchez.sanchez.sergio.agrociety.ui.features.main.search.categories.event
 
 import sanchez.sanchez.sergio.agrociety.domain.model.UpcomingEvent
-import sanchez.sanchez.sergio.brownie.ui.core.viewmodel.SupportGroupedLCEViewModel
+import sanchez.sanchez.sergio.brownie.ui.core.viewmodel.SupportLCEViewModel
+import java.util.*
 import javax.inject.Inject
 
-class SearchEventViewModel @Inject constructor(): SupportGroupedLCEViewModel<UpcomingEvent, Void>() {
-    override fun onCompareElements(elementOne: UpcomingEvent, elementTwo: UpcomingEvent): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+class SearchEventViewModel @Inject constructor(): SupportLCEViewModel<UpcomingEvent, Void>() {
 
-    override fun onCheckIfNextElementIsInSameGroup(
-        previousElement: UpcomingEvent,
-        nextElement: UpcomingEvent
-    ): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    private val eventsList = mutableListOf(
+        UpcomingEvent(
+            title = "Event 1",
+            date = Date()
+        ),
+        UpcomingEvent(
+            title = "Event 2",
+            date = Date()
+        ),
+        UpcomingEvent(
+            title = "Event 3",
+            date = Date()
+        ),
+        UpcomingEvent(
+            title = "Event 4",
+            date = Date()
+        )
+    )
 
-    override fun onCreateDataSet(params: Void?): List<UpcomingEvent> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+
+    override suspend fun onLoadData(): List<UpcomingEvent> =
+        eventsList
+
+    override suspend fun onLoadData(params: Void): List<UpcomingEvent> =
+        eventsList
+
 }

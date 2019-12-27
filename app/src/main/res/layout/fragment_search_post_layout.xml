@@ -5,6 +5,12 @@
     android:orientation="vertical"
     android:background="@color/screenBackground">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/categoryTagsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="@dimen/common_margin"/>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

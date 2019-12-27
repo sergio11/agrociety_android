@@ -1,14 +1,17 @@
 package sanchez.sanchez.sergio.agrociety.ui.features.main.search.categories.post
 
+import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.squareup.picasso.Picasso
 import sanchez.sanchez.sergio.agrociety.R
 import sanchez.sanchez.sergio.agrociety.di.components.fragment.SearchComponent
 import sanchez.sanchez.sergio.agrociety.di.factory.DaggerComponentFactory
 import sanchez.sanchez.sergio.agrociety.domain.model.Post
+import sanchez.sanchez.sergio.agrociety.domain.model.SearchCategory
 import sanchez.sanchez.sergio.agrociety.domain.model.User
 import sanchez.sanchez.sergio.agrociety.ui.features.main.search.SearchFragmentDirections
+import sanchez.sanchez.sergio.agrociety.ui.features.main.search.tags.SearchCategoryTagsFragment
 import sanchez.sanchez.sergio.brownie.extension.navigate
 import sanchez.sanchez.sergio.brownie.models.Section
 import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
@@ -31,6 +34,18 @@ class SearchPostFragment: SupportGroupedLCEFragment<Void, Post, Void, SearchPost
             it.listener = this
         }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val searchCategory = requireArguments().getParcelable<SearchCategory>(CATEGORY_ARG)
+            ?: throw IllegalArgumentException("Search Category is required")
+
+        childFragmentManager.beginTransaction()
+            .add(R.id.categoryTagsContainer, SearchCategoryTagsFragment.newInstance(searchCategory.id))
+            .commit()
+
+    }
+
     override fun layoutId(): Int = R.layout.fragment_search_post_layout
 
     override fun onInject() {
@@ -49,6 +64,15 @@ class SearchPostFragment: SupportGroupedLCEFragment<Void, Post, Void, SearchPost
 
 
     companion object {
-        const val GRID_LAYOUT_SPAN_COUNT = 2
+
+        const val CATEGORY_ARG = "CATEGORY"
+
+        @JvmStatic
+        fun newInstance(category: SearchCategory) = SearchPostFragment().apply {
+            arguments = Bundle().apply {
+                putParcelable(CATEGORY_ARG, category)
+            }
+        }
     }
+
 }
