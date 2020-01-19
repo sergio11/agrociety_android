@@ -44,7 +44,7 @@
     <string name="set_location_turn_on_gps_button">Turn On GPS</string>
     <string name="set_location_reason_text">We need access to your GPS location for find out the best services suggestion near you</string>
 
-    <string name="custom_bottom_navigation_behaviour">sanchez.sanchez.sergio.agrociety.ui.features.main.components.bottomnav.behaviour.CustomNavigationViewBehavior</string>
+    <string name="custom_bottom_navigation_behaviour">sanchez.sanchez.sergio.brownie.ui.components.bottomnav.behaviour.CustomNavigationViewBehavior</string>
 
     <!-- User Profile -->
     <string name="user_name_default">Sergio Sánchez Sánchez</string>

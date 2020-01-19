@@ -13,7 +13,7 @@
         app:defaultNavHost="true"
         app:navGraph="@navigation/main_navigation" />
 
-    <sanchez.sanchez.sergio.agrociety.ui.features.main.components.bottomnav.CustomBottomNavigationView
+    <sanchez.sanchez.sergio.brownie.ui.components.bottomnav.CustomBottomNavigationView
         android:id="@+id/navigationBottomBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -11,10 +11,10 @@ import sanchez.sanchez.sergio.agrociety.R
 import sanchez.sanchez.sergio.agrociety.di.components.activity.MainActivityComponent
 import sanchez.sanchez.sergio.agrociety.di.factory.DaggerComponentFactory
 import sanchez.sanchez.sergio.agrociety.ui.features.intro.IntroActivity
-import sanchez.sanchez.sergio.agrociety.ui.features.main.components.bottomnav.listener.ISpaceOnClickListener
-import sanchez.sanchez.sergio.agrociety.ui.features.main.components.bottomnav.listener.ISpaceOnLongClickListener
-import sanchez.sanchez.sergio.agrociety.ui.features.main.components.bottomnav.model.NavItem
 import sanchez.sanchez.sergio.brownie.extension.*
+import sanchez.sanchez.sergio.brownie.ui.components.bottomnav.listener.ISpaceOnClickListener
+import sanchez.sanchez.sergio.brownie.ui.components.bottomnav.listener.ISpaceOnLongClickListener
+import sanchez.sanchez.sergio.brownie.ui.components.bottomnav.model.NavItem
 import sanchez.sanchez.sergio.brownie.ui.core.activity.SupportActivity
 import sanchez.sanchez.sergio.brownie.ui.dialogs.impl.ConfirmationDialogFragment
 import timber.log.Timber

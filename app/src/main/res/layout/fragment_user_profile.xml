@@ -211,7 +211,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/user_profile_my_groups"
                     android:layout_marginBottom="@dimen/common_margin"
-                    style="@style/BrownieTheme.OutlinedButton"/>
+                    style="@style/BrownieTheme.OutlinedButton.Accent"/>
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="@dimen/image_width"
