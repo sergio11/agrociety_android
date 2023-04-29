@@ -1,11 +1,11 @@
 # Agrociety - Prototype of agricultural application to connect the rural world in the demand for services
 
-## Concepto 
+## Main goals
 
-* Dar mejor acceso a los servicios.
-* Agilizar la gestión de proveedores y consumidores.
-* Optimizar los recursos disponibles.
-* Mejorar la productividad.
+* Give better access to services.
+* Streamline the management of suppliers and consumers.
+* Optimize available resources.
+* Improve productivity.
 
 ## Algunas imágenes
 
