@@ -26,11 +26,11 @@ class UserDetailViewModel @Inject constructor(): SupportViewModel() {
     fun load(userId: String) = viewModelScope.launch {
         userDetail.postValue(User(
             id = "dsadsadsadsadas",
-            displayName = "David Martín Fidalgo",
-            email = "davidmartin@gmail.com",
+            displayName = "User 1",
+            email = "user1@gmail.com",
             follow = 23,
             followers = 13,
-            photoUrl = "https://media.licdn.com/dms/image/C5603AQFHfMzxZg-B1Q/profile-displayphoto-shrink_200_200/0?e=1579737600&v=beta&t=s1HgcSfcUNKYizZwFyrCyp30YzJuFsErYrOd_uY9XXM",
+            photoUrl = "",
             background = R.drawable.publication_example_one
         ))
     }
