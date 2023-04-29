@@ -14,9 +14,9 @@ class CommentsWallViewModel @Inject constructor(): SupportLCEViewModel<Comment, 
             text = "Esto es un comentario de prueba",
             author = User(
                 id = "dasdsadsa432423bfdgfdg",
-                displayName = "Jorge Martínez Marí",
-                email = "jorgemartinezmari@gmail.com",
-                photoUrl = "https://media.licdn.com/dms/image/C4D03AQHwTcBjN6oGuQ/profile-displayphoto-shrink_200_200/0?e=1579737600&v=beta&t=iMRyoVwBszKQ0TJQS8EicvoEVVXRhFlyXZNiU5FbafI",
+                displayName = "User 1",
+                email = "user1@gmail.com",
+                photoUrl = "",
                 background = R.drawable.publication_example_one
             )
         ),
@@ -25,9 +25,9 @@ class CommentsWallViewModel @Inject constructor(): SupportLCEViewModel<Comment, 
             text = "Esto es un comentario de prueba",
             author = User(
                 id = "dasdsadsa432423bfdgfdg",
-                displayName = "Jorge Martínez Marí",
-                email = "jorgemartinezmari@gmail.com",
-                photoUrl = "https://media.licdn.com/dms/image/C4D03AQHwTcBjN6oGuQ/profile-displayphoto-shrink_200_200/0?e=1579737600&v=beta&t=iMRyoVwBszKQ0TJQS8EicvoEVVXRhFlyXZNiU5FbafI",
+                displayName = "User 2",
+                email = "user2@gmail.com",
+                photoUrl = "",
                 background = R.drawable.publication_example_one
             )
         ),
@@ -36,11 +36,11 @@ class CommentsWallViewModel @Inject constructor(): SupportLCEViewModel<Comment, 
             text = "Esto es un comentario de prueba",
             author = User(
                 id = "4324324sfgsgfdgfd",
-                displayName = "Mª Gema Jiménez Fernández",
+                displayName = "User 3",
                 followers = 22,
                 follow = 22,
-                email = "gemajimenezfernandez@gmail.com",
-                photoUrl = "https://media.licdn.com/dms/image/C5603AQETtcBGB63hAw/profile-displayphoto-shrink_200_200/0?e=1579737600&v=beta&t=BMuG3ElNVFxeuHro5U9-JjngI5XwSvlMp78EjAZyvFA",
+                email = "user3@gmail.com",
+                photoUrl = "",
                 background = R.drawable.publication_example_tree
             )
         ),
@@ -49,11 +49,11 @@ class CommentsWallViewModel @Inject constructor(): SupportLCEViewModel<Comment, 
             text = "Esto es un comentario de prueba",
             author = User(
                 id = "4324324sfgsgfdgfd",
-                displayName = "Mª Gema Jiménez Fernández",
+                displayName = "User 4",
                 followers = 22,
                 follow = 22,
-                email = "gemajimenezfernandez@gmail.com",
-                photoUrl = "https://media.licdn.com/dms/image/C5603AQETtcBGB63hAw/profile-displayphoto-shrink_200_200/0?e=1579737600&v=beta&t=BMuG3ElNVFxeuHro5U9-JjngI5XwSvlMp78EjAZyvFA",
+                email = "user4@gmail.com",
+                photoUrl = "",
                 background = R.drawable.publication_example_tree
             )
         ),
@@ -62,11 +62,11 @@ class CommentsWallViewModel @Inject constructor(): SupportLCEViewModel<Comment, 
             text = "Esto es un comentario de prueba",
             author = User(
                 id = "4324324sfgsgfdgfd",
-                displayName = "Mª Gema Jiménez Fernández",
+                displayName = "User 5",
                 followers = 22,
                 follow = 22,
-                email = "gemajimenezfernandez@gmail.com",
-                photoUrl = "https://media.licdn.com/dms/image/C5603AQETtcBGB63hAw/profile-displayphoto-shrink_200_200/0?e=1579737600&v=beta&t=BMuG3ElNVFxeuHro5U9-JjngI5XwSvlMp78EjAZyvFA",
+                email = "user5@gmail.com",
+                photoUrl = "",
                 background = R.drawable.publication_example_tree
             )
         ),
@@ -75,11 +75,11 @@ class CommentsWallViewModel @Inject constructor(): SupportLCEViewModel<Comment, 
             text = "Esto es un comentario de prueba",
             author = User(
                 id = "dsadas3423432ghgfhgf",
-                displayName = "Gema Conde Gonzalez",
+                displayName = "User 6",
                 followers = 32,
                 follow = 23,
-                email = "gemacondegonzalez@gmail.com",
-                photoUrl = "https://media.licdn.com/dms/image/C4E03AQHfhXsFSZsxdA/profile-displayphoto-shrink_200_200/0?e=1579737600&v=beta&t=xYXQ7M7oDmY_jX4UtsMOW_gt7GgKQ-MbkpHM_Te1XfM",
+                email = "user6@gmail.com",
+                photoUrl = "",
                 background = R.drawable.publication_example_two
             )
         )
