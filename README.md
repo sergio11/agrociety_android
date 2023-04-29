@@ -1,4 +1,4 @@
-# Agrociety - APP AGRARIA PARA CONECTAR AL MUNDO RURAL EN LA DEMANDA DESERVICIOS
+# Agrociety - Prototype of agricultural application to connect the rural world in the demand for services
 
 ## Concepto 
 
